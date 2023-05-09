@@ -15,7 +15,7 @@
     "dev": "nodemon server.js",
     "db:seed": "node --experimental-json-modules seed/data.js"
   },
-  "name": "pawmeets",
+  "name": "server",
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
