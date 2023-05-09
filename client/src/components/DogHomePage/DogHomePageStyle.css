@@ -1,0 +1,125 @@
+* {
+  font-family: "Comic Sans MS";
+  overflow: hidden;
+}
+
+.dog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  height: 90vh;
+  background-image: url("https://i.pinimg.com/originals/22/75/dd/2275dd50a322a8ecfc9a59d2e334c652.gif");
+  background-repeat: no-repeat;
+  background-position: 7% center;
+}
+
+.dog-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 40vw;
+  margin-bottom: 3rem;
+  padding-bottom: 7rem;
+}
+
+.homepage-button-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.dislike-button {
+  background-image: url("../../assets/dog-bone.png");
+  background-color: transparent;
+  width: 6rem;
+  height: 6rem;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 0.2rem;
+}
+
+.like-button {
+  background-image: url("../../assets/dog-bone.png");
+  background-color: transparent;
+  width: 6rem;
+  height: 6rem;
+  flex-direction: row;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.homepage-dog-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+  border: black;
+}
+
+.homepage-description {
+  text-align: center;
+  margin-top: -6rem;
+}
+
+.homepage-personality-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.homepage-personality-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #f2f2f2;
+  color: black;
+  font-weight: bold;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+}
+
+.home-page-dog-name {
+  font-size: 20px;
+  margin-top: 1rem;
+}
+
+.home-page-dog-gender {
+  font-size: 16px;
+  margin-top: 0.5rem;
+}
+
+.home-page-dog-age {
+  font-size: 16px;
+  margin-top: 0.5rem;
+}
+
+.home-page-dog-about {
+  font-size: 16px;
+  margin-top: 0.5rem;
+}
+
+.like-button,
+.dislike-button,
+.homepage-personality-button {
+  border: none;
+  box-shadow: none;
+}

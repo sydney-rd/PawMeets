@@ -1,0 +1,41 @@
+.messages-container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.messages-image-container {
+    width: 75px !important;
+    height: 75px !important;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.messages-image-container:last-child {
+    margin-right: 0;
+}
+
+.messages-image-container .messages-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.messages-text-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.messages-text-box {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.messages-text-box:last-child {
+    margin-bottom: 0;
+}
