@@ -21,14 +21,15 @@ export const getDog = async (id) => {
   }
 };
 
-// export const getUserDogs = async (user) => {
-//     const dogRequests = user.dog.map(async (dogId) => {
-//       const response = await api.get(`/dogs/id/${dogId}`)
-//       return response.data
-//     });
-//     let response = await Promise.all(dogRequests)
-//     return response
-// }
+export const getUserDogs = async () => {
+  try {
+    const response = await api.get(`/dogs/userdogs/`);
+    return response.data;
+  } catch (error) {
+    console.error(`Failed to get user - error: ${error}`);
+    throw error;
+  }
+};
 
 export const createDog = async (dogData) => {
   try {
