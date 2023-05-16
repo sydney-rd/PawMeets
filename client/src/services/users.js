@@ -40,13 +40,13 @@ export const signOut = async () => {
   }
 }
 
-export const getUser = async (id) => {
-  try {
-    const resp = await api.get(`/auth/getuser/${id}`);
-    localStorage.setItem("token", resp.data.token);
-    const user = jwtDecode(resp.data.token);
-    return user;
-  } catch (error) {
-    throw error;
-  }
-};
+// export const getUser = async (id) => {
+//   try {
+//     const resp = await api.get(`/auth/getuser/${id}`);
+//     localStorage.setItem("token", resp.data.token);
+//     const user = jwtDecode(resp.data.token);
+//     return user;
+//   } catch (error) {
+//     throw error;
+//   }
+// };

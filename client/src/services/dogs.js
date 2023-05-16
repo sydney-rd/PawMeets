@@ -1,5 +1,4 @@
 import api from "./apiConfig.js";
-import { verifyUser } from "./users.js";
 
 export const getDogs = async () => {
   try {
@@ -13,13 +12,14 @@ export const getDogs = async () => {
 
 export const getDog = async (id) => {
   try {
-    const response = await api.get(`/dogs/id/${id}`);
+    const response = await api.get(`/dogs/${id}`);
     return response.data;
   } catch (error) {
     console.error(`Failed to get dog - error: ${error}`);
     throw error;
   }
 };
+
 
 export const getUserDogs = async () => {
   try {
@@ -42,17 +42,16 @@ export const createDog = async (dogData) => {
 
 export const updateDog = async (id, dogData) => {
   try {
-    const response = await api.put(`/dogs/id/${id}`, dogData);
+    const response = await api.put(`/dogs/${id}`, dogData);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const deleteDog = async (dogId, userId) => {
+export const deleteDog = async (dogId) => {
   try {
-    const response = await api.post(`/dogs/delete/${dogId}`, { userId });
-    verifyUser()
+    const response = await api.post(`/dogs/delete/${dogId}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -62,7 +61,6 @@ export const deleteDog = async (dogId, userId) => {
 export const likeDog = async (dogId, likedDog) => {
   try {
     const response = await api.put(`/dogs/like/${dogId}`, {likedDog})
-    verifyUser()
     return response.data
   } catch (error) {
     throw error

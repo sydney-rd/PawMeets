@@ -8,10 +8,9 @@ const getToken = () => {
 
 const api = axios.create({
   baseURL:
-    // process.env.NODE_ENV === "production"
-    //   ? "https://pawmeets-production.up.railway.app"
-    //   : "http://127.0.0.1:3000",
-    "https://pawmeets-production.up.railway.app"
+    process.env.NODE_ENV === "production"
+      ? "https://pawmeets-production.up.railway.app"
+      : "http://127.0.0.1:3000"
 });
 
 api.interceptors.request.use(

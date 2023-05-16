@@ -4,31 +4,30 @@ import { getDogs, likeDog } from '../services/dogs.js';
 import "../components/DogHomePage/DogHomePageStyle.css"
 import Nav from '../components/Nav/Nav.jsx'
 
-export default function Dogs({user}) {
+export default function Dogs({currentDog}) {
   const [dogs, setDogs] = useState([]);
   const [currentDogIndex, setCurrentDogIndex] = useState(0);
+  const [userLikedDogIds, setUserLikedDogIds] = useState([]);
 
   const handleDislikeBtnClick = () => {
     setCurrentDogIndex((currentDogIndex + 1) % dogs.length);
   };
 
   const handleLikeClick = async () => {
-    // get selected dog's id
-    // generate body of request => updated data
-    let likedDogId = dogs[currentDogIndex]._id
-
-    await likeDog(user.dog._id, likedDogId)
-
+    const likedDogId = dogs[currentDogIndex]._id;
+    await likeDog(currentDog._id, likedDogId);
+    setUserLikedDogIds([...userLikedDogIds, likedDogId]);
     setCurrentDogIndex((currentDogIndex + 1) % dogs.length);
   };
 
   useEffect(() => {
     const fetchDogs = async () => {
       const response = await getDogs();
-      setDogs(response);
+      const filteredDogs = response.filter(dog => !userLikedDogIds.includes(dog._id));
+      setDogs(filteredDogs);
     };
     fetchDogs();
-  }, []);
+  }, [userLikedDogIds]);
 
   return (
       <div>

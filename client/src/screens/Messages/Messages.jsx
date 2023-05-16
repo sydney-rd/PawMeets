@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import { getDogs } from "../../services/dogs.js";
-import { getUser } from "../../services/users.js";
 import "./Messages.css";
 import Nav from "../../components/Nav/Nav.jsx";
 
@@ -9,7 +8,6 @@ function Messages({user}) {
 
   useEffect(()=>{
     const fetchLikedDogs = async () => {
-      await getUser(user.id) // Update token
       const dogs = await getDogs()
       let likedDogsData = dogs.filter((dog) => {
         return user?.dog?.like.includes(dog._id)
@@ -22,7 +20,7 @@ function Messages({user}) {
   return (
     <>
       <Nav />
-      <div class="messages-container">
+      <div className="messages-container">
         {likedDogs.map((dog)=>(
           <div key={dog._id} class="messages-image-container">
             <img
@@ -33,14 +31,14 @@ function Messages({user}) {
           </div>
         ))}
       </div>
-      <div class="messages-text-container">
-        <div class="messages-text-box">
+      <div className="messages-text-container">
+        <div className="messages-text-box">
           <p>MSG 1</p>
         </div>
-        <div class="messages-text-box">
+        <div className="messages-text-box">
           <p>Text 2</p>
         </div>
-        <div class="messages-text-box">
+        <div className="messages-text-box">
           <p>Text 3</p>
         </div>
       </div>
