@@ -1,6 +1,6 @@
 import HomePage from "./screens/HomePage.jsx";
 import Messages from "./screens/Messages/Messages.jsx"
-import SignIn  from "./screens/SignIn/SignIn.jsx";
+import Login  from "./screens/Login/Login.jsx";
 import SignUp from "./screens/SignUp/SignUp.jsx";
 import SignOut from "./screens/SignOut.jsx";
 import Profile from "./screens/Profile/Profile.jsx" 
@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<SignIn user={user} setUser={setUser}/>} />
+        <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
         <Route path="/signup" element={<SignUp user={user} setUser={setUser}/>} />
         <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
         <Route path='/homepage' element={<HomePage currentDog={currentDog} />} />

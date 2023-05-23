@@ -22,7 +22,11 @@ export default function DogProfile( {user} ) {
     <>
       <div>DogProfile</div>
       <h1>{location.state.name}</h1>
-      <div className="messages-container">
+      <h1>{location.state.breed}</h1>
+      <h1>{location.state.about}</h1>
+
+
+      <div className="messages-container">Liked Dogs
         {likedDogs.map((dog) => (
           <div key={dog._id} class="messages-image-container">
             <img className="messages-img" src={dog.image} alt={dog.name} />
