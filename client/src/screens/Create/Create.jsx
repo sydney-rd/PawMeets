@@ -35,13 +35,15 @@ export default function Create() {
         <input
           type="number"
           placeholder="Dog's Age"
-          {...register("age", { required: true, pattern: /^\d+$/ })}
+          {...register("age", { required: true, pattern: /^\d+$/})}
+          min="1"
+          max="20"
         />
         {errors.age && errors.age.type === "required" && (
           <span>Age is required.</span>
         )}
         {errors.age && errors.age.type === "pattern" && (
-          <span>Age must be an integer.</span>
+          <span>Age must be a number.</span>
         )}
 
         <input
