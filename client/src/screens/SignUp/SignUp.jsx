@@ -1,12 +1,17 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
-import './SignUp.css';
+import "./SignUp.css";
 
 function SignUp(props) {
   const { setUser } = props;
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors }, getValues } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    getValues,
+  } = useForm();
 
   const onSignUp = async (data) => {
     try {
@@ -32,7 +37,7 @@ function SignUp(props) {
         <h3>Sign Up</h3>
         <form onSubmit={handleSubmit(onSignUp)}>
           <label>Email</label>
-          <input 
+          <input
             required
             type="email"
             {...register("email", {
@@ -84,8 +89,10 @@ function SignUp(props) {
                 message: "Password should have a maximum length of 24",
               },
               pattern: {
-                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]+$/,
-                message: "Password should contain at least one uppercase letter, number, and symbol",
+                value:
+                  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]+$/,
+                message:
+                  "Password should contain at least one uppercase letter, number, and symbol",
               },
             })}
             placeholder="Password"
@@ -98,7 +105,8 @@ function SignUp(props) {
             type="password"
             {...register("passwordConfirmation", {
               required: "Password confirmation is required",
-              validate: (value) => value === getValues("password") || "Passwords do not match",
+              validate: (value) =>
+                value === getValues("password") || "Passwords do not match",
             })}
             placeholder="Confirm Password"
           />
@@ -106,7 +114,9 @@ function SignUp(props) {
 
           <button type="submit">Sign Up</button>
         </form>
-        <p>Have an account? <a href="/login">Login</a></p>
+        <p>
+          Have an account? <a href="/login">Login</a>
+        </p>
       </div>
     </>
   );

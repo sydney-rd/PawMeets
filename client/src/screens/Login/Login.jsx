@@ -1,88 +1,58 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { signIn } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
-import './Login.css'
+import './Login.css';
 
 function Login(props) {
   const { setUser } = props;
-  const [form, setForm] = useState({
-    username: "",
-    password: "",
-    isError: false,
-    errorMsg: "",
-  });
-
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState("");
 
-  // Function designed to redirect to targeted user
-  const handleUser = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const onSignIn = async (e) => {
-    e.preventDefault();
+  const onSignIn = async (data) => {
     try {
-      const user = await signIn(form);
+      const user = await signIn(data);
       setUser(user);
       navigate("/homepage");
     } catch (error) {
       console.error(error);
-      setForm({
-        isError: true,
-        errorMsg: "Invalid Credentials",
-        username: "",
-        password: "",
-      });
+      if (error.response && error.response.status === 401) {
+        setLoginError("Invalid username or password");
+      }
     }
   };
-
-  const renderError = () => {
-    const toggleForm = form.isError ? "danger" : "";
-    if (form.isError) {
-      return (
-        <button type="submit" className={toggleForm}>
-          {form.errorMsg}
-        </button>
-      );
-    } else {
-      return <button type="submit">Sign In</button>;
-    }
-  };
-
-  const { username, password } = form;
 
   return (
     <>
-    <div className="form-signin">
-      <h3>Sign In</h3>
-      <form onSubmit={onSignIn}>
-        <label>Username</label>
-        <input
-          required
-          type="text"
-          name="username"
-          value={username}
-          placeholder="Enter Username"
-          onChange={handleUser}
-        />
-        <label>Password</label>
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={handleUser}
-        />
-        {renderError()}
-      </form>
-      <p>Need an account? <a href="/signup">Sign up</a></p>
- </div>
- </>
+      <div className="form-signin">
+        <h3>Login</h3>
+        <form onSubmit={handleSubmit(onSignIn)}>
+          <label>Username</label>
+          <input
+            required
+            type="text"
+            {...register("username", { required: "Username is required" })}
+            placeholder="Enter Username"
+          />
+          {errors.username && <p>{errors.username.message}</p>}
+          <label>Password</label>
+          <input
+            required
+            type="password"
+            {...register("password", { required: "Password is required" })}
+            placeholder="Password"
+          />
+          {errors.password && <p>{errors.password.message}</p>}
+          {loginError && <p>{loginError}</p>}
+          <button type="submit">Login</button>
+        </form>
+        <p>
+          Need an account? <a href="/signup">Sign up</a>
+        </p>
+      </div>
+    </>
   );
 }
+
 export default Login;
