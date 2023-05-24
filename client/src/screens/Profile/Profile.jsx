@@ -1,4 +1,4 @@
-// import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getUserDogs, deleteDog } from "../../services/dogs.js";
@@ -7,6 +7,9 @@ import "./Profile.css";
 
 function Profile({ user, userDogs, setToggle, setCurrentDog }) {
   const navigate = useNavigate();
+  useEffect(() => {
+    setToggle((prev) => !prev);
+  }, [])
 
   const handleDeleteDog = async (dogId) => {
     await deleteDog(dogId);
