@@ -10,7 +10,7 @@ function Login(props) {
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState("");
 
-  const onSignIn = async (data) => {
+  const onLogin = async (data) => {
     try {
       const user = await signIn(data);
       setUser(user);
@@ -27,7 +27,7 @@ function Login(props) {
     <>
       <div className="form-signin">
         <h3>Login</h3>
-        <form onSubmit={handleSubmit(onSignIn)}>
+        <form onSubmit={handleSubmit(onLogin)}>
           <label>Username</label>
           <input
             required

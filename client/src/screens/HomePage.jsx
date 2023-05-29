@@ -1,7 +1,7 @@
 import DogHomePage from '../components/DogHomePage/DogHomePage.jsx';
 import { useState, useEffect } from 'react';
 import { getDogs, likeDog } from '../services/dogs.js';
-import "../components/DogHomePage/DogHomePageStyle.css"
+import "../components/DogHomePage/DogHomePage.css"
 import Nav from '../components/Nav/Nav.jsx'
 
 export default function Dogs({currentDog}) {

@@ -1,10 +1,13 @@
 .profile-container {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+    padding-top: 3rem;
 }
 
-.update-profile {
+
+.edit-btn {
     margin-top: 10px;
     margin-top: 1em;
     display: flex;
@@ -17,7 +20,7 @@
     transition: all 0.3s ease;
 }
 
-.delete-profile {
+.delete-btn {
     margin-top: 10px;
     margin-top: 1em;
     display: flex;
@@ -28,18 +31,38 @@
     border-radius: 3px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+}
+
+.select-btn {
+    margin-top: 10px;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.6em 1em;
+    border-radius: 3px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+
 }
 
 .profile-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    width: 200px;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto;
+    padding: 1rem; /* Add desired padding value */
+    transition: transform 0.3s; /* Add transition for smooth mouseover effect */
 }
+
+.profile-img:hover {
+    transform: scale(1.1); /* Add desired scale value for mouseover effect */
+}
+
 
 .profile-dog-name {
     margin-top: 10px;

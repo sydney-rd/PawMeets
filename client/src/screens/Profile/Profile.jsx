@@ -39,20 +39,21 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
                 onClick={() => handleClick(dog)}
                 className="profile-img"
                 src={dog?.image}
-                alt={dog?.name}
               />
               <Link to={`/edit/${dog?._id}`}>
-                <button className="update-profile">
+                <button className="edit-btn">
                   Edit your pet profile
                 </button>
               </Link>
               <button
-                className="delete-profile"
+                className="delete-btn"
                 onClick={() => handleDeleteDog(dog?._id)}
               >
                 delete your pet profile
               </button>
-              <button onClick={() => setCurrentDog(dog)}>
+              <button
+                className="select-btn"
+                onClick={() => setCurrentDog(dog)}>
                 Select Current Dog
               </button>
             </div>

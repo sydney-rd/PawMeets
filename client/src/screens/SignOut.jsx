@@ -9,7 +9,7 @@ export default function SignOut({setUser}) {
         const signOutUser = async ()=> {
             await signOut()
             setUser(null)
-            navigate("/")
+            navigate("/login")
         }
         signOutUser()
     }, [setUser, navigate])

@@ -11,7 +11,6 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { verifyUser } from "./services/users.js";
 import { getUserDogs } from "./services/dogs.js";
-import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -45,11 +44,11 @@ function App() {
         <Route path="/signup" element={<SignUp user={user} setUser={setUser}/>} />
         <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
         <Route path='/homepage' element={<HomePage currentDog={currentDog} />} />
-        <Route path="/messages" element={<Messages user={user}/>} />
+        <Route path="/messages" element={<Messages user={user} userDogs={userDogs} currentDog={currentDog} setCurrentDog={setCurrentDog}/>} />
         <Route path="/profile" element={<Profile user={user} userDogs={userDogs} setToggle={setToggle} setCurrentDog={setCurrentDog} />} />
         <Route path="/create" element={<Create />} />
         <Route path="/edit/:id" element={<EditDog />} />
-        <Route path="/dog-profile" element={<DogProfile user={user} userDogs={userDogs} setToggle={setToggle} setCurrentDog={setCurrentDog} />} />
+        <Route path="/dog-profile" element={<DogProfile user={user} userDogs={userDogs} setToggle={setToggle} currentDog={currentDog} setCurrentDog={setCurrentDog} />} />
       </Routes>
     </div>
   );

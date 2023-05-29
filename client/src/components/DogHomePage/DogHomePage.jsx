@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import "./DogHomePageStyle.css";
+import "./DogHomePage.css";
 
 export default function DogHomePage({ dog, handleDislikeBtnClick, handleLikeClick }) {
 

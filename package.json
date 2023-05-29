@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-cloudinary-upload-widget": "^1.7.6"
+  }
+}

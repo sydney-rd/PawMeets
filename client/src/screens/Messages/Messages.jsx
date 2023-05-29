@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import { getDogs } from "../../services/dogs.js";
+import { getUserDogs, messageDog, likeDog } from "../../services/dogs.js";
 import "./Messages.css";
 import Nav from "../../components/Nav/Nav.jsx";
 
@@ -8,7 +8,7 @@ function Messages({user}) {
 
   useEffect(()=>{
     const fetchLikedDogs = async () => {
-      const dogs = await getDogs()
+      const dogs = await getUserDogs()
       let likedDogsData = dogs.filter((dog) => {
         return user?.dog?.like.includes(dog._id)
       })
