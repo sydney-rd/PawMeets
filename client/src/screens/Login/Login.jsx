@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { signIn } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
-import './Login.css';
+import "./Login.css";
 
 function Login(props) {
   const { setUser } = props;
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState("");
 

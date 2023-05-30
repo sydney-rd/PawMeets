@@ -4,6 +4,17 @@ import { useNavigate } from "react-router-dom";
 import { createDog } from "../../services/dogs.js";
 import "../../screens/Create/Create.css";
 
+const traits = [
+  "Loves Baths",
+  "Hates Baths",
+  "Loves the Vet",
+  "Hates the Vet",
+  "Walks",
+  "Car Rides",
+  "Active",
+  "Lazy",
+];
+
 const Create = () => {
   const {
     register,
@@ -12,8 +23,10 @@ const Create = () => {
   } = useForm();
   const navigate = useNavigate();
   const [imageUrl, setImageUrl] = useState("");
+  const [selectedTraits, setSelectedTraits] = useState([]);
 
   const onSubmit = async (data) => {
+    data.personality = selectedTraits; // Set selected traits in the form data
     await createDog(data);
     navigate("/homepage");
   };
@@ -35,6 +48,18 @@ const Create = () => {
     widget.open();
   };
 
+  const toggleTrait = (trait) => {
+    const traitIndex = selectedTraits.indexOf(trait);
+
+    if (traitIndex !== -1) {
+      // Remove the trait if already selected
+      setSelectedTraits(selectedTraits.filter((t) => t !== trait));
+    } else {
+      // Add the trait if not selected
+      setSelectedTraits([...selectedTraits, trait]);
+    }
+  };
+
   return (
     <div className="form-create">
       <h3>Create Dog Profile</h3>
@@ -49,16 +74,10 @@ const Create = () => {
           type="text"
           placeholder="Dog's Breed"
           {...register("breed", { minLength: 2 })}
-          list="breedList"
-        />
-        <input
-          type="text"
-          placeholder="Dog's Breed"
-          {...register("breed", { minLength: 2 })}
         />
         {errors.breed && errors.breed.type === "minLength" && (
           <span>Breed should be at least 2 characters long.</span>
-        )}{" "}
+        )}
         <input
           type="number"
           placeholder="Dog's Age"
@@ -94,11 +113,22 @@ const Create = () => {
         {errors.gender && errors.gender.type === "pattern" && (
           <span>Gender must be Male or Female.</span>
         )}
-        <input
-          type="text"
-          placeholder="Dog's Personality"
-          {...register("personality")}
-        />
+        <div>
+          <p>Select dog's personality traits:</p>
+          <div>
+            {traits.map((trait) => (
+              <button 
+                key={trait}
+                className={`personality-trait ${
+                  selectedTraits.includes(trait) ? "selected" : ""
+                }` }
+                onClick={() => toggleTrait(trait)}
+              >
+                {trait}
+              </button>
+            ))}
+          </div>
+        </div>
         <input
           type="button"
           value="Upload Image"

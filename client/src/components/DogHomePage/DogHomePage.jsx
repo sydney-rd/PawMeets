@@ -3,10 +3,10 @@ import React from "react";
 import "./DogHomePage.css";
 
 export default function DogHomePage({ dog, handleDislikeBtnClick, handleLikeClick }) {
-
+  if (!dog) return <h1>Loading...</h1>
   return (
     <div className="dog-container">
-      <h1 className="home-page-dog-name">{dog.user.username} owns {dog.name}</h1>
+      <h1 className="home-page-dog-name">{dog.user?.username} owns {dog.name}</h1>
       <div className="dog-image-container">
         <Link to={`/dogs/${dog._id}`}>
           <img className="homepage-dog-image" src={dog.image} alt={dog.name} />

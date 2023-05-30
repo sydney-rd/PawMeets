@@ -35,6 +35,9 @@ export const verifyUser = async () => {
 export const signOut = async () => {
   try {
     localStorage.removeItem("token")
+    localStorage.removeItem("currentProfile") 
+    localStorage.removeItem("refresh")
+    localStorage.removeItem("userLikedDogIds")
   } catch (error) {
     throw error
   }

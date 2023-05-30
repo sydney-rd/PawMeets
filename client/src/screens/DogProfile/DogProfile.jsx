@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getDogs } from "../../services/dogs.js";
+import Nav from '../../components/Nav/Nav.jsx'
 
 export default function DogProfile( {user} ) {
   const location = useLocation();
@@ -20,6 +21,7 @@ export default function DogProfile( {user} ) {
   
   return (
     <>
+      <Nav />
       <div>DogProfile</div>
       <h1>{location.state.name}</h1>
       <h1>{location.state.breed}</h1>
