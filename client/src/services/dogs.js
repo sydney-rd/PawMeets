@@ -10,16 +10,6 @@ export const getDogs = async () => {
   }
 };
 
-export const getDogBreeds = async () => {
-  try {
-    const response = await api.get("/dogs/breeds/getBreeds");
-    return response.data;
-  } catch (error) {
-    console.error(`Failed to get dog breeds - error: ${error}`);
-    throw error;
-  }
-};
-
 export const getDog = async (id) => {
   try {
     const response = await api.get(`/dogs/${id}`);
@@ -32,7 +22,7 @@ export const getDog = async (id) => {
 
 export const getUserDogs = async () => {
   try {
-    const response = await api.get(`/dogs/user/dogs/`);
+    const response = await api.get(`/dogs/user/dogs`);
     return response.data;
   } catch (error) {
     console.error(`Failed to get user - error: ${error}`);
@@ -40,8 +30,8 @@ export const getUserDogs = async () => {
   }
 };
 
+
 export const createDog = async (dogData) => {
-  createDog(dogData)
   try {
     const response = await api.post("/dogs", dogData);
     return response.data;

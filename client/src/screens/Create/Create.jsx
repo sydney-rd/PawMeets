@@ -1,49 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { createDog, getDogBreeds } from "../../services/dogs.js";
+import { createDog } from "../../services/dogs.js";
 import "../../screens/Create/Create.css";
 
 const Create = () => {
   const {
     register,
-    handleClick,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
   const [imageUrl, setImageUrl] = useState("");
-  const [dogBreeds, setDogBreeds] = useState([]);
-
-  useEffect(() => {
-    const fetchDogBreeds = async () => {
-      try {
-        const breeds = await getDogBreeds();
-        setDogBreeds(breeds);
-        console.log(breeds);
-      } catch (error) {
-        console.error("Failed to fetch dog breeds:", error);
-      }
-    };
-
-    fetchDogBreeds();
-  }, []);
 
   const onSubmit = async (data) => {
-    console.log("onsubmit", data)
-    await createDog({ ...data, image: imageUrl });
+    await createDog(data);
     navigate("/homepage");
   };
 
   const widget = window.cloudinary.createUploadWidget(
     {
       cloudName: "dhhjypuye",
-      uploadPreset: "qzhbngti"
+      uploadPreset: "qzhbngti",
     },
     (error, res) => {
       if (!error && res && res.event === "success") {
         console.log("cloudinary result:", res.info);
-        setImageUrl(res.info.url)
+        setImageUrl(res.info.url);
       }
     }
   );
@@ -62,22 +45,20 @@ const Create = () => {
           {...register("name", { required: true })}
         />
         {errors.name && <span>Name is required.</span>}
-
         <input
           type="text"
           placeholder="Dog's Breed"
           {...register("breed", { minLength: 2 })}
           list="breedList"
         />
-        <datalist id="breedList">
-          {dogBreeds.map((breed) => (
-            <option key={breed._id} value={breed.name} />
-          ))}
-        </datalist>
+        <input
+          type="text"
+          placeholder="Dog's Breed"
+          {...register("breed", { minLength: 2 })}
+        />
         {errors.breed && errors.breed.type === "minLength" && (
           <span>Breed should be at least 2 characters long.</span>
-        )}
-
+        )}{" "}
         <input
           type="number"
           placeholder="Dog's Age"
@@ -91,7 +72,6 @@ const Create = () => {
         {errors.age && errors.age.type === "pattern" && (
           <span>Age must be a number.</span>
         )}
-
         <input
           type="text"
           placeholder="Tell us about yourself"
@@ -100,7 +80,6 @@ const Create = () => {
         {errors.about && errors.about.type === "minLength" && (
           <span>About should be at least 24 characters long.</span>
         )}
-
         <input
           type="text"
           placeholder="Dog's Gender"
@@ -115,21 +94,18 @@ const Create = () => {
         {errors.gender && errors.gender.type === "pattern" && (
           <span>Gender must be Male or Female.</span>
         )}
-
         <input
           type="text"
           placeholder="Dog's Personality"
           {...register("personality")}
         />
-
         <input
           type="button"
-          value="Upload"
+          value="Upload Image"
           onClick={() => showWidget(widget)}
           {...register("image", { required: true })}
         />
         {errors.image && <span>Image is required.</span>}
-
         <input className="btn" type="submit" value="Submit" />
       </form>
     </div>
