@@ -40,8 +40,12 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if(!user){
+      return;
+    }
+
     fetchUserDogs();
-  }, [toggle, currentDog]);
+  }, [toggle, currentDog, user]);
 
   const handleSetCurrentDog = (dog) => {
     setCurrentDog(dog);

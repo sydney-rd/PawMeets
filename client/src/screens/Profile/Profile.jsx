@@ -21,7 +21,7 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
   };
 
   if (!user) return <h1>Loading...</h1>;
-
+  
   return (
     <div>
       <Nav />

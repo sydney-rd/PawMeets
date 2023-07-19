@@ -20,6 +20,7 @@ const Create = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue
   } = useForm();
   const navigate = useNavigate();
   const [imageUrl, setImageUrl] = useState("");
@@ -39,7 +40,8 @@ const Create = () => {
     (error, res) => {
       if (!error && res && res.event === "success") {
         console.log("cloudinary result:", res.info);
-        setImageUrl(res.info.url);
+        // setImageUrl(res.info.url);
+        setValue("image", res.info.url);
       }
     }
   );
@@ -133,8 +135,10 @@ const Create = () => {
           type="button"
           value="Upload Image"
           onClick={() => showWidget(widget)}
-          {...register("image", { required: true })}
+          
         />
+        
+        <input type="hidden" {...register("image", { required: true })} />
         {errors.image && <span>Image is required.</span>}
         <input className="btn" type="submit" value="Submit" />
       </form>
