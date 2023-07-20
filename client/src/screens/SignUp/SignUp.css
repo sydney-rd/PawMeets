@@ -1,52 +1,57 @@
-/* .form-signup {
+/* Assuming the base font-size is set to 16px */
+
+.signup-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://cdn.wallpapersafari.com/34/65/oxEy0h.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.form-signup {
   align-self: center;
-  padding: 1em;
-  width: 40%;
-  margin: 4em auto;
-  border: 1px solid black;
-  border-radius: 6px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  width: 40rem; /* Converted to rem */
+  margin: 4rem auto;
+  border: 0.2rem solid black;
+  border-radius: .7rem;
+  box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
 
 .form-signup form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: auto;
   padding-top: 5rem;
   width: 80%;
   text-align: center;
-  align-content: center;
-
+  
 }
 
 .form-signup form input {
   width: 85%;
-  padding: 0.6em 1em;
-  margin: 0.5em auto;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem auto;
   font-size: 1rem;
-  border-radius: 3px;
-  border: 1px solid black;
+  border-radius: 0.3rem; /* Converted to rem */
+  border: 0.1rem solid black;
   outline: none;
   transition: all 0.4s ease;
 }
 
-
 .form-signup form button {
-  width: 50%;
-  margin: 1em auto;
+  width: 6rem;
+  height: 3rem;
+  margin: 1rem auto;
   background: #cbc9c0cd;
   border: none;
 }
 
 .form-signup form button:hover {
-  box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
-
 
 @media only screen and (max-width: 768px) {
   .form-signup {
     width: 90%;
   }
-} */
+}

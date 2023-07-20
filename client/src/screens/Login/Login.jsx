@@ -28,10 +28,8 @@ function Login(props) {
   };
 
   return (
-    <div
-      className="login-container"
-    >
-      <div className="form-signin">
+    <div className="login-container">
+      <div className="form-login">
         <div className="pmLogo">{/* <img src={logo} alt="Logo" /> */}</div>
         <form onSubmit={handleSubmit(onLogin)}>
           <input

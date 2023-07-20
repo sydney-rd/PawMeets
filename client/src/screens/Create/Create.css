@@ -1,40 +1,43 @@
-/* .button {
-  cursor: pointer;
-  font-size: 20rem;
-  padding: 0.6em 1em;
-  border-radius: 3px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-} 
+/* Create.css */
+
+.create-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://cdn.wallpapersafari.com/34/65/oxEy0h.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
 
 .form-create {
   align-self: center;
-  padding: 1em;
-  width: 30%;
-  margin: 4em auto;
-  border: 2px solid #b0bec5;
-  border-radius: 6px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  width: 40rem;
+  margin: 4rem auto;
+  border: 0.2rem solid black;
+  border-radius: 0.7rem;
+  box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
 
 .form-create h3 {
   text-align: center;
+  font-weight: bold;
 }
 
 .form-create form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .form-create form input {
   width: 80%;
-  padding: 0.6em 1em;
-  margin: 0.5em auto;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem auto;
   font-size: 1rem;
-  border-radius: 3px;
+  border-radius: 0.3rem;
   border: 1px solid #e0e0e0;
   outline: none;
   transition: all 0.4s ease;
@@ -47,12 +50,8 @@
 .form-create form button {
   width: 20%;
   height: 20%;
-  margin: 1em auto;
-  background: #434241cd;
+  margin: 1rem auto;
+  background: silver;
   border: none;
 }
 
-.personality-trait {
-  font-size: 0.7rem;
-}
- */
