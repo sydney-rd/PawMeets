@@ -1,3 +1,6 @@
+// Create.css
+// (Styling classes are moved to a separate CSS file)
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -9,10 +12,10 @@ const traits = [
   "Hates Baths",
   "Loves the Vet",
   "Hates the Vet",
-  "Walks",
-  "Car Rides",
-  "Active",
-  "Lazy",
+  "Prefers Walks",
+  "Prefers Car Rides",
+  "Is Active",
+  "Is Lazy",
 ];
 
 const Create = () => {
@@ -20,7 +23,7 @@ const Create = () => {
     register,
     handleSubmit,
     formState: { errors },
-    setValue
+    setValue,
   } = useForm();
   const navigate = useNavigate();
   const [imageUrl, setImageUrl] = useState("");
@@ -64,7 +67,7 @@ const Create = () => {
 
   return (
     <div className="form-create">
-      <h3>Create Dog Profile</h3>
+      <h3>Create Your Dog Profile</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
@@ -75,8 +78,10 @@ const Create = () => {
         <input
           type="text"
           placeholder="Dog's Breed"
-          {...register("breed", { minLength: 2 })}
+          {...register("breed", { minLength: 3 })}
+          list="dog-breeds-list"
         />
+        <datalist id="dog-breeds-list"></datalist>
         {errors.breed && errors.breed.type === "minLength" && (
           <span>Breed should be at least 2 characters long.</span>
         )}
@@ -119,11 +124,11 @@ const Create = () => {
           <p>Select dog's personality traits:</p>
           <div>
             {traits.map((trait) => (
-              <button 
+              <button
                 key={trait}
                 className={`personality-trait ${
                   selectedTraits.includes(trait) ? "selected" : ""
-                }` }
+                }`}
                 onClick={() => toggleTrait(trait)}
               >
                 {trait}
@@ -135,9 +140,8 @@ const Create = () => {
           type="button"
           value="Upload Image"
           onClick={() => showWidget(widget)}
-          
         />
-        
+
         <input type="hidden" {...register("image", { required: true })} />
         {errors.image && <span>Image is required.</span>}
         <input className="btn" type="submit" value="Submit" />

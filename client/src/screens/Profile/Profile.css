@@ -1,4 +1,4 @@
-.profile-container {
+/* .profile-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -55,12 +55,12 @@
     width: 15rem;
     border-radius: 50%;
     object-fit: cover;
-    padding: 1rem; /* Add desired padding value */
-    transition: transform 0.3s; /* Add transition for smooth mouseover effect */
+    padding: 1rem; 
+    transition: transform 0.3s; 
 }
 
 .profile-img:hover {
-    transform: scale(1.1); /* Add desired scale value for mouseover effect */
+    transform: scale(1.1); 
 }
 
 
@@ -71,4 +71,5 @@
 
 .header-container {
     text-align: center;
-}
+} 
+*/

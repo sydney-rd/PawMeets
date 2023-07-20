@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap');
 
 body {
   margin: 0;
@@ -16,9 +16,9 @@ button {
   border-radius: 3px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-}
+} */
 
-.navbar {
+/* .navbar {
   background: #cbc9c0cd;
   height: 4em;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -267,7 +267,7 @@ button {
 }
 
 .alert {
-  /* background: #ef9a9a; */
+
   width: 400px;
   height: 200px;
   border-radius: 3px;
@@ -334,4 +334,4 @@ button {
   margin: 4em auto;
 }
 
-
+ */

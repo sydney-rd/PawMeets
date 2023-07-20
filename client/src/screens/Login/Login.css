@@ -1,25 +1,30 @@
-body {
+/* Login.css */
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://cdn.wallpapersafari.com/34/65/oxEy0h.jpg");
+  background-size: cover;
   overflow: hidden;
-  background-size: 100% 137%;
-  background-image: url("../../assets/LoginScreen/loginBG.webp");
 }
 
-.pmLogo img {
+ .pmLogo img {
   max-height: 150%;
 }
 
 .form-signin {
   align-self: center;
-  padding: 1rem;
+  padding: 2rem;
+  width: 80%; 
   width: 23rem;
   height: 60vh;
-  margin: 4rem auto;
+  margin: 2.5rem auto;
   border: 0.1rem solid black;
   border-radius: 0.6rem;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
   display: flex;
   flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   align-items: center;
 }
 
@@ -34,7 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 100%; 
 }
 
 .form-signin form input {
@@ -47,12 +52,31 @@ body {
 }
 
 .form-signin form button {
-  width: 5rem;
+  width: 6rem;
+  height: 3rem;
   margin: 1rem auto;
   background: #cbc9c0cd;
   border: none;
+  border-radius: 0.6rem;
+
 }
 
 .form-signin form button:hover {
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
+}
+
+
+@media only screen and (max-width: 768px) {
+  .login-container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://cdn.wallpapersafari.com/34/65/oxEy0h.jpg") !important;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+.form-signin {  
+  width: 20rem;
+
+}
 }

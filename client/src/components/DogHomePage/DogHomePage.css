@@ -1,9 +1,9 @@
-* {
-    font-family: "Comic Sans MS";
+/* * {
+    font-family: "verdana";
     overflow: hidden;
-  }
+  } */
   
-  .dog-container {
+  /* .dog-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,4 +121,4 @@
   .homepage-personality-button {
     border: none;
     box-shadow: none;
-  }
+  } */

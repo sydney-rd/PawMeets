@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
@@ -32,26 +33,21 @@ function SignUp(props) {
   };
 
   return (
-    <>
-      <div className="form-signup">
-        <h3>Sign Up</h3>
-        <form onSubmit={handleSubmit(onSignUp)}>
-          <label>Email</label>
+    <div className="form-signup">
+      <form onSubmit={handleSubmit(onSignUp)}>
+        <div className="form-group">
           <input
             required
             type="email"
             {...register("email", {
               required: "Email is required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address",
-              },
             })}
             placeholder="Enter email"
           />
           {renderError("email")}
+        </div>
 
-          <label>Username</label>
+        <div className="form-group">
           <input
             required
             type="text"
@@ -73,8 +69,9 @@ function SignUp(props) {
             placeholder="Enter username"
           />
           {renderError("username")}
+        </div>
 
-          <label>Password</label>
+        <div className="form-group">
           <input
             required
             type="password"
@@ -98,8 +95,9 @@ function SignUp(props) {
             placeholder="Password"
           />
           {renderError("password")}
+        </div>
 
-          <label>Password Confirmation</label>
+        <div className="form-group">
           <input
             required
             type="password"
@@ -111,14 +109,14 @@ function SignUp(props) {
             placeholder="Confirm Password"
           />
           {renderError("passwordConfirmation")}
+        </div>
 
-          <button type="submit">Sign Up</button>
-        </form>
-        <p>
-          Have an account? <a href="/login">Login</a>
-        </p>
-      </div>
-    </>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>
+        Have an account? <a href="/login">Login</a>
+      </p>
+    </div>
   );
 }
 
