@@ -1,4 +1,4 @@
-import HomePage from "./screens/HomePage.jsx";
+import HomePage from "./screens/HomePage/HomePage.jsx";
 import Messages from "./screens/Messages/Messages.jsx";
 import Login from "./screens/Login/Login.jsx";
 import SignUp from "./screens/SignUp/SignUp.jsx";
@@ -93,7 +93,7 @@ function App() {
             />
           }
         />
-        <Route path="/create" element={<Create />} />
+        <Route path="/create" element={<Create setCurrentDog={setCurrentDog}/>} />
         <Route path="/edit/:id" element={<EditDog />} />
         <Route
           path="/dog-profile"

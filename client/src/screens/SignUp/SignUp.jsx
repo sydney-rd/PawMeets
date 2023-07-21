@@ -11,6 +11,7 @@ function SignUp(props) {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
     getValues,
   } = useForm();
 
@@ -21,6 +22,7 @@ function SignUp(props) {
       console.log(user);
       navigate("/create");
     } catch (error) {
+      setError("username", error);
       console.error(error);
     }
   };

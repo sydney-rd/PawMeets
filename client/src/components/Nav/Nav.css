@@ -1,26 +1,30 @@
-/* .nav {
-    background-size: 10%;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid black;
-  }
-  
-  .nav-links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 60%;
-  
-  }
-  
-  .nav-links a {
-    margin: 0 10px;
-    font-size: 18px;
-  } */
-  
-  /* nav {
-    text-decoration: none;
-  } */
+.nav {
+  background-size: 20%;
+  opacity: .9;
+  height: 80px;
+  font-size: .8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
+  padding-left: 15rem;
+  padding-right: 5rem;
+  font-weight: bold;
+  background-image: url("https://img.freepik.com/premium-vector/seamless-pattern-with-colorful-dog-paws_197792-31.jpg");
+}
+
+
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 0.5rem .8rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: black;
+}

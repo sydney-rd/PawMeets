@@ -1,0 +1,65 @@
+.dog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFDB59;
+  height: 91vh;
+  overflow: hidden;
+}
+
+.dog-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dislike-button,
+.like-button {
+  background-image: url("../../assets/dog-bone.png");
+  background-color: transparent;
+  width: 8rem;
+  height: 8rem;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.dislike-button {
+  margin-right: 5rem; 
+}
+
+.like-button {
+  /* your existing styles */
+  margin-left: 2rem; /* Add margin to the left to spread it apart */
+}
+
+
+.homepage-dog-image {
+  display: block;
+  height: 21rem;
+  width: 26rem;
+  border: 0.3rem dotted white;
+  border-radius: 50%;
+  box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.homepage-description {
+  text-align: center;
+  font-size: 1rem;
+  max-width: 40rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home-page-dog-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  color: black;
+  font-family: cursive;
+
+}

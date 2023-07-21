@@ -6,20 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { createDog } from "../../services/dogs.js";
 import "../../screens/Create/Create.css";
 
-const traits = [
-  "Loves Baths",
-  "Hates Baths",
-  "Loves the Vet",
-  "Hates the Vet",
-  "Loves Walks",
-  "Loves Car Rides",
-  "Is Active",
-  "Is Lazy",
-  "Relationship",
-  "Friendship"
-];
-
-const Create = () => {
+const Create = ({ setCurrentDog }) => {
   const {
     register,
     handleSubmit,
@@ -27,24 +14,13 @@ const Create = () => {
     setValue,
   } = useForm();
   const navigate = useNavigate();
-
-  const [selectedTraits, setSelectedTraits] = useState([]);
-
-  const toggleTrait = (trait) => {
-    const traitIndex = selectedTraits.indexOf(trait);
-
-    if (traitIndex !== -1) {
-      // Remove the trait if already selected
-      setSelectedTraits(selectedTraits.filter((t) => t !== trait));
-    } else {
-      // Add the trait if not selected
-      setSelectedTraits([...selectedTraits, trait]);
-    }
-  };
+  const [imageUrl, setImageUrl] = useState("");
+  const [isImageUploaded, setIsImageUploaded] = useState(false);
 
   const onSubmit = async (data) => {
-    data.personality = selectedTraits; // Set selected traits in the form data
-    await createDog(data);
+    const dog = await createDog(data);
+    setCurrentDog(dog);
+    localStorage.setItem("currentProfile", JSON.stringify(dog));
     navigate("/homepage");
   };
 
@@ -55,14 +31,15 @@ const Create = () => {
     },
     (error, res) => {
       if (!error && res && res.event === "success") {
-        console.log("cloudinary result:", res.info);
-        // setImageUrl(res.info.url);
         setValue("image", res.info.url);
+        setImageUrl(res.info.url);
+        setIsImageUploaded(true);
       }
     }
   );
 
   const showWidget = (widget) => {
+    setIsImageUploaded(false);
     widget.open();
   };
 
@@ -102,7 +79,7 @@ const Create = () => {
           )}
           <input
             type="text"
-            placeholder="Tell us about yourself"
+            placeholder="Tell us about your dog"
             {...register("about", { minLength: 24 })}
           />
           {errors.about && errors.about.type === "minLength" && (
@@ -122,25 +99,9 @@ const Create = () => {
           {errors.gender && errors.gender.type === "pattern" && (
             <span>Gender must be Male or Female.</span>
           )}
-          <div>
-            <p className="personality-trait-header">Select dog's personality traits:</p>
-            <div>
-              {traits.map((trait) => (
-                <button
-                  key={trait}
-                  className={`personality-trait ${
-                    selectedTraits.includes(trait) ? "selected" : ""
-                  }`}
-                  onClick={() => toggleTrait(trait)}
-                >
-                  {trait}
-                </button>
-              ))}
-            </div>
-          </div>
           <input
             type="button"
-            value="Upload Image"
+            value={isImageUploaded ? "Change Image" : "Upload Image"}
             onClick={() => showWidget(widget)}
           />
 

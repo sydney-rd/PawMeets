@@ -4,6 +4,10 @@ import jwtDecode from 'jwt-decode'
 export const signUp = async (credentials) => {
   try {
     const resp = await api.post('/auth/signup', credentials)
+    if(resp.data.error){
+      throw new Error(resp.data.error);
+    }
+
     localStorage.setItem('token', resp.data.token)
     const user = jwtDecode(resp.data.token)
     return user

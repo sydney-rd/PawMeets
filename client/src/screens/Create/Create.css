@@ -55,3 +55,14 @@
   border: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .form-create {
+    width: 20rem;
+  }  
+
+  .form-create form input {
+    font-size: .8rem;
+  
+  }
+
+}
