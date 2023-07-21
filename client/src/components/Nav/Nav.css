@@ -14,8 +14,6 @@
   background-image: url("https://img.freepik.com/premium-vector/seamless-pattern-with-colorful-dog-paws_197792-31.jpg");
 }
 
-
-
 .nav a {
   text-decoration: none;
   color: white;
@@ -28,3 +26,13 @@
 .nav a:hover {
   background-color: black;
 }
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    background-size: 40%;
+    font-size: .6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
