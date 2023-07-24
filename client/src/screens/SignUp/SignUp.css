@@ -42,10 +42,8 @@
   transform: translateY(-50%);
 }
 
-
 .form-signup form .form-group {
   position: relative;
-
 }
 
 .form-signup form .password-toggle-btn {
@@ -59,7 +57,6 @@
   background: #cbc9c0cd;
   border: none;
   border-radius: 0.7rem;
-
 }
 
 .on-submit-btn:hover  {

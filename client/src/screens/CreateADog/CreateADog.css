@@ -5,12 +5,23 @@
   width: 100vw;
   background-image: url("https://cdn.wallpapersafari.com/34/65/oxEy0h.jpg");
   background-size: cover;
-  overflow: hidden;
+  overflow: auto;
+}
+
+/* Consolidate common styles for textarea and input elements */
+.form-create textarea,
+.form-create input {
+  width: 28.5rem;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+  outline: none;
 }
 
 .form-create {
   align-self: center;
-  padding: 1rem;
+  padding: 2rem;
   width: 40rem;
   margin: 4rem auto;
   border: 0.2rem solid black;
@@ -32,17 +43,6 @@
   gap: 0.4rem;
 }
 
-.form-create form input {
-  width: 80%;
-  padding: 0.6rem 1rem;
-  margin: 0.5rem auto;
-  font-size: 1rem;
-  border-radius: 0.3rem;
-  border: 1px solid #e0e0e0;
-  outline: none;
-  transition: all 0.4s ease;
-}
-
 .form-create form input:valid {
   border: 1px solid black;
 }
@@ -52,7 +52,11 @@
   height: 20%;
   margin: 1rem auto;
   background: silver;
-  border: none;
+}
+
+span {
+  font-weight: bold;
+  font-size: .8rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -62,7 +66,14 @@
 
   .form-create form input {
     font-size: .8rem;
-  
   }
 
+  .form-create textarea {
+    width: 100%; 
+    font-size: 0.8rem; 
+  }
+
+  .create-title {
+    font-size: 1rem;
+  }
 }

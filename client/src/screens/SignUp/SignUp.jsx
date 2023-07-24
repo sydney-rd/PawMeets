@@ -141,7 +141,7 @@ function SignUp(props) {
                 className="password-toggle-btn"
                 onClick={toggleConfirmPasswordVisibility}
               >
-                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+                <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
               </button>
             </div>
           </div>

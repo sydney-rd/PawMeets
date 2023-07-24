@@ -46,7 +46,7 @@ const CreateADog = ({ setCurrentDog }) => {
   return (
     <div className="create-container">
       <div className="form-create">
-        <h3>Create Your Dog Profile</h3>
+        <h3 className="create-title">Create Your Dog Profile</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
@@ -57,12 +57,15 @@ const CreateADog = ({ setCurrentDog }) => {
           <input
             type="text"
             placeholder="Dog's Breed"
-            {...register("breed", { minLength: 3 })}
+            {...register("breed", { required: true, minLength: 3 })}
             list="dog-breeds-list"
           />
           <datalist id="dog-breeds-list"></datalist>
           {errors.breed && errors.breed.type === "minLength" && (
             <span>Breed should be at least 2 characters long.</span>
+          )}
+          {errors.breed && errors.breed.type === "required" && (
+            <span>Breed is required.</span>
           )}
           <input
             type="number"
@@ -77,13 +80,16 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.age && errors.age.type === "pattern" && (
             <span>Age must be a number.</span>
           )}
-          <input
-            type="text"
+          <textarea
             placeholder="Tell us about your dog"
-            {...register("about", { minLength: 24 })}
+            {...register("about", { required: true, minLength: 100 })}
+            style={{ resize: "none", minHeight: "100px" }} 
           />
           {errors.about && errors.about.type === "minLength" && (
-            <span>About should be at least 24 characters long.</span>
+            <span>Description should be at least 100 characters long.</span>
+          )}
+          {errors.about && errors.about.type === "required" && (
+            <span>Description is required.</span>
           )}
           <input
             type="text"
