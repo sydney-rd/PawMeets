@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { signIn } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import "./Login.css";
 
 function Login(props) {
@@ -13,6 +15,7 @@ function Login(props) {
   } = useForm();
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const onLogin = async (data) => {
     try {
@@ -27,6 +30,10 @@ function Login(props) {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword)
+  }
+
   return (
     <div className="login-container">
       <div className="form-login">
@@ -35,18 +42,25 @@ function Login(props) {
           <input
             required
             type="text"
-            id="username"
             {...register("username", { required: "Username is required" })}
             placeholder="Enter Username"
           />
           {errors.username && <p>{errors.username.message}</p>}
           <input
             required
-            type="password"
-            id="password"
+            type={showPassword ? "text" : "password"}
             {...register("password", { required: "Password is required" })}
             placeholder="Enter Password"
           />
+          <div className="password-toggle-btn-container">
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={togglePasswordVisibility}
+              >
+                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+              </button>
+              </div>
           {errors.password && <p>{errors.password.message}</p>}
           {loginError && <p>{loginError}</p>}
           <button type="submit">Login</button>

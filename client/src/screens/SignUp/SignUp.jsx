@@ -118,7 +118,7 @@ function SignUp(props) {
                 className="password-toggle-btn"
                 onClick={togglePasswordVisibility}
               >
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
               </button>
             </div>
           </div>
@@ -141,7 +141,7 @@ function SignUp(props) {
                 className="password-toggle-btn"
                 onClick={toggleConfirmPasswordVisibility}
               >
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
               </button>
             </div>
           </div>

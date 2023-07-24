@@ -38,15 +38,18 @@
 .form-signup form .form-group .password-toggle-btn-container {
   position: absolute;
   top: 50%;
-  right: 2rem;
+  left: 78%;
   transform: translateY(-50%);
+}
+
+
+.form-signup form .form-group {
+  position: relative;
+
 }
 
 .form-signup form .password-toggle-btn {
   background-color: transparent;
-  width: 3rem;
-  height: 3rem;
-  cursor: pointer;
 }
 
 .form-signup form button {
@@ -72,8 +75,12 @@
   padding-top: 2rem;
 }
 
-.login-a-tag:hover {
+.login-a-tag {
   font-weight: bold;
+}
+
+.login-a-tag:hover {
+  color: green;
 }
 
 @media only screen and (max-width: 768px) {
@@ -81,17 +88,17 @@
     width: 90%;
   }
 
-  /* .password-toggle-btn {
+  .password-toggle-btn {
     font-size: smaller;
   }
 
   .form-signup form .form-group .password-toggle-btn-container {
-    right: .1rem;
+    left: 10rem;
   }
 
   .form-signup form input {
     width: 95%;
     font-size: .9rem;
-  } */
+  }
 
 }
