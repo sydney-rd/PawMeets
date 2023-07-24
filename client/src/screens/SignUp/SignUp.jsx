@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import "./SignUp.css";
 
 function SignUp(props) {
@@ -14,6 +16,10 @@ function SignUp(props) {
     setError,
     getValues,
   } = useForm();
+
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const onSignUp = async (data) => {
     try {
@@ -33,6 +39,14 @@ function SignUp(props) {
     }
     return null;
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword((prevShowConfirmPassword) => !prevShowConfirmPassword)
+  }
 
   return (
     <div className="signup-container">
@@ -75,10 +89,10 @@ function SignUp(props) {
             {renderError("username")}
           </div>
 
-          <div className="form-group">
+          <div className="form-group password-input-container">
             <input
               required
-              type="password"
+              type={showPassword ? "text" : "password"}
               {...register("password", {
                 required: "Password is required",
                 minLength: {
@@ -98,13 +112,22 @@ function SignUp(props) {
               })}
               placeholder="Password"
             />
-            {renderError("password")}
+            <div className="password-toggle-btn-container">
+              <button
+                type="button"
+                className="password-toggle-btn"
+                onClick={togglePasswordVisibility}
+              >
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+              </button>
+            </div>
           </div>
+          {renderError("password")}
 
-          <div className="form-group">
+          <div className="form-group password-input-container">
             <input
               required
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
               {...register("passwordConfirmation", {
                 required: "Password confirmation is required",
                 validate: (value) =>
@@ -112,13 +135,22 @@ function SignUp(props) {
               })}
               placeholder="Confirm Password"
             />
-            {renderError("passwordConfirmation")}
+            <div className="password-toggle-btn-container">
+              <button
+                type="button"
+                className="password-toggle-btn"
+                onClick={toggleConfirmPasswordVisibility}
+              >
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+              </button>
+            </div>
           </div>
+          {renderError("passwordConfirmation")}
 
-          <button type="submit">Sign Up</button>
+          <button className="on-submit-btn" type="submit">Sign Up</button>
         </form>
-        <p>
-          Have an account? <a href="/login">Login</a>
+        <p className="login-nav-link">
+          Have an account? <a className="login-a-tag" href="/login">Login</a>
         </p>
       </div>
     </div>

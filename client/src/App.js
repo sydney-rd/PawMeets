@@ -4,7 +4,7 @@ import Login from "./screens/Login/Login.jsx";
 import SignUp from "./screens/SignUp/SignUp.jsx";
 import SignOut from "./screens/SignOut.jsx";
 import Profile from "./screens/Profile/Profile.jsx";
-import Create from "./screens/Create/Create.jsx";
+import CreateADog from "./screens/CreateADog/CreateADog.jsx";
 import EditDog from "./screens/Edit/EditDog.jsx";
 import DogProfile from "./screens/DogProfile/DogProfile.jsx";
 import { Routes, Route } from "react-router-dom";
@@ -93,7 +93,7 @@ function App() {
             />
           }
         />
-        <Route path="/create" element={<Create setCurrentDog={setCurrentDog}/>} />
+        <Route path="/create" element={<CreateADog setCurrentDog={setCurrentDog}/>} />
         <Route path="/edit/:id" element={<EditDog />} />
         <Route
           path="/dog-profile"

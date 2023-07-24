@@ -1,5 +1,3 @@
-/* Assuming the base font-size is set to 16px */
-
 .signup-container {
   height: 100vh;
   width: 100vw;
@@ -11,10 +9,10 @@
 .form-signup {
   align-self: center;
   padding: 1rem;
-  width: 40rem; /* Converted to rem */
+  width: 40rem;
   margin: 4rem auto;
   border: 0.2rem solid black;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
@@ -24,7 +22,6 @@
   padding-top: 5rem;
   width: 80%;
   text-align: center;
-  
 }
 
 .form-signup form input {
@@ -32,10 +29,24 @@
   padding: 0.6rem 1rem;
   margin: 0.5rem auto;
   font-size: 1rem;
-  border-radius: 0.3rem; /* Converted to rem */
+  border-radius: 0.3rem;
   border: 0.1rem solid black;
   outline: none;
   transition: all 0.4s ease;
+}
+
+.form-signup form .form-group .password-toggle-btn-container {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+.form-signup form .password-toggle-btn {
+  background-color: transparent;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
 }
 
 .form-signup form button {
@@ -44,14 +55,43 @@
   margin: 1rem auto;
   background: #cbc9c0cd;
   border: none;
+  border-radius: 0.7rem;
+
 }
 
-.form-signup form button:hover {
+.on-submit-btn:hover  {
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
+}
+
+.form-signup form .password-toggle-btn .eye-icon {
+  font-size: 1.5rem;
+}
+
+.login-nav-link {
+  font-size: 1rem;
+  padding-top: 2rem;
+}
+
+.login-a-tag:hover {
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
   .form-signup {
     width: 90%;
   }
+
+  /* .password-toggle-btn {
+    font-size: smaller;
+  }
+
+  .form-signup form .form-group .password-toggle-btn-container {
+    right: .1rem;
+  }
+
+  .form-signup form input {
+    width: 95%;
+    font-size: .9rem;
+  } */
+
 }

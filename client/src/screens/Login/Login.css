@@ -14,6 +14,7 @@
   height: 60vh;
   margin: 2.5rem auto;
   border: 0.2rem solid black;
+  border-radius: 0.7rem;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
   display: flex;
@@ -51,14 +52,26 @@
   margin: 1rem auto;
   background: #cbc9c0cd;
   border: none;
+  border-radius: 0.7rem;
+
 }
 
 .form-login form button:hover {
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
 
+.signup-nav-link {
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.signup-a-tag:hover {
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 768px) {
   .form-login {
     width: 20rem;
   }
+
 }

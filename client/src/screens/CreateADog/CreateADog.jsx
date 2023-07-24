@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { createDog } from "../../services/dogs.js";
-import "../../screens/Create/Create.css";
+import "./CreateADog.css";
 
-const Create = ({ setCurrentDog }) => {
+const CreateADog = ({ setCurrentDog }) => {
   const {
     register,
     handleSubmit,
@@ -114,4 +114,4 @@ const Create = ({ setCurrentDog }) => {
   );
 };
 
-export default Create;
+export default CreateADog;

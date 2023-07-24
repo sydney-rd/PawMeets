@@ -51,8 +51,8 @@ function Login(props) {
           {loginError && <p>{loginError}</p>}
           <button type="submit">Login</button>
         </form>
-        <p>
-          Need an account? <a href="/signup">Sign up</a>
+        <p className="signup-nav-link">
+          Need an account? <a className="signup-a-tag" href="/signup">Sign up</a>
         </p>
       </div>
     </div>

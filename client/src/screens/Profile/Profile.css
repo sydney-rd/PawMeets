@@ -3,7 +3,9 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    padding-top: 3rem;
+    background-color: lightgrey;
+    height: 80vh;
+    overflow: hidden;
 }
 
 
@@ -18,6 +20,7 @@
     border-radius: 3px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+
 }
 
 .delete-btn {
@@ -31,6 +34,7 @@
     border-radius: 3px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+
 }
 
 .select-btn {
@@ -65,10 +69,14 @@
 
 
 .profile-dog-name {
-    margin-top: 10px;
     text-align: center;
+    
 }
 
 .header-container {
     text-align: center;
+    padding-top: 2rem;
+    font-size: 1.3rem;
+    background-color: lightgrey;
+
 } 
