@@ -57,11 +57,9 @@
 
 .home-page-dog-name {
   font-size: 2rem;
-  font-weight: bold;
   margin-top: 1rem;
   padding-bottom: 1rem;
   color: black;
-  font-family: cursive;
 }
 
 @media only screen and (max-width: 768px) {

@@ -5,7 +5,7 @@ import SignUp from "./screens/SignUp/SignUp.jsx";
 import SignOut from "./screens/SignOut.jsx";
 import Profile from "./screens/Profile/Profile.jsx";
 import CreateADog from "./screens/CreateADog/CreateADog.jsx";
-import EditDog from "./screens/Edit/EditDog.jsx";
+import EditDog from "./screens/EditDog/EditDog.jsx";
 import DogProfile from "./screens/DogProfile/DogProfile.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -60,7 +60,7 @@ function App() {
       <Routes>
         <Route
           path="/login"
-          element={<Login user={user} setUser={setUser} />}
+          element={<Login user={user} setUser={setUser} setCurrentDog={setCurrentDog} />}
         />
         <Route
           path="/signup"

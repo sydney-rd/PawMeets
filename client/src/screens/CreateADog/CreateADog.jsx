@@ -14,7 +14,7 @@ const CreateADog = ({ setCurrentDog }) => {
     setValue,
   } = useForm();
   const navigate = useNavigate();
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImage] = useState(""); // quotes orrrr null
   const [isImageUploaded, setIsImageUploaded] = useState(false);
 
   const onSubmit = async (data) => {
@@ -32,7 +32,7 @@ const CreateADog = ({ setCurrentDog }) => {
     (error, res) => {
       if (!error && res && res.event === "success") {
         setValue("image", res.info.url);
-        setImageUrl(res.info.url);
+        setImage(res.info.url);
         setIsImageUploaded(true);
       }
     }

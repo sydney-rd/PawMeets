@@ -52,7 +52,7 @@ function SignUp(props) {
   return (
     <div className="signup-container">
       <div className="form-signup">
-      <div className="pmLogo"><img src={logo} alt="Logo" /></div>
+      <div className="signupPmLogo"><img src={logo} alt="Logo" /></div>
         <form onSubmit={handleSubmit(onSignUp)}>
           <div className="form-group">
             <input

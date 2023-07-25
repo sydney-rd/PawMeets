@@ -3,22 +3,17 @@
   width: 100vw;
   background-image: url("../../assets/dogBg.jpeg");
   background-size: cover;
-  overflow: hidden;
+  overflow: auto;
+  padding-top: 4rem;
 }
-
-.signupPmLogo {
-  height: 10rem;
-  width: 10rem;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 
 .form-signup {
   align-self: center;
-  padding: 1rem;
-  width: 40rem;
+  padding: 2rem;
+  padding-top: 4rem;
+  max-width: 60rem;
+  width: 25vw;
+  height: 70vh;
   margin: 4rem auto;
   border: 0.2rem solid black;
   border-radius: 0.7rem;
@@ -28,8 +23,7 @@
 
 .form-signup form {
   margin: auto;
-  padding-top: 5rem;
-  width: 80%;
+  padding-top: 6rem;
   text-align: center;
 }
 
@@ -44,10 +38,19 @@
   transition: all 0.4s ease;
 }
 
+.form-signup form button {
+  width: 6rem;
+  height: 3rem;
+  margin: 1rem auto;
+  background: #cbc9c0cd;
+  border: none;
+  border-radius: 0.7rem;
+}
+
 .form-signup form .form-group .password-toggle-btn-container {
   position: absolute;
-  top: 50%;
-  left: 78%;
+  top: 10%;
+  left: 70%;
   transform: translateY(-50%);
 }
 
@@ -59,21 +62,21 @@
   background-color: transparent;
 }
 
-.form-signup form button {
-  width: 6rem;
-  height: 3rem;
-  margin: 1rem auto;
-  background: #cbc9c0cd;
-  border: none;
-  border-radius: 0.7rem;
-}
-
 .on-submit-btn:hover  {
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
 
 .form-signup form .password-toggle-btn .eye-icon {
   font-size: 1.5rem;
+}
+
+.signupPmLogo {
+  position: absolute;
+  height: 11rem;
+  width: 11rem;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login-nav-link {
@@ -91,7 +94,11 @@
 
 @media only screen and (max-width: 768px) {
   .form-signup {
-    width: 90%;
+    width: 90vw;
+    height: 80vh;
+    padding-top: 3rem;
+
+
   }
 
   .password-toggle-btn {
@@ -107,4 +114,18 @@
     font-size: .9rem;
   }
 
+  .signupPmLogo {
+    height: 10rem;
+    width: 10rem;
+    top: 23%;
+  }
+
+  .signup-container {
+   
+    padding-top: 1rem;
+  }
+
+  .form-signup form .form-group .password-toggle-btn-container {
+    left: 70%;
+  }
 }

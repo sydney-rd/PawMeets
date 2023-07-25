@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { signIn } from "../../services/users.js";
+import { login } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +8,7 @@ import logo from "../../assets/Logo/PawMeets-1.png"
 import "./Login.css";
 
 function Login(props) {
-  const { setUser } = props;
+  const { setUser, setCurrentDog } = props;
   const {
     register,
     handleSubmit,
@@ -20,8 +20,13 @@ function Login(props) {
 
   const onLogin = async (data) => {
     try {
-      const user = await signIn(data);
+      const user = await login(data);
       setUser(user);
+      if (user?.dogs?.length > 0) {
+        setCurrentDog(user.dogs[0]);
+        localStorage.setItem("currentProfile", JSON.stringify(user.dogs[0]));
+      }
+
       navigate("/homepage");
     } catch (error) {
       console.error(error);
@@ -38,7 +43,7 @@ function Login(props) {
   return (
     <div className="login-container">
       <div className="form-login">
-        <div className="pmLogo"><img src={logo} alt="Logo" /></div>
+        <div className="loginPmLogo"><img src={logo} alt="Logo" /></div>
         <form onSubmit={handleSubmit(onLogin)}>
           <input
             required
