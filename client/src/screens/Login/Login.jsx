@@ -4,6 +4,7 @@ import { signIn } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import logo from "../../assets/Logo/PawMeets-1.png"
 import "./Login.css";
 
 function Login(props) {
@@ -37,7 +38,7 @@ function Login(props) {
   return (
     <div className="login-container">
       <div className="form-login">
-        <div className="pmLogo">{/* <img src={logo} alt="Logo" /> */}</div>
+        <div className="pmLogo"><img src={logo} alt="Logo" /></div>
         <form onSubmit={handleSubmit(onLogin)}>
           <input
             required

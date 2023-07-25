@@ -28,7 +28,7 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
       <div className="header-container">
         <h1>Welcome, {user?.username}!</h1>
         <p>Please find a list of your dogs below!</p>
-        <Link to="/create">Have a new dog? Add to your list :)</Link>
+        <Link to="/create"> a new dog? Add to your list :)</Link>
       </div>
       <div className="profile-container">
         {userDogs.length > 0 &&

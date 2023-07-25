@@ -7,13 +7,13 @@ function Nav() {
       <div className="nav-container">
         <nav className="nav">
           <p className="create-profile-link">
-            <NavLink to="/profile">Your Profile</NavLink>
-          </p>
-          <p className="messages-link">
-            <NavLink to="/messages">Messages</NavLink>
+            <NavLink to="/profile">Profile</NavLink>
           </p>
           <p className="homepage-link">
-            <NavLink to="/homepage">Homepage</NavLink>
+            <NavLink to="/homepage">Home</NavLink>
+          </p>
+          <p className="messages-link">
+            <NavLink to="/messages">Your Matches</NavLink>
           </p>
           <p className="signout-link">
             <NavLink to="/sign-out">Sign Out</NavLink>

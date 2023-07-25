@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import logo from "../../assets/Logo/PawMeets-1.png"
 import "./SignUp.css";
 
 function SignUp(props) {
@@ -51,6 +52,7 @@ function SignUp(props) {
   return (
     <div className="signup-container">
       <div className="form-signup">
+      <div className="pmLogo"><img src={logo} alt="Logo" /></div>
         <form onSubmit={handleSubmit(onSignUp)}>
           <div className="form-group">
             <input

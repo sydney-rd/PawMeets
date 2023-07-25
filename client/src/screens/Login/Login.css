@@ -1,28 +1,15 @@
-/* Login.css */
 .login-container {
   height: 100vh;
   width: 100vw;
   background-image: url("../../assets/dogBg.jpeg");
   background-size: cover;
   overflow: hidden;
-}
-
-.password-toggle-btn-container {
-  position: absolute;
-  left: 10rem;
-  transform: translateY(-10%);
-}
-
-.password-toggle-btn {
-  position: sticky;
-  background-color: transparent !important;
-  box-shadow: none !important;
+  padding-top: 6rem;
 }
 
 .form-login {
-  align-self: center;
   padding: 2rem;
-  width: 23rem;
+  width: 20rem;
   height: 60vh;
   margin: 2.5rem auto;
   border: 0.2rem solid black;
@@ -34,18 +21,10 @@
   align-items: center;
 }
 
-.pmLogo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .form-login form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
 }
 
 .form-login form input {
@@ -65,11 +44,30 @@
   background: #cbc9c0cd;
   border: none;
   border-radius: 0.7rem;
-
 }
 
 .form-login form button:hover {
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
+}
+
+.password-toggle-btn-container {
+  position: absolute;
+  left: 53%;
+  transform: translateY(-10%);
+}
+
+.password-toggle-btn {
+  position: sticky;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.pmLogo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
 }
 
 .signup-nav-link {
@@ -91,4 +89,15 @@
     width: 20rem;
   }
 
+  .login-container {
+    padding-top: 1rem;
+  }
+
+  .form-login {
+    height: 70vh;
+  }
+
+  .password-toggle-btn-container {
+    left: 62%;
+  }
 }
