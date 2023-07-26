@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/Logo/PawMeets-1.png"
 import "./Nav.css";
 
 function Nav() {
@@ -7,6 +8,7 @@ function Nav() {
       <div className="nav-container">
         <nav className="nav">
           <p className="create-profile-link">
+      <div className="navPmLogo"><img src={logo} alt="Logo" /></div>
             <NavLink to="/profile">Profile</NavLink>
           </p>
           <p className="homepage-link">

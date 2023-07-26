@@ -18,6 +18,7 @@ function SignUp(props) {
     getValues,
   } = useForm();
 
+  console.log("errors: ", errors)
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -29,14 +30,14 @@ function SignUp(props) {
       console.log(user);
       navigate("/create");
     } catch (error) {
-      setError("username", error);
+      setError(error.field, {type: "custom", message: error.message});
       console.error(error);
     }
   };
 
   const renderError = (fieldName) => {
     if (errors[fieldName]) {
-      return <span>{errors[fieldName].message}</span>;
+      return <span className="error-message">{errors[fieldName].message}</span>;
     }
     return null;
   };

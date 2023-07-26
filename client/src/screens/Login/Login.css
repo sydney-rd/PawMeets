@@ -9,15 +9,13 @@
 
 .form-login {
   padding: 2rem;
-  max-width: 20rem;
-  width: 22%;
-  height: 65%;
-  max-height: 40rem;
+  max-width: 20rem; 
+  width: 90%;
+  height: auto; 
   margin: 2.5rem auto;
   border: 0.2rem solid black;
   border-radius: 0.7rem;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
-  transition: all 2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,6 +29,7 @@
 
 .form-login form input {
   padding: 0.6rem 1rem;
+  width: 90%;
   margin: 0.5rem auto;
   font-size: 1rem;
   border-radius: 0.3rem;
@@ -52,14 +51,10 @@
 
 .password-toggle-btn-container {
   position: absolute;
-  left: 53%;
-  bottom: 53%;
-}
-
-.password-toggle-btn {
-  position: absolute;
-  background-color: transparent !important;
-  box-shadow: none !important;
+  /* Use percentage-based positioning for responsiveness */
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
 }
 
 .loginPmLogo {
@@ -77,27 +72,23 @@
 
 .signup-a-tag {
   font-weight: bold;
-
 }
 
+/* The media queries for responsiveness */
 @media only screen and (max-width: 768px) {
   .form-login {
     width: 80%;
   }
 
   .login-container {
-    padding-top: 1rem;
-  }
-
-  .form-login {
-    height: 71%;
+    padding-top: 3rem;
   }
 
   .password-toggle-btn-container {
-    left: 62%;
+    bottom: 3%;
   }
 
   .signup-nav-link {
-    padding-top: 1.5rem;
+    padding-top: .5rem;
   }
 }

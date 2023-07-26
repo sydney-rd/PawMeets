@@ -1,9 +1,8 @@
-/* EditDog.css */
 
 .form-edit {
   align-self: center;
   padding: 2rem;
-  width: 40rem;
+  width: 30rem;
   margin: 4rem auto;
   border: 0.2rem solid black;
   border-radius: 0.7rem;
@@ -14,6 +13,7 @@
 .form-edit h3 {
   text-align: center;
   font-weight: bold;
+  padding-bottom: 2rem;
 }
 
 .form-edit form {
@@ -30,8 +30,8 @@
 
 .form-edit form input[type="text"],
 .form-edit form textarea {
-  width: 28.5rem;
-  padding: 0.6rem 1rem;
+  width: 23rem;
+  padding: 0.5rem 1rem;
   margin: 0.5rem;
   border-radius: 0.3rem;
   border: 1px solid black;
@@ -44,7 +44,7 @@
 }
 
 .form-edit .btn {
-  width: 100%;
+  width: 30%;
   padding: 0.6rem 1rem;
   background: silver;
   color: white;

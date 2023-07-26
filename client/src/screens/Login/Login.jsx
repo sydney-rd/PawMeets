@@ -13,26 +13,24 @@ function Login(props) {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm();
   const navigate = useNavigate();
-  const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const onLogin = async (data) => {
     try {
       const user = await login(data);
       setUser(user);
+      console.log("user: ", user)
       if (user?.dogs?.length > 0) {
         setCurrentDog(user.dogs[0]);
         localStorage.setItem("currentProfile", JSON.stringify(user.dogs[0]));
       }
-
       navigate("/homepage");
     } catch (error) {
+      setError(error.field, {type: "custom", message: error.message});
       console.error(error);
-      if (error.response && error.response.status === 401) {
-        setLoginError("Invalid username or password");
-      }
     }
   };
 
@@ -68,7 +66,6 @@ function Login(props) {
               </button>
               </div>
           {errors.password && <p>{errors.password.message}</p>}
-          {loginError && <p>{loginError}</p>}
           <button type="submit">Login</button>
         </form>
         <p className="signup-nav-link">
