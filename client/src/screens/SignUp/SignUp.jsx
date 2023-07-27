@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/Logo/PawMeets-1.png"
+import logo from "../../assets/Logo/PawMeets-1.png";
 import "./SignUp.css";
 
 function SignUp(props) {
@@ -18,10 +18,10 @@ function SignUp(props) {
     getValues,
   } = useForm();
 
-  console.log("errors: ", errors)
+  console.log("errors: ", errors);
 
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const onSignUp = async (data) => {
     try {
@@ -30,14 +30,18 @@ function SignUp(props) {
       console.log(user);
       navigate("/create");
     } catch (error) {
-      setError(error.field, {type: "custom", message: error.message});
+      setError(error.field, { type: "custom", message: error.message });
       console.error(error);
     }
   };
 
   const renderError = (fieldName) => {
     if (errors[fieldName]) {
-      return <span className="error-message">{errors[fieldName].message}</span>;
+      return (
+        <span className="signup-error-message">
+          {errors[fieldName].message}
+        </span>
+      );
     }
     return null;
   };
@@ -47,13 +51,17 @@ function SignUp(props) {
   };
 
   const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword((prevShowConfirmPassword) => !prevShowConfirmPassword)
-  }
+    setShowConfirmPassword(
+      (prevShowConfirmPassword) => !prevShowConfirmPassword
+    );
+  };
 
   return (
     <div className="signup-container">
       <div className="form-signup">
-      <div className="signupPmLogo"><img src={logo} alt="Logo" /></div>
+        <div className="signupPmLogo">
+          <img src={logo} alt="Logo" />
+        </div>
         <form onSubmit={handleSubmit(onSignUp)}>
           <div className="form-group">
             <input
@@ -115,15 +123,13 @@ function SignUp(props) {
               })}
               placeholder="Password"
             />
-            <div className="password-toggle-btn-container">
-              <button
-                type="button"
-                className="password-toggle-btn"
-                onClick={togglePasswordVisibility}
-              >
-                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
-              </button>
-            </div>
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={togglePasswordVisibility}
+            >
+              <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+            </button>
           </div>
           {renderError("password")}
 
@@ -138,22 +144,27 @@ function SignUp(props) {
               })}
               placeholder="Confirm Password"
             />
-            <div className="password-toggle-btn-container">
-              <button
-                type="button"
-                className="password-toggle-btn"
-                onClick={toggleConfirmPasswordVisibility}
-              >
-                <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
-              </button>
-            </div>
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={toggleConfirmPasswordVisibility}
+            >
+              <FontAwesomeIcon
+                icon={showConfirmPassword ? faEye : faEyeSlash}
+              />
+            </button>
           </div>
           {renderError("passwordConfirmation")}
 
-          <button className="on-submit-btn" type="submit">Sign Up</button>
+          <button className="on-submit-btn" type="submit">
+            Sign Up
+          </button>
         </form>
         <p className="login-nav-link">
-          Have an account? <a className="login-a-tag" href="/login">Login</a>
+          Have an account?{" "}
+          <a className="login-a-tag" href="/login">
+            Login
+          </a>
         </p>
       </div>
     </div>

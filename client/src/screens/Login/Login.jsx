@@ -79,7 +79,7 @@ function Login(props) {
           <button type="submit">Login</button>
         </form>
         <p className="signup-nav-link">
-          Need an account?{" "}
+          Need an account?
           <a className="signup-a-tag" href="/signup">
             Sign up
           </a>

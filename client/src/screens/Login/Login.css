@@ -8,6 +8,7 @@
 }
 
 .form-login {
+  background-color: rgba(236, 235, 233, 255);
   padding: 2rem;
   max-width: 20rem;
   width: 90%;
@@ -63,9 +64,10 @@
 }
 
 .login-error-message {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
   color: black;
+  font-weight: bold;
 }
 
 .loginPmLogo {
@@ -78,10 +80,11 @@
 }
 
 .signup-a-tag:hover {
-  color: tan;
+  color: rgba(253, 216, 184, 255);
 }
 
 .signup-a-tag {
+  padding-left: .4rem;
   font-weight: bold;
 }
 

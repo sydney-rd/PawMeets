@@ -4,18 +4,19 @@
   background-image: url("../../assets/dogBgFinal.jpeg");
   background-size: cover;
   overflow: auto;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 .form-signup {
+  background-color: rgba(236, 235, 233, 255);
   padding: 2rem;
-  max-width: 22rem;
-  width: 80%;
+  max-width: 20rem;
+  width: 93%;
   height: auto;
   margin: 2.5rem auto;
   border: 0.2rem solid black;
   border-radius: 0.7rem;
-  box-shadow: 0.2rem 0.4rem 1.5rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +25,8 @@
 .form-signup form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
+
 
 .form-signup form input {
   padding: 0.6rem 1rem;
@@ -34,55 +35,42 @@
   border-radius: 0.3rem;
   border: 0.1rem solid black;
   outline: none;
-  
 }
 
 .form-signup form button {
   width: 6rem;
   height: 3rem;
-  margin: 1rem auto;
+  margin: auto;
   background: #cbc9c0cd;
-
   border-radius: 0.7rem;
+  margin-top: 2rem;
 }
 
 .form-signup form button:hover {
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
 
-.form-group {
-  text-align: center;
-}
-
-.error-message {
-  text-align: center;
-  font-size: 0.6rem; /* Set the font size for error messages */
-}
-
-/* .password-toggle-btn-container {
-  position: sticky;
- 
-  transform: translateX(-50%);
-} */
-
-/* .password-toggle-btn-container {
-  position: relative;
-  display: flex;
-  top: 10rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.password-toggle-btn {
+.form-signup form .password-toggle-btn {
+  position: absolute;
+  display: inline-flex;
+  transform: translateX(-100%);
   background-color: transparent;
-  border: none;
-  cursor: pointer;
-} */
+  width: auto;
+  padding: 1em;
+  margin: 0.5em 0;
+}
 
-/* .eye-icon {
-  font-size: 1.5rem;
-} */
+.form-signup form .password-toggle-btn:hover {
+  box-shadow: initial;
+}
 
+.signup-error-message {
+  font-size: 0.7rem;
+  display: flex;
+  color: black;
+  justify-content: center;
+  text-align: center;
+}
 
 .signupPmLogo {
   width: 12rem;
@@ -90,14 +78,78 @@
 
 .login-nav-link {
   font-size: 1rem;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 }
 
-.signup-a-tag:hover {
-  color: tan;
+.login-a-tag:hover {
+  color: rgba(253, 216, 184, 255)
 }
 
-.signup-a-tag {
+.login-a-tag {
+  padding-left: .1rem;
   font-weight: bold;
 }
 
+/* The media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .signup-container {
+    padding-top: .3rem;
+  }
+
+  .form-signup {
+    padding: 2rem;
+    max-width: 20rem;
+    width: 75%;
+    height: auto;
+    margin: 2.5rem auto;
+  }
+
+  .form-signup form input {
+    padding: 0.6rem 1rem;
+    margin: 0.5rem auto;
+    font-size: .8rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid black;
+    outline: none;
+  }
+
+  .form-signup form button {
+    width: 5rem;
+    height: 3rem;
+    margin: auto;
+    background: #cbc9c0cd;
+    border-radius: 0.7rem;
+    margin-top: 2rem;
+  }
+
+  .form-signup form .password-toggle-btn {
+    position: absolute;
+    display: inline-flex;
+    transform: translateX(-100%);
+    background-color: transparent;
+    width: auto;
+    padding: 1em;
+    margin: 0.5em 0;
+  }
+
+  .form-signup form .password-toggle-btn:hover {
+    box-shadow: initial;
+  }
+
+  .signup-error-message {
+    font-size: 0.7rem;
+    display: flex;
+    color: black;
+    justify-content: center;
+  }
+
+  .signupPmLogo {
+    width: 10rem;
+  }
+
+  .login-nav-link {
+    font-size: .9rem;
+    padding-top: 1.2rem;
+  }
+
+}
