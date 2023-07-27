@@ -28,8 +28,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     };
     fetchDogs();
   }, []);
-  
-  console.log("current dog", currentDog)
+
   const filteredDogs = useMemo(
     () => dogs.filter((dog) => !currentDog?.likes.includes(dog._id)),
     [dogs, currentDog?.likes]
@@ -43,7 +42,18 @@ export default function HomePage({ currentDog, setCurrentDog }) {
 
   if (filteredDogs.length === 0) return <h1>No dogs found in your area ...</h1>;
 
+  console.log(
+    "------------------------------------------------------------------------------------"
+  );
+  console.log(
+    "------------------------------------------------------------------------------------"
+  );
+  console.log("dogs: ", dogs);
+  console.log("currentDog?.likes: ", currentDog?.likes);
+  console.log("filteredDogs: ", filteredDogs);
+  console.log("currentDogIndex: ", currentDogIndex);
   const dog = filteredDogs[currentDogIndex];
+  console.log("dog: ", dog);
 
   return (
     <div>
@@ -52,30 +62,35 @@ export default function HomePage({ currentDog, setCurrentDog }) {
         <div className="homepage-container">
           <div className="overlay"> </div>
           <div className="dog-container">
-          <h1 className="home-page-dog-name">
-            {dog.name}
-          </h1>
-          <div className="dog-image-container">
-            <Link to={`/dogs/${dog._id}`}>
-              <img className="homepage-dog-image" src={dog.image} alt={dog.name} />
-            </Link>
-            <div>
-              <button className="dislike-button" onClick={handleDislikeBtnClick}>
-                BARK
-              </button>
-              <button className="like-button" onClick={handleLikeClick}>
-                BONE
-              </button>
+            <h1 className="home-page-dog-name">{dog.name}</h1>
+            <div className="dog-image-container">
+              <Link to={`/dogs/${dog._id}`}>
+                <img
+                  className="homepage-dog-image"
+                  src={dog.image}
+                  alt={dog.name}
+                />
+              </Link>
+              <div>
+                <button
+                  className="dislike-button"
+                  onClick={handleDislikeBtnClick}
+                >
+                  BARK
+                </button>
+                <button className="like-button" onClick={handleLikeClick}>
+                  BONE
+                </button>
+              </div>
+            </div>
+            <div className="homepage-description">
+              <p>
+                {dog.name} the {dog.breed}. {dog.gender}, {dog.age} years young.
+              </p>
+              <br />
+              <p>{dog.about}</p>
             </div>
           </div>
-          <div className="homepage-description">
-            <p>
-              {dog.name} the {dog.breed}. {dog.gender}, {dog.age} years young.
-            </p>
-            <br />
-            <p>{dog.about}</p>
-          </div>
-        </div>
         </div>
       )}
     </div>

@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if(!user){
+    if (!user) {
       return;
     }
 
@@ -52,24 +52,35 @@ function App() {
     localStorage.setItem("currentProfile", JSON.stringify(dog));
   };
 
-  console.log(userDogs)
-  console.log("current dog", currentDog)
-  
+  console.log(userDogs);
+  console.log("current dog", currentDog);
+
   return (
     <div className="App">
       <Routes>
         <Route
           path="/login"
-          element={<Login user={user} setUser={setUser} setCurrentDog={setCurrentDog} />}
+          element={
+            <Login
+              user={user}
+              setUser={setUser}
+              setCurrentDog={setCurrentDog}
+            />
+          }
         />
         <Route
           path="/signup"
           element={<SignUp user={user} setUser={setUser} />}
         />
-        <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
+        <Route
+          path="/sign-out"
+          element={<SignOut setUser={setUser} setCurrentDog={setCurrentDog} />}
+        />
         <Route
           path="/homepage"
-          element={<HomePage currentDog={currentDog} setCurrentDog={setCurrentDog} />}
+          element={
+            <HomePage currentDog={currentDog} setCurrentDog={setCurrentDog} />
+          }
         />
         <Route
           path="/messages"
@@ -93,7 +104,10 @@ function App() {
             />
           }
         />
-        <Route path="/create" element={<CreateADog setCurrentDog={setCurrentDog}/>} />
+        <Route
+          path="/create"
+          element={<CreateADog setCurrentDog={setCurrentDog} />}
+        />
         <Route path="/edit/:id" element={<EditDog />} />
         <Route
           path="/dog-profile"
