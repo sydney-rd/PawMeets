@@ -1,36 +1,48 @@
 .nav-container {
   position: relative;
+  
 }
 
 .nav {
-  background-size: 20%;
+  background-size: 15%;
   opacity: 0.9;
-  height: 80px;
+  height: 5.5rem;
   font-size: 0.8rem;
   display: flex;
   align-items: center;
+  justify-content: center; /* Add this to space the elements evenly */
   border-bottom: 2px solid black;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   font-weight: bold;
-  background-image: url("https://img.freepik.com/premium-vector/seamless-pattern-with-colorful-dog-paws_197792-31.jpg");
+  background-color: rgba(236,235,233,255);
 }
 
 .nav a {
   text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 1rem; /* Adjust the horizontal spacing between <a> items */
+  border-radius: 1rem;
+  /* margin-left: 4rem; */
   color: white;
   background-color: black;
-  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  align-items: center;
   border-radius: 1rem;
+
 }
 
-.navPmLogo img {
-  width: 12%; /* Adjust the percentage value as needed */
-  height: auto;
-  padding-left: 2rem;
+a {
+  align-content: center;
+  text-align: center;
 }
 
-.nav a:hover {
-  background-color: black;
+.navPmLogo {
+  position: absolute;
+  /* margin-left: 2rem; */
+  height: 6rem;
+  width: 6rem;
+  left: 1rem; 
+  top: 50%; /* Adjust this value to vertically center the logo */
+  transform: translateY(-50%); /* Vertically center the logo using translate */
 }
 
 /* Update the logo size to be responsive */
@@ -53,4 +65,11 @@
   .nav-right p {
     margin: 0;
   }
+
+  .navPmLogo img {
+    width: 5rem;
+    /* padding-right: 4rem;
+    max-width: 20rem; */
+  }
+  
 }

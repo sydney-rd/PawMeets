@@ -7,15 +7,16 @@ function Nav() {
     <>
       <div className="nav-container">
         <nav className="nav">
-          <p className="create-profile-link">
+        
       <div className="navPmLogo"><img src={logo} alt="Logo" /></div>
-            <NavLink to="/profile">Profile</NavLink>
-          </p>
           <p className="homepage-link">
             <NavLink to="/homepage">Home</NavLink>
           </p>
           <p className="messages-link">
-            <NavLink to="/messages">Your Matches</NavLink>
+            <NavLink to="/messages">Matches</NavLink>
+          </p>
+          <p className="create-profile-link">
+            <NavLink to="/profile">Profile</NavLink>
           </p>
           <p className="signout-link">
             <NavLink to="/sign-out">Sign Out</NavLink>

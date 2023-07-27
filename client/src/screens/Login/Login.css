@@ -1,7 +1,7 @@
 .login-container {
   height: 100vh;
   width: 100vw;
-  background-image: url("../../assets/dogBg.jpeg");
+  background-image: url("../../assets/dogBgFinal.jpeg");
   background-size: cover;
   overflow: auto;
   padding-top: 6rem;
@@ -24,12 +24,11 @@
 .form-login form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .form-login form input {
   padding: 0.6rem 1rem;
-  width: 90%;
+  width: 95%;
   margin: 0.5rem auto;
   font-size: 1rem;
   border-radius: 0.3rem;
@@ -40,7 +39,7 @@
 .form-login form button {
   width: 6rem;
   height: 3rem;
-  margin: 1rem auto;
+  margin: auto;
   background: #cbc9c0cd;
   border-radius: 0.7rem;
 }
@@ -49,21 +48,30 @@
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
 
+.password-toggle-btn {
+ position: relative;
+}
+
 .password-toggle-btn-container {
-  position: absolute;
-  /* Use percentage-based positioning for responsiveness */
+  /* position: absolute; */
   left: 50%;
   bottom: 5%;
   transform: translateX(-50%);
 }
 
+.login-error-message {
+  font-size: 0.8rem;
+  text-align: center;
+  color: black;
+}
+
 .loginPmLogo {
-  width: 10rem;
+  width: 12rem;
 }
 
 .signup-nav-link {
   font-size: 1rem;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 }
 
 .signup-a-tag:hover {

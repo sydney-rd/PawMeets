@@ -49,7 +49,7 @@ function Login(props) {
             {...register("username", { required: "Username is required" })}
             placeholder="Enter Username"
           />
-          {errors.username && <p>{errors.username.message}</p>}
+          {errors.username && <p className="login-error-message">{errors.username.message}</p>}
           <input
             required
             type={showPassword ? "text" : "password"}
@@ -65,7 +65,7 @@ function Login(props) {
                 <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
               </button>
               </div>
-          {errors.password && <p>{errors.password.message}</p>}
+          {errors.password && <p className="login-error-message">{errors.password.message}</p>}
           <button type="submit">Login</button>
         </form>
         <p className="signup-nav-link">

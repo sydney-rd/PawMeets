@@ -49,9 +49,11 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     <div>
       <Nav />
       {filteredDogs.length > 0 && (
-        <div className="dog-container">
+        <div className="homepage-container">
+          <div className="overlay"> </div>
+          <div className="dog-container">
           <h1 className="home-page-dog-name">
-            {dog.user?.username} owns {dog.name}
+            {dog.name}
           </h1>
           <div className="dog-image-container">
             <Link to={`/dogs/${dog._id}`}>
@@ -73,6 +75,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
             <br />
             <p>{dog.about}</p>
           </div>
+        </div>
         </div>
       )}
     </div>

@@ -1,12 +1,34 @@
-.dog-container {
+.homepage-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/38dc384a-d9ba-495c-bdb4-57d7f49f35ab/ddzq4q4-9973bc85-d521-490d-83d4-532b824b22ac.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM4ZGMzODRhLWQ5YmEtNDk1Yy1iZGI0LTU3ZDdmNDlmMzVhYlwvZGR6cTRxNC05OTczYmM4NS1kNTIxLTQ5MGQtODNkNC01MzJiODI0YjIyYWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.YoJtaNt8t75r-DYEYy7rBumMCi2ZMTJiuNqGt9tKSZA");
-  height: 91vh;
-  overflow: hidden;
+  background-image: url("../../assets/dogBgFinal.jpeg");
+  height: 90vh;
+  overflow: auto;
+}
+
+.homepage-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.dog-container {
+  background-color: rgba(236, 235, 233, 255);
+  text-align: center;
+  border-radius: 5%;
+  box-shadow: 0.2rem 0.4rem 2rem rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  z-index: 2;
+  min-width: 30rem; /* Use min-width instead of max-width */
+  margin-bottom: 2rem;
+  height: 90vh;
 }
 
 .dog-image-container {
@@ -21,8 +43,8 @@
 .like-button {
   background-image: url("../../assets/dog-bone.png");
   background-color: transparent;
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: 7rem;
   border: none;
   background-repeat: no-repeat;
   background-size: contain;
@@ -41,17 +63,21 @@
 
 .homepage-dog-image {
   display: block;
-  height: 23rem;
-  width: 30rem;
-  border: 0.3rem dotted white;
+  height: 18rem;
+  width: 23rem;
+  max-width: 30rem;
+
+  /* border: 0.3rem solid black; */
   border-radius: 5%;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .homepage-description {
   text-align: center;
-  font-size: 1rem;
-  max-width: 40rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: .85rem;
+  max-width: 30rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -60,41 +86,11 @@
   margin-top: 1rem;
   padding-bottom: 1rem;
   color: black;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
 
-.dog-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #FFDB59;
-  overflow: hidden;
-}
 
-.homepage-dog-image {
-  display: block;
-  height: 17rem;
-  width: 19rem;
-  border: 0.3rem dotted white;
-  border-radius: 50%;
-  box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
-}
 
-.home-page-dog-name {
-  font-size: 1.5rem;
-}
-
-.dislike-button,
-.like-button {
-  background-color: transparent;
-  width: 6rem;
-  height: 6rem;
-  font-size: .7rem;
-}
-
-.homepage-description {
-  font-size: .8rem;
-  max-width: 20rem;
-}
 }
