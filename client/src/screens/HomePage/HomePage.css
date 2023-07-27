@@ -16,7 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.1); 
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .dog-container {
@@ -25,10 +25,11 @@
   border-radius: 5%;
   box-shadow: 0.2rem 0.4rem 2rem rgba(0, 0, 0, 0.3);
   margin-top: 2rem;
-  z-index: 2;
-  min-width: 30rem; /* Use min-width instead of max-width */
+  max-width: 28rem;
+  width: 28rem;
   margin-bottom: 2rem;
   height: 90vh;
+  z-index: 1;
 }
 
 .dog-image-container {
@@ -50,29 +51,29 @@
   background-size: contain;
   font-size: 1rem;
   font-weight: bold;
+
 }
 
 .dislike-button {
-  margin-right: 5rem; 
+  margin-right: 5rem;
 }
 
 .like-button {
-  margin-left: 2rem; 
-
+  margin-left: 2rem;
 }
 
 .homepage-dog-image {
   display: block;
-  height: 18rem;
-  width: 23rem;
+  height: 17rem;
+  width: 22rem;
   max-width: 30rem;
-
-  /* border: 0.3rem solid black; */
   border-radius: 5%;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .homepage-description {
+  padding-top: 1rem;
+
   text-align: center;
   padding-left: 5%;
   padding-right: 5%;
@@ -95,9 +96,8 @@
 @media only screen and (max-width: 768px) {
 
   .homepage-dog-image {
-    height: 13rem;
+    height: 11rem;
     width: 15rem;
-    max-width: 100%;
   }
 
   .home-page-dog-name {
@@ -106,28 +106,29 @@
 
   .dislike-button,
   .like-button {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     font-size: 0.7rem;
   }
 
   .dislike-button {
-    margin-right: 1rem; 
+    margin-right: 1rem;
   }
 
   .homepage-description {
     font-size: 0.8rem;
-    max-width: 18rem;
-  }
-  
-  .dog-container {
-    min-width: auto;
-    width: 80%; /* Set a specific width for the dog container on smaller screens */
-    margin-bottom: 1rem; /* Adjust the margin to create more space between dog containers */
-    height: 70vh;
+    max-width: 27rem;
   }
 
-  .homepage-container .overlay {
-    background-color: rgba(255, 255, 255, 0.3); /* Increase the opacity of the overlay on smaller screens */
+  .homepage-container {
+    height: 91vh;
+
+  }
+
+  .dog-container {
+    min-width: auto;
+    width: 85%;
+    margin-bottom: 1rem;
+    height: 85vh auto;
   }
 }

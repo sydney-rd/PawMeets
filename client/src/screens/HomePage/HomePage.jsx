@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect, useMemo } from "react";
 import { getDogs, likeDog } from "../../services/dogs.js";
 import Nav from "../../components/Nav/Nav.jsx";
+import Modal from "../../components/Modal/Modal.jsx";
 import "./HomePage.css";
 
 export default function HomePage({ currentDog, setCurrentDog }) {
   const [dogs, setDogs] = useState([]);
   const [currentDogIndex, setCurrentDogIndex] = useState(0);
-
+  const [showModal, setShowModal] = useState(false);
   const handleDislikeBtnClick = () => {
     setCurrentDogIndex((currentDogIndex + 1) % filteredDogs.length);
   };
@@ -19,6 +20,12 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     setCurrentDog((prev) => {
       return { ...prev, likes: [...prev.likes, likedDogId] };
     });
+    const likedByLikedDog = dogs.find(
+      (dog) => dog.likes.includes(currentDog._id) && dog._id === likedDogId
+    );
+    if (likedByLikedDog) {
+      setShowModal(true);
+    }
   };
 
   useEffect(() => {
@@ -42,18 +49,18 @@ export default function HomePage({ currentDog, setCurrentDog }) {
 
   if (filteredDogs.length === 0) return <h1>No dogs found in your area ...</h1>;
 
-  console.log(
-    "------------------------------------------------------------------------------------"
-  );
-  console.log(
-    "------------------------------------------------------------------------------------"
-  );
-  console.log("dogs: ", dogs);
-  console.log("currentDog?.likes: ", currentDog?.likes);
-  console.log("filteredDogs: ", filteredDogs);
-  console.log("currentDogIndex: ", currentDogIndex);
+  // console.log(
+  //   "------------------------------------------------------------------------------------"
+  // );
+  // console.log(
+  //   "------------------------------------------------------------------------------------"
+  // );
+  // console.log("dogs: ", dogs);
+  // console.log("currentDog?.likes: ", currentDog?.likes);
+  // console.log("filteredDogs: ", filteredDogs);
+  // console.log("currentDogIndex: ", currentDogIndex);
   const dog = filteredDogs[currentDogIndex];
-  console.log("dog: ", dog);
+  // console.log("dog: ", dog);
 
   return (
     <div>
@@ -93,6 +100,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
           </div>
         </div>
       )}
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }

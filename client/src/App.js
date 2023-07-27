@@ -6,7 +6,7 @@ import SignOut from "./screens/SignOut.jsx";
 import Profile from "./screens/Profile/Profile.jsx";
 import CreateADog from "./screens/CreateADog/CreateADog.jsx";
 import EditDog from "./screens/EditDog/EditDog.jsx";
-import DogProfile from "./screens/DogProfile/DogProfile.jsx";
+import Matches from "./screens/Matches/Matches.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { verifyUser } from "./services/users.js";
@@ -110,9 +110,9 @@ function App() {
         />
         <Route path="/edit/:id" element={<EditDog />} />
         <Route
-          path="/dog-profile"
+          path="/Matches"
           element={
-            <DogProfile
+            <Matches
               user={user}
               userDogs={userDogs}
               setToggle={setToggle}

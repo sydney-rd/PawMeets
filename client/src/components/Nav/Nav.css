@@ -1,26 +1,27 @@
 .nav-container {
   position: relative;
-  
+
 }
 
 .nav {
-  background-size: 15%;
   opacity: 0.9;
   height: 5.5rem;
   font-size: 0.8rem;
   display: flex;
   align-items: center;
-  justify-content: center; /* Add this to space the elements evenly */
+  justify-content: center;
+  /* Add this to space the elements evenly */
   border-bottom: 2px solid black;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   font-weight: bold;
-  background-color: rgba(236,235,233,255);
+  background-color: rgba(236, 235, 233, 255);
 }
 
 .nav a {
   text-decoration: none;
   padding: 0.5rem 1rem;
-  margin: 0 1rem; /* Adjust the horizontal spacing between <a> items */
+  margin: 0 1rem;
+  /* Adjust the horizontal spacing between <a> items */
   border-radius: 1rem;
   /* margin-left: 4rem; */
   color: white;
@@ -40,54 +41,41 @@ a {
   /* margin-left: 2rem; */
   height: 6rem;
   width: 6rem;
-  left: 1rem; 
-  top: 50%; /* Adjust this value to vertically center the logo */
-  transform: translateY(-50%); /* Vertically center the logo using translate */
+  left: 1rem;
+  top: 50%;
+  /* Adjust this value to vertically center the logo */
+  transform: translateY(-50%);
+  /* Vertically center the logo using translate */
 }
 
-.hamburger-menu {
-  display: none; /* Hide the menu on larger screens */
-  cursor: pointer;
-}
 
 
 @media only screen and (max-width: 767px) {
   .nav {
-    background-size: 40%;
+    height: 4rem;
     font-size: 0.6rem;
     display: flex;
-    justify-content: space-between; /* Align the logo and hamburger menu to opposite ends */
-    padding: 0 1rem; /* Add some spacing around the logo and hamburger menu */
-  }
-
-  .navPmLogo img {
-    width: 5rem;
-  }
-
-  .hamburger-menu {
-    display: block; /* Display the hamburger menu icon on small screens */
-  }
-
-  .nav-links {
-    display: none; /* Hide the navigation links by default */
-  }
-
-  /* Show the navigation links when the menu is toggled */
-  .show-nav-links .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 5.5rem; /* Adjust the vertical position of the menu */
-    right: 1rem; /* Adjust the horizontal position of the menu */
-    background-color: rgba(236, 235, 233, 255);
-    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    /* Add this to space the elements evenly */
+    border-bottom: 2px solid black;
     box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    z-index: 999; /* Ensure the menu appears on top of other content */
+    /* font-weight: bold; */
+    background-color: rgba(236, 235, 233, 255);
   }
 
-  .show-nav-links .nav-links p {
-    margin-bottom: 0.5rem; /* Add some spacing between menu items */
+  .nav a {
+    padding: 0.4rem .9rem;
+    margin: 0 .4rem;
+  }
+
+  a {
+    align-content: center;
+    text-align: center;
+  }
+
+  .navPmLogo {
+    height: 0rem;
+    width: 0rem;
   }
 }
-
