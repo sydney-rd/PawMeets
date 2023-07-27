@@ -30,7 +30,6 @@ export const getUserDogs = async () => {
   }
 };
 
-
 export const createDog = async (dogData) => {
   try {
     const response = await api.post("/dogs", dogData);

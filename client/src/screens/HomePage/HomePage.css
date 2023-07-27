@@ -89,8 +89,45 @@
   font-weight: bold;
 }
 
+/* Keep the existing CSS outside the media query */
+
+/* Add the responsive styles inside the media query */
 @media only screen and (max-width: 768px) {
 
+  .homepage-dog-image {
+    height: 13rem;
+    width: 15rem;
+    max-width: 100%;
+  }
 
+  .home-page-dog-name {
+    font-size: 1.5rem;
+  }
 
+  .dislike-button,
+  .like-button {
+    width: 5rem;
+    height: 5rem;
+    font-size: 0.7rem;
+  }
+
+  .dislike-button {
+    margin-right: 1rem; 
+  }
+
+  .homepage-description {
+    font-size: 0.8rem;
+    max-width: 18rem;
+  }
+  
+  .dog-container {
+    min-width: auto;
+    width: 80%; /* Set a specific width for the dog container on smaller screens */
+    margin-bottom: 1rem; /* Adjust the margin to create more space between dog containers */
+    height: 70vh;
+  }
+
+  .homepage-container .overlay {
+    background-color: rgba(255, 255, 255, 0.3); /* Increase the opacity of the overlay on smaller screens */
+  }
 }

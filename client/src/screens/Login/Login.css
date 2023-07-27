@@ -9,9 +9,9 @@
 
 .form-login {
   padding: 2rem;
-  max-width: 20rem; 
+  max-width: 20rem;
   width: 90%;
-  height: auto; 
+  height: auto;
   margin: 2.5rem auto;
   border: 0.2rem solid black;
   border-radius: 0.7rem;
@@ -28,7 +28,6 @@
 
 .form-login form input {
   padding: 0.6rem 1rem;
-  width: 95%;
   margin: 0.5rem auto;
   font-size: 1rem;
   border-radius: 0.3rem;
@@ -48,15 +47,18 @@
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
 
-.password-toggle-btn {
- position: relative;
+.form-login form .password-toggle-btn {
+  position: absolute;
+  display: inline-flex;
+  transform: translateX(-100%);
+  background-color: transparent;
+  width: auto;
+  padding: 1em;
+  margin: 0.5em 0;
 }
 
-.password-toggle-btn-container {
-  /* position: absolute; */
-  left: 50%;
-  bottom: 5%;
-  transform: translateX(-50%);
+.form-login form .password-toggle-btn:hover {
+  box-shadow: initial;
 }
 
 .login-error-message {

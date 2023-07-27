@@ -45,31 +45,49 @@ a {
   transform: translateY(-50%); /* Vertically center the logo using translate */
 }
 
-/* Update the logo size to be responsive */
-@media only screen and (max-width: 768px) {
+.hamburger-menu {
+  display: none; /* Hide the menu on larger screens */
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 767px) {
   .nav {
     background-size: 40%;
     font-size: 0.6rem;
-  }
-
-  .nav-left {
-    flex: 1; /* Take the full available space on small screens */
-  }
-
-  .nav-right {
     display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .nav-right p {
-    margin: 0;
+    justify-content: space-between; /* Align the logo and hamburger menu to opposite ends */
+    padding: 0 1rem; /* Add some spacing around the logo and hamburger menu */
   }
 
   .navPmLogo img {
     width: 5rem;
-    /* padding-right: 4rem;
-    max-width: 20rem; */
   }
-  
+
+  .hamburger-menu {
+    display: block; /* Display the hamburger menu icon on small screens */
+  }
+
+  .nav-links {
+    display: none; /* Hide the navigation links by default */
+  }
+
+  /* Show the navigation links when the menu is toggled */
+  .show-nav-links .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5.5rem; /* Adjust the vertical position of the menu */
+    right: 1rem; /* Adjust the horizontal position of the menu */
+    background-color: rgba(236, 235, 233, 255);
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    z-index: 999; /* Ensure the menu appears on top of other content */
+  }
+
+  .show-nav-links .nav-links p {
+    margin-bottom: 0.5rem; /* Add some spacing between menu items */
+  }
 }
+
