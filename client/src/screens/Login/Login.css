@@ -41,6 +41,7 @@
   margin: auto;
   background: #cbc9c0cd;
   border-radius: 0.7rem;
+  margin-top: 2rem;
 }
 
 .form-login form button:hover {
@@ -99,6 +100,6 @@
   }
 
   .signup-nav-link {
-    padding-top: .5rem;
+    padding-top: 2rem;
   }
 }
