@@ -1,7 +1,5 @@
-// Create.js
-
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { createDog } from "../../services/dogs.js";
 import "./CreateADog.css";
@@ -12,10 +10,12 @@ const CreateADog = ({ setCurrentDog }) => {
     handleSubmit,
     formState: { errors },
     setValue,
+    control,
   } = useForm();
   const navigate = useNavigate();
-  const [imageUrl, setImage] = useState(""); // quotes orrrr null
+  const [imageUrl, setImage] = useState("");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
+  const [characterCount, setCharacterCount] = useState(0);
 
   const onSubmit = async (data) => {
     const dog = await createDog(data);
@@ -42,6 +42,20 @@ const CreateADog = ({ setCurrentDog }) => {
     setIsImageUploaded(false);
     widget.open();
   };
+
+  const handleAboutChange = (event) => {
+    const inputText = event.target.value;
+    if (inputText.length <= 300) {
+      setValue("about", inputText);
+      setCharacterCount(inputText.length);
+    }
+  };
+
+  const about = useWatch({
+    control,
+    name: "about",
+    defaultValue: "",
+  });
 
   return (
     <div className="create-container">
@@ -82,15 +96,25 @@ const CreateADog = ({ setCurrentDog }) => {
           )}
           <textarea
             placeholder="Tell us about your dog"
-            {...register("about", { required: true, minLength: 100 })}
-            style={{ resize: "none", minHeight: "100px" }} 
+            {...register("about", {
+              required: true,
+              minLength: 100,
+              maxLength: 300,
+            })}
+            onChange={handleAboutChange}
+            value={about}
+            style={{ resize: "none", minHeight: "100px" }}
           />
           {errors.about && errors.about.type === "minLength" && (
             <span>Description should be at least 100 characters long.</span>
           )}
+          {errors.about && errors.about.type === "maxLength" && (
+            <span>Description should be no longer than 300 characters</span>
+          )}
           {errors.about && errors.about.type === "required" && (
             <span>Description is required.</span>
           )}
+          <div className="character-count">{characterCount}/300</div>
           <input
             type="text"
             placeholder="Dog's Gender"

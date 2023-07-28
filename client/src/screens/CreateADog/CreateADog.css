@@ -52,18 +52,23 @@ span {
   font-size: .8rem;
 }
 
+.character-count {
+  font-size: .7rem;
+  position: initial;
+}
+
 @media only screen and (max-width: 768px) {
   .form-create {
     width: 20rem;
-  }  
+  }
 
   .form-create form input {
     font-size: .8rem;
   }
 
   .form-create textarea {
-    width: 100%; 
-    font-size: 0.8rem; 
+    width: 100%;
+    font-size: 0.8rem;
   }
 
   .create-title {
