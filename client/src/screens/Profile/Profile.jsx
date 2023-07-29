@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { deleteDog } from "../../services/dogs.js";
 import Nav from "../../components/Nav/Nav.jsx";
 import "./Profile.css";
 
 function Profile({ user, userDogs, setToggle, setCurrentDog }) {
-  const navigate = useNavigate();
+  const [selectedDogId, setSelectedDogId] = useState(null);
+
   useEffect(() => {
     setToggle((prev) => !prev);
   }, []);
@@ -22,8 +22,10 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
     <div>
       <Nav />
       <div className="header-container">
-        <h1>Welcome to PawMeets, {user?.username}!</h1>
-        <Link to="/create">New dog? Add them here</Link>
+        <div className="header">
+          <h1>Welcome, {user?.username}! Please see your dogs below</h1>
+          <Link to="/create">Add a new dog profile here</Link>
+        </div>
       </div>
       <div className="profile-container">
         {userDogs.length > 0 &&
@@ -43,10 +45,15 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
                 </button>
                 <button
                   className="select-btn"
-                  onClick={() => setCurrentDog(dog)}
+                  onClick={() => {
+                    setSelectedDogId(dog?._id);
+                    setCurrentDog(dog);
+                  }}
                 >
-                  Select as Current Dog
-                </button>
+                  {selectedDogId === dog?._id
+                    ? "Dog Selected"
+                    : "Select as Current Dog"}
+                </button>{" "}
               </div>
             </div>
           ))}

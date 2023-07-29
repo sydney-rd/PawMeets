@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Add this to space the elements evenly */
   border-bottom: 2px solid black;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   font-weight: bold;
@@ -21,9 +20,7 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   margin: 0 1rem;
-  /* Adjust the horizontal spacing between <a> items */
   border-radius: 1rem;
-  /* margin-left: 4rem; */
   color: white;
   background-color: black;
   align-items: center;
@@ -36,37 +33,30 @@ a {
   text-align: center;
 }
 
+.welcome-msg {
+  font-size: 1rem;
+}
+
 .navPmLogo {
   position: absolute;
-  /* margin-left: 2rem; */
   height: 6rem;
   width: 6rem;
   left: 1rem;
   top: 50%;
-  /* Adjust this value to vertically center the logo */
   transform: translateY(-50%);
-  /* Vertically center the logo using translate */
 }
-
-
 
 @media only screen and (max-width: 767px) {
   .nav {
     height: 4rem;
     font-size: 0.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Add this to space the elements evenly */
-    border-bottom: 2px solid black;
-    box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
-    /* font-weight: bold; */
-    background-color: rgba(236, 235, 233, 255);
+    padding-top: .2rem;
+    padding-left: 4rem;
   }
 
   .nav a {
-    padding: 0.4rem .9rem;
-    margin: 0 .4rem;
+    padding: .4rem .7rem;
+    margin: .4rem .4rem;
   }
 
   a {
@@ -75,7 +65,8 @@ a {
   }
 
   .navPmLogo {
-    height: 0rem;
-    width: 0rem;
+    height: 4rem;
+    width: 4rem;
+    left: 0rem;
   }
 }

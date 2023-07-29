@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/Logo/PawMeets-1.png";
 import "./Nav.css";
-// classnames keep?
+
 function Nav() {
   return (
     <>
