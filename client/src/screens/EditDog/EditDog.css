@@ -1,13 +1,13 @@
-
 .form-edit {
   align-self: center;
   padding: 2rem;
-  width: 30rem;
+  width: 45rem;
   margin: 4rem auto;
   border: 0.2rem solid black;
   border-radius: 0.7rem;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
-  transition: all 2s ease;
+  background-color: rgba(236, 235, 233, 255);
+
 }
 
 .form-edit h3 {
@@ -30,7 +30,7 @@
 
 .form-edit form input[type="text"],
 .form-edit form textarea {
-  width: 23rem;
+  width: 35rem;
   padding: 0.5rem 1rem;
   margin: 0.5rem;
   border-radius: 0.3rem;

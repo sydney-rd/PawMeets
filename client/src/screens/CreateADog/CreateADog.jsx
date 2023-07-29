@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { createDog } from "../../services/dogs.js";
 import "./CreateADog.css";
@@ -10,12 +10,10 @@ const CreateADog = ({ setCurrentDog }) => {
     handleSubmit,
     formState: { errors },
     setValue,
-    control,
   } = useForm();
   const navigate = useNavigate();
   const [imageUrl, setImage] = useState("");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
-  const [characterCount, setCharacterCount] = useState(0);
 
   const onSubmit = async (data) => {
     const dog = await createDog(data);
@@ -47,20 +45,13 @@ const CreateADog = ({ setCurrentDog }) => {
     const inputText = event.target.value;
     if (inputText.length <= 300) {
       setValue("about", inputText);
-      setCharacterCount(inputText.length);
     }
   };
-
-  const about = useWatch({
-    control,
-    name: "about",
-    defaultValue: "",
-  });
 
   return (
     <div className="create-container">
       <div className="form-create">
-        <h3 className="create-title">Create Your Dog Profile</h3>
+        <h3>Create Your Dog Profile</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
@@ -102,9 +93,11 @@ const CreateADog = ({ setCurrentDog }) => {
               maxLength: 300,
             })}
             onChange={handleAboutChange}
-            value={about}
             style={{ resize: "none", minHeight: "100px" }}
           />
+          <span className="character-count">
+            {register("about").value?.length || 0}/300
+          </span>
           {errors.about && errors.about.type === "minLength" && (
             <span>Description should be at least 100 characters long.</span>
           )}
@@ -114,7 +107,6 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.about && errors.about.type === "required" && (
             <span>Description is required.</span>
           )}
-          <div className="character-count">{characterCount}/300</div>
           <input
             type="text"
             placeholder="Dog's Gender"
@@ -129,15 +121,20 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.gender && errors.gender.type === "pattern" && (
             <span>Gender must be Male or Female.</span>
           )}
-          <input
-            type="button"
-            value={isImageUploaded ? "Change Image" : "Upload Image"}
-            onClick={() => showWidget(widget)}
-          />
-
-          <input type="hidden" {...register("image", { required: true })} />
-          {errors.image && <span>Image is required.</span>}
-          <input className="btn" type="submit" value="Submit" />
+          <div className="btn-container">
+            <button
+              type="button"
+              className="image-btn"
+              onClick={() => showWidget(widget)}
+            >
+              {isImageUploaded ? "Change Image" : "Upload Image"}
+            </button>
+            <input type="hidden" {...register("image", { required: true })} />
+            {errors.image && <span>Image is required.</span>}
+            <button type="submit" className="create-submit-btn">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
