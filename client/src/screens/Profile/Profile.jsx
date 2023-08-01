@@ -21,12 +21,11 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
   return (
     <div>
       <Nav />
-      <div className="header-container">
-        <div className="header">
-          <h1>Welcome, {user?.username}! Please see your dogs below</h1>
-          <Link to="/create">Add a new dog profile here</Link>
-        </div>
+      <div className="header">
+        <h1>Welcome, {user?.username}! Please see your dogs below</h1>
+        <Link to="/create">Add a new dog profile here</Link>
       </div>
+
       <div className="profile-container">
         {userDogs.length > 0 &&
           userDogs.map((dog) => (

@@ -55,34 +55,36 @@ export default function EditDog() {
   };
 
   return (
-    <div className="form-edit">
-      <h3>Edit Dog's Profile</h3>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Dog's Name" ref={dogNameRef} />
-        <input type="text" placeholder="Dog's Breed" ref={dogBreedRef} />
-        <input type="text" placeholder="Dog's Age" ref={dogAgeRef} />
-        <textarea
-          placeholder="Tell us about yourself"
-          ref={dogAboutRef}
-          style={{ resize: "none" }}
-        />
-        <input type="text" placeholder="Dog's Gender" ref={dogGenderRef} />
-        <label className="image-label" htmlFor="file-input">
-          {currentImage ? (
-            <img className="current-image" src={currentImage} alt="Dog" />
-          ) : (
-            "Change Image"
-          )}
-        </label>
-        <input
-          id="file-input"
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          style={{ display: "none" }}
-        />
-        <input className="btn" type="submit" value="Submit" />
-      </form>
+    <div className="edit-container">
+      <div className="form-edit">
+        <h3>Edit Dog's Profile</h3>
+        <form onSubmit={handleSubmit}>
+          <input type="text" placeholder="Dog's Name" ref={dogNameRef} />
+          <input type="text" placeholder="Dog's Breed" ref={dogBreedRef} />
+          <input type="text" placeholder="Dog's Age" ref={dogAgeRef} />
+          <textarea
+            placeholder="Tell us about yourself"
+            ref={dogAboutRef}
+            style={{ resize: "none" }}
+          />
+          <input type="text" placeholder="Dog's Gender" ref={dogGenderRef} />
+          <label className="image-label" htmlFor="file-input">
+            {currentImage ? (
+              <img className="current-image" src={currentImage} alt="Dog" />
+            ) : (
+              "Change Image"
+            )}
+          </label>
+          <input
+            id="file-input"
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            style={{ display: "none" }}
+          />
+          <input className="btn" type="submit" value="Submit" />
+        </form>
+      </div>
     </div>
   );
 }

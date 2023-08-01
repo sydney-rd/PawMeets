@@ -1,13 +1,20 @@
+.edit-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/dogBgFinal.jpeg");
+  background-size: cover;
+  overflow: auto;
+}
+
 .form-edit {
   align-self: center;
   padding: 2rem;
-  width: 45rem;
+  width: 30rem;
   margin: 4rem auto;
   border: 0.2rem solid black;
   border-radius: 0.7rem;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   background-color: rgba(236, 235, 233, 255);
-
 }
 
 .form-edit h3 {
@@ -36,6 +43,8 @@
   border-radius: 0.3rem;
   border: 1px solid black;
   outline: none;
+  font-size: 1rem;
+
 }
 
 .form-edit textarea {
@@ -44,22 +53,20 @@
 }
 
 .form-edit .btn {
-  width: 30%;
-  padding: 0.6rem 1rem;
-  background: silver;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 0.3rem;
+  width: 6rem;
+  height: 3rem;
+  margin: auto;
+  background: #cbc9c0cd;
+  border-radius: 0.7rem;
   cursor: pointer;
 }
 
 .form-edit .btn:hover {
-  background-color: tan;
+  box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
 
 .image-label {
-  width: 100%;
+  width: 39rem;
   padding: 0.6rem 1rem;
   margin: 0.5rem;
   border-radius: 0.3rem;
@@ -72,8 +79,38 @@
 }
 
 .current-image {
-  max-width: 100%;
-  max-height: 200px;
+  max-width: 10rem;
+  max-height: 20rem;
   object-fit: cover;
   border-radius: 0.3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-edit {
+    align-self: center;
+    padding: 2rem;
+    width: 20rem;
+    margin: 4rem auto;
+  }
+
+  .form-edit h3 {
+    padding-bottom: 1rem;
+  }
+
+  .form-edit form input[type="text"],
+  .form-edit form textarea {
+    font-size: .8rem;
+
+  }
+
+
+  .form-edit .btn {
+    width: 5.5rem;
+    height: 2.8rem;
+    margin: auto;
+    background: #cbc9c0cd;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
 }
