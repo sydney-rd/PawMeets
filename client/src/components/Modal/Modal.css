@@ -37,28 +37,22 @@
     height: 12rem;
     width: 13rem;
     margin-top: 1.5rem;
+    border: 2px dotted pink;
 }
 
 @media only screen and (max-width: 767px) {
-
-
     .modal-content {
-
-        border-radius: 5px;
         width: 18rem;
         height: 19rem;
-
         font-size: 1.2rem;
     }
 
     .close-btn {
         font-size: 1rem;
-        cursor: pointer;
         margin-top: 2rem;
     }
 
     .modal-dog-img {
-        border-radius: 50%;
         height: 10rem;
         width: 11rem;
         margin-top: 1.8rem;

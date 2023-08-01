@@ -2,7 +2,7 @@ import React from "react";
 import "./Modal.css";
 
 export default function Modal({ showModal, setShowModal, dog }) {
-  if (!showModal) return null;
+  if (!showModal || !dog) return null; // Add a check for 'dog' variable
 
   return (
     <div className="modal-container">

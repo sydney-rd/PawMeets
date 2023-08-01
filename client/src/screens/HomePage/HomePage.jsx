@@ -8,6 +8,7 @@ import "./HomePage.css";
 export default function HomePage({ currentDog, setCurrentDog }) {
   const [dogs, setDogs] = useState([]);
   const [currentDogIndex, setCurrentDogIndex] = useState(0);
+  const [likedByLikedDog, setLikedByLikedDog] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const handleDislikeBtnClick = () => {
     setCurrentDogIndex((currentDogIndex + 1) % filteredDogs.length);
@@ -20,10 +21,11 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     setCurrentDog((prev) => {
       return { ...prev, likes: [...prev.likes, likedDogId] };
     });
-    const likedByLikedDog = dogs.find(
+    const matchedDog = dogs.find(
       (dog) => dog.likes.includes(currentDog._id) && dog._id === likedDogId
     );
-    if (likedByLikedDog) {
+    if (matchedDog) {
+      setLikedByLikedDog(matchedDog); // Store the matched dog in the state
       setShowModal(true);
     }
   };
@@ -100,7 +102,11 @@ export default function HomePage({ currentDog, setCurrentDog }) {
           </div>
         </div>
       )}
-      <Modal showModal={showModal} setShowModal={setShowModal} dog={dog} />
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        dog={likedByLikedDog}
+      />
     </div>
   );
 }
