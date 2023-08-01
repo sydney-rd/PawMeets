@@ -14,6 +14,7 @@
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
   font-weight: bold;
   background-color: rgba(236, 235, 233, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav a {

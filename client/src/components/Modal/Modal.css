@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'PawMeetsFont';
+    src: url('../../assets/Font/AdelaideAndGeorgieDemoVersion.ttf') format('truetype');
+}
+
+
 .modal-container {
     display: flex;
     justify-content: center;
@@ -14,6 +20,8 @@
 .close-btn {
     font-size: 1.5rem;
     cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .modal-content {
@@ -21,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: rgba(236, 235, 233, 255);
     border-radius: 1rem;
     width: 22rem;
@@ -28,11 +37,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-image: url("https://media.tenor.com/UjVt3LyF9aIAAAAi/hearts-love.gif");
     background-size: cover;
-    font-size: 1.2rem;
+    font-family: "PawMeetsFont";
 }
 
 .modal-title {
-    padding-bottom: 3.5rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding-bottom: .4rem;
 }
 
 .images-container {

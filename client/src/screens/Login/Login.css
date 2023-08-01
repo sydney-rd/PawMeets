@@ -34,6 +34,7 @@
   border-radius: 0.3rem;
   border: 0.1rem solid black;
   outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form-login form button {
@@ -77,6 +78,8 @@
 .signup-nav-link {
   font-size: 1rem;
   padding-top: 2.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .signup-a-tag:hover {

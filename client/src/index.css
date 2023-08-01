@@ -2,6 +2,11 @@
 /* @import 'tailwindcss/components'; */
 /* @import 'tailwindcss/utilities'; */
 
+@font-face {
+  font-family: 'Total';
+  src: url('assets/Font/LittlemomentRegular-OVneP.otf') format('truetype');
+}
+
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Total;
 }

@@ -1,14 +1,13 @@
+// Matches.jsx
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getDogs } from "../../services/dogs.js";
 import Nav from "../../components/Nav/Nav.jsx";
-import Modal from "../../components/Modal/Modal.jsx";
 import "./Matches.css";
 
 export default function Matches({ user, userDogs }) {
   const location = useLocation();
   const [likedDogs, setLikedDogs] = useState([]);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchLikedDogs = async () => {
@@ -33,16 +32,16 @@ export default function Matches({ user, userDogs }) {
             <div key={dog._id} className="match-card">
               <h2>You and {dog.name} are a Match!</h2>
               <img className="match-dog-image" src={dog.image} alt={dog.name} />
-              <button className="close-btn" onClick={() => setShowModal(true)}>
-                View Details
-              </button>
+              {/* Display other details of the matched dog if desired */}
+              <p>Breed: {dog.breed}</p>
+              <p>Age: {dog.age}</p>
+              {/* ... and so on */}
             </div>
           ))
         ) : (
           <h1>No matches found.</h1>
         )}
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 }

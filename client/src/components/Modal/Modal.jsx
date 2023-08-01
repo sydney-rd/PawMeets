@@ -8,7 +8,8 @@ export default function Modal({ showModal, setShowModal, dog, currentDog }) {
     <div className="modal-container">
       <div className="modal-content">
         <h2 className="modal-title">
-          {currentDog.name} and {dog.name} are a Match!
+          {currentDog.name} and {dog.name} <br />
+          Matched!
         </h2>
         <div className="images-container">
           <img className="modal-dog-img" src={dog.image} alt={dog.name} />
