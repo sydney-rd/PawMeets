@@ -1,15 +1,17 @@
 import React from "react";
 import "./Modal.css";
 
-export default function Modal({ showModal, setShowModal }) {
+export default function Modal({ showModal, setShowModal, dog }) {
   if (!showModal) return null;
 
   return (
     <div className="modal-container">
       <div className="modal-content">
-        <h2>It's a Match!</h2>
-        <p>Both dogs have liked each other!</p>
-        <button onClick={() => setShowModal(false)}>Keep swiping</button>
+        <h2>You and {dog.name} are a Match!</h2>
+        <img className="modal-dog-img" src={dog.image} alt={dog.name} />
+        <button className="close-btn" onClick={() => setShowModal(false)}>
+          Keep swiping
+        </button>
       </div>
     </div>
   );

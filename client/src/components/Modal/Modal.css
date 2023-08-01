@@ -15,23 +15,26 @@
 .modal-content {
     background-color: rgba(236, 235, 233, 255);
     border-radius: 5px;
-    width: 20rem;
-    height: 20rem;
+    width: 22rem;
+    height: 23rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-image: url("https://media.tenor.com/UjVt3LyF9aIAAAAi/hearts-love.gif");
+    background-size: cover;
     text-align: center;
+    font-size: 1.4rem;
+    padding-top: 4rem;
 }
 
 /* Close button */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.close-btn {
+    font-size: 1.5rem;
     cursor: pointer;
+    padding-top: 4rem;
 }
 
-/* Style for the text inside the modal */
-.modal-text {
-    font-size: 9rem;
-    line-height: 1.5;
-    margin-bottom: 10px;
+.modal-dog-img {
+    border-radius: 90%;
+    height: 10rem;
+    width: 12rem;
+
 }

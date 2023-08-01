@@ -100,7 +100,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
           </div>
         </div>
       )}
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal showModal={showModal} setShowModal={setShowModal} dog={dog} />
     </div>
   );
 }
