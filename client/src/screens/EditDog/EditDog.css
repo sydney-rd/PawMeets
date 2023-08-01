@@ -28,6 +28,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
   gap: 0.4rem;
 }
 
@@ -44,6 +45,8 @@
   border: 1px solid black;
   outline: none;
   font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 
 }
 

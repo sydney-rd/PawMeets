@@ -16,6 +16,7 @@
   border: 1px solid black;
   outline: none;
   font-size: .9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form-create {
@@ -27,6 +28,7 @@
   border: 0.2rem solid black;
   border-radius: 0.7rem;
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
+
 }
 
 .character-count {
@@ -34,7 +36,10 @@
   position: absolute;
   padding-top: 17rem;
   padding-left: 17rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
+
 
 .image-btn {
   color: black;
@@ -45,6 +50,8 @@
   width: 20rem;
   height: 2.4rem;
   background: #cbc9c0cd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .create-submit-btn {
@@ -71,6 +78,7 @@
   text-align: center;
   font-weight: bold;
   padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .form-create form {
