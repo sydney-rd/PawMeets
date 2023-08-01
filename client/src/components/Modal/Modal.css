@@ -11,6 +11,11 @@
     z-index: 999;
 }
 
+.close-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 .modal-content {
     display: flex;
     flex-direction: column;
@@ -23,22 +28,29 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-image: url("https://media.tenor.com/UjVt3LyF9aIAAAAi/hearts-love.gif");
     background-size: cover;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
-.close-btn {
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-top: 3rem;
+.modal-title {
+    padding-bottom: 3.5rem;
+}
+
+.images-container {
+    display: flex;
+    padding-bottom: 4rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .modal-dog-img {
     border-radius: 50%;
-    height: 12rem;
-    width: 13rem;
-    margin-top: 1.5rem;
-    border: 2px dotted pink;
+    height: 9rem;
+    width: 10rem;
+    border: 3px dotted pink;
 }
+
 
 @media only screen and (max-width: 767px) {
     .modal-content {

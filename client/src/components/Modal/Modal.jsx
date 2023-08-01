@@ -1,16 +1,25 @@
 import React from "react";
 import "./Modal.css";
 
-export default function Modal({ showModal, setShowModal, dog }) {
-  if (!showModal || !dog) return null; // Add a check for 'dog' variable
+export default function Modal({ showModal, setShowModal, dog, currentDog }) {
+  if (!showModal) return null;
 
   return (
     <div className="modal-container">
       <div className="modal-content">
-        <h2>You and {dog.name} are a Match!</h2>
-        <img className="modal-dog-img" src={dog.image} alt={dog.name} />
+        <h2 className="modal-title">
+          {currentDog.name} and {dog.name} are a Match!
+        </h2>
+        <div className="images-container">
+          <img className="modal-dog-img" src={dog.image} alt={dog.name} />
+          <img
+            className="modal-dog-img"
+            src={currentDog.image}
+            alt={currentDog.name}
+          />
+        </div>
         <button className="close-btn" onClick={() => setShowModal(false)}>
-          Keep swiping
+          Keep swiping ♡
         </button>
       </div>
     </div>

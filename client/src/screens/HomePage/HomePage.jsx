@@ -16,8 +16,8 @@ export default function HomePage({ currentDog, setCurrentDog }) {
 
   const handleLikeClick = async () => {
     const likedDogId = filteredDogs[currentDogIndex]._id;
-    const doggy = await likeDog(currentDog._id, likedDogId);
-    localStorage.setItem("currentProfile", JSON.stringify(doggy));
+    const dog = await likeDog(currentDog._id, likedDogId);
+    localStorage.setItem("currentProfile", JSON.stringify(dog));
     setCurrentDog((prev) => {
       return { ...prev, likes: [...prev.likes, likedDogId] };
     });
@@ -25,7 +25,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
       (dog) => dog.likes.includes(currentDog._id) && dog._id === likedDogId
     );
     if (matchedDog) {
-      setLikedByLikedDog(matchedDog); // Store the matched dog in the state
+      setLikedByLikedDog(matchedDog);
       setShowModal(true);
     }
   };
@@ -49,7 +49,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     }
   }, [filteredDogs, currentDogIndex]);
 
-  if (filteredDogs.length === 0) return <h1>No dogs found in your area ...</h1>;
+  if (filteredDogs.length === 0) return <h1>No dogs found in your area...</h1>;
 
   // console.log(
   //   "------------------------------------------------------------------------------------"
@@ -106,6 +106,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
         showModal={showModal}
         setShowModal={setShowModal}
         dog={likedByLikedDog}
+        currentDog={currentDog}
       />
     </div>
   );
