@@ -1,4 +1,3 @@
-/* Modal container */
 .modal-container {
     display: flex;
     justify-content: center;
@@ -13,6 +12,10 @@
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(236, 235, 233, 255);
     border-radius: 5px;
     width: 22rem;
@@ -20,21 +23,45 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-image: url("https://media.tenor.com/UjVt3LyF9aIAAAAi/hearts-love.gif");
     background-size: cover;
-    text-align: center;
     font-size: 1.4rem;
-    padding-top: 4rem;
 }
 
-/* Close button */
 .close-btn {
     font-size: 1.5rem;
     cursor: pointer;
-    padding-top: 4rem;
+    margin-top: 3rem;
 }
 
 .modal-dog-img {
-    border-radius: 90%;
-    height: 10rem;
-    width: 12rem;
+    border-radius: 50%;
+    height: 12rem;
+    width: 13rem;
+    margin-top: 1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+
+
+    .modal-content {
+
+        border-radius: 5px;
+        width: 18rem;
+        height: 19rem;
+
+        font-size: 1.2rem;
+    }
+
+    .close-btn {
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 2rem;
+    }
+
+    .modal-dog-img {
+        border-radius: 50%;
+        height: 10rem;
+        width: 11rem;
+        margin-top: 1.8rem;
+    }
 
 }
