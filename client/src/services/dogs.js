@@ -30,6 +30,15 @@ export const getUserDogs = async () => {
   }
 };
 
+export const getUserDogsMatches = async () => {
+  try {
+    const response = await api.get(`/dogs/user/dogs/matches`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const createDog = async (dogData) => {
   try {
     const response = await api.post("/dogs", dogData);
