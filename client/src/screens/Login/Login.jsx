@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { login } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ import "./Login.css";
 import { getUserDogs } from "../../services/dogs.js";
 
 function Login(props) {
-  const { setUser, setCurrentDog } = props;
+  const { user: currentUser, setUser, setCurrentDog } = props;
   const {
     register,
     handleSubmit,
@@ -18,6 +18,12 @@ function Login(props) {
   } = useForm();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/homepage");
+    }
+  }, [currentUser]);
 
   const onLogin = async (data) => {
     try {

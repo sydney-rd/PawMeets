@@ -10,7 +10,7 @@ export default function SignOut({ setUser, setCurrentDog }) {
       await signOut();
       setCurrentDog(null);
       setUser(null);
-      navigate("/login");
+      navigate("/");
     };
     signOutUser();
   }, [setUser, navigate]);

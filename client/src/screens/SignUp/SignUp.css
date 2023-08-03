@@ -132,8 +132,8 @@
     transform: translateX(-100%);
     background-color: transparent;
     width: auto;
-    padding: 1em;
-    margin: 0.5em 0;
+    padding: .5em;
+    margin: 0.9em 0;
   }
 
   .form-signup form .password-toggle-btn:hover {

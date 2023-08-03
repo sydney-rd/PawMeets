@@ -10,10 +10,12 @@ const CreateADog = ({ setCurrentDog }) => {
     handleSubmit,
     formState: { errors },
     setValue,
+    getValues,
   } = useForm();
   const navigate = useNavigate();
   const [imageUrl, setImage] = useState("");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
+  const [aboutText, setAboutText] = useState("");
 
   const onSubmit = async (data) => {
     const dog = await createDog(data);
@@ -44,7 +46,7 @@ const CreateADog = ({ setCurrentDog }) => {
   const handleAboutChange = (event) => {
     const inputText = event.target.value;
     if (inputText.length <= 300) {
-      setValue("about", inputText);
+      setAboutText(inputText);
     }
   };
 
@@ -85,24 +87,26 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.age && errors.age.type === "pattern" && (
             <span>Age must be a number.</span>
           )}
-          <textarea
-            placeholder="Tell us about your dog"
-            {...register("about", {
-              required: true,
-              minLength: 100,
-              maxLength: 300,
-            })}
-            onChange={handleAboutChange}
-            style={{ resize: "none", minHeight: "100px" }}
-          />
-          <span className="character-count">
-            {register("about").value?.length || 0}/300
-          </span>
+          <label className="text-area-label">
+            <textarea
+              placeholder="Tell us about your dog"
+              {...register("about", {
+                required: true,
+                minLength: 100,
+                maxLength: 250,
+              })}
+              onChange={handleAboutChange}
+              value={aboutText}
+              style={{ resize: "none", minHeight: "100px" }}
+            />
+            <span className="character-count">{aboutText.length || 0}/250</span>
+          </label>
+
           {errors.about && errors.about.type === "minLength" && (
             <span>Description should be at least 100 characters long.</span>
           )}
           {errors.about && errors.about.type === "maxLength" && (
-            <span>Description should be no longer than 300 characters</span>
+            <span>Description should be no longer than 250 characters</span>
           )}
           {errors.about && errors.about.type === "required" && (
             <span>Description is required.</span>

@@ -59,7 +59,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route
-          path="/login"
+          path="/"
           element={
             <Login
               user={user}

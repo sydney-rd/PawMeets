@@ -27,8 +27,7 @@
   margin-top: 2rem;
   max-width: 28rem;
   width: 28rem;
-  margin-bottom: 2rem;
-  height: 90vh;
+  height: 83vh;
   z-index: 1;
 }
 
@@ -74,7 +73,6 @@
 }
 
 .homepage-description {
-  padding-top: 1rem;
   text-align: center;
   padding-left: 5%;
   padding-right: 5%;

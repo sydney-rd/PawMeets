@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
@@ -8,7 +8,7 @@ import logo from "../../assets/Logo/PawMeets-1.png";
 import "./SignUp.css";
 
 function SignUp(props) {
-  const { setUser } = props;
+  const { user: currentUser, setUser } = props;
   const navigate = useNavigate();
   const {
     register,
@@ -22,6 +22,12 @@ function SignUp(props) {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/homepage");
+    }
+  }, [currentUser]);
 
   const onSignUp = async (data) => {
     try {
