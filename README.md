@@ -26,15 +26,28 @@ const DogSchema = new Schema({
 });
 ```
 
-## API Get Endpoints Examples
+```
+const UserSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  email: {type: String},
+  password_digest: { type: String, required: true, select: false },
+});
 
-Get Request: A request with /dogs will return all the dogs in the app:
-link: https://pawmeets-api-production.up.railway.app/dogs
-response:
-![ScreenshotOfMultipleDogs](../public/readme%20pictures/Screen%20Shot%202023-05-04%20at%209.48.45%20AM.png)
-Get Request: A request by ID will return an object specific to that ID or in this case a specific users profile
-Link: https://pawmeets-api-production.up.railway.app/dogs/(objectID number)
-![ScreenshotOfMultipleDogs](../public/readme%20pictures/Screen%20Shot%202023-05-04%20at%209.48.45%20AM.png)
+```
+
+## API Endpoints Examples
+
+### Get Requests
+
+- (Returns all dogs in application minus current user's dogs)[localhost:3000/]
+
+### Post Requests
+
+### Put Requests
 
 # Front End Functionality
 
