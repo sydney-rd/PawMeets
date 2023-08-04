@@ -2,11 +2,11 @@
 
 ## About
 
-PawMeets™ is a dog dating app that helps dogs find compatible partners in New York City. The app showcases dog profiles with their picture and an about me section that allows them to share their personalities. They can swipe through profiles of NYC's finest dogs and match with those they think would be a good fit. PawMeets™ allows pet owners to create a new profile for a pet, edit, or delete their profiles. PawMeets™ promises to provide a user-friendly experience with seamless UI/UX that will enable pet owners to discover ideal matches for their dogs.
+PawMeets™ is a dog dating app that helps dogs find compatible partners in New York City. The app showcases dog profiles with their picture and an about me section that allows them to share their personalities. They can swipe through profiles of NYC's finest dogs and match with those they think would be a good fit. PawMeets™ allows pet owners to create a new profile for a pet, edit, or delete their profiles. PawMeets™ promises to provide a user-friendly experience with seamless UI/UX that will enable pet owners to discover ideal matches for their dogs. 🐶 ♡
 
 PawMeets uses React on the frontend.
 
-# Frontend Functionality
+## Frontend Functionality
 
 ### Login
 
@@ -15,8 +15,8 @@ Login functionality:
 - Authentication
 - Data Validation
 - Password Hashing
-- Stores user Data
-- Token-based Auth
+- Stores User Data
+- Token-based Authentication
 - User Login
 
 ![Login](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/login.jpeg?token=GHSAT0AAAAAAB7BNBVYLXISOXXHAME66ETYZGNFENA)
