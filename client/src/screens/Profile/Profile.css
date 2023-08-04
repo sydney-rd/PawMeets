@@ -46,7 +46,6 @@
     box-shadow: 0.2rem 0.4rem 2rem rgba(0, 0, 0, 0.3);
 }
 
-
 .edit-btn,
 .delete-btn,
 .select-btn {
@@ -69,7 +68,6 @@
         flex-direction: column;
         text-align: center;
         padding-top: 3rem;
-
     }
 
     .dog-profile-container {
