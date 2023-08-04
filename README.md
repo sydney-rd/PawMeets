@@ -39,7 +39,7 @@ Link: https://pawmeets-api-production.up.railway.app/dogs/(objectID number)
 # Front End Functionality
 
 The user is introduced to a login page, where they can sign in.
-![Login](src/assets/README/login.jpeg)
+![Login](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/login.jpeg?token=GHSAT0AAAAAAB7BNBVYQGRL4X3MMAAVVVJ4ZGNE5SQ)
 
 If the user does not have an account the user will be directed to create an account and be prompted to create their dogs profile with the following:
 
