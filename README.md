@@ -38,10 +38,15 @@ Link: https://pawmeets-api-production.up.railway.app/dogs/(objectID number)
 
 # Front End Functionality
 
-The user is introduced to a login page, where they can sign in.
+The user is introduced to a login page, where they can sign in:
+
 ![Login](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/login.jpeg?token=GHSAT0AAAAAAB7BNBVYQGRL4X3MMAAVVVJ4ZGNE5SQ)
 
-If the user does not have an account the user will be directed to create an account and be prompted to create their dogs profile with the following:
+If the user does not have an account the user will be directed to create an account:
+
+![Signup](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/signup.jpeg?token=GHSAT0AAAAAAB7BNBVZVBLK4ZDZDI3EY5HEZGNE6TQ)
+
+If a user signs up, they will be then prompted to create their dogs profile:
 
 - Dog Name
 - Dog Breed
@@ -49,5 +54,7 @@ If the user does not have an account the user will be directed to create an acco
 - Dog Personality Summary
 - Dog picture using Cloudinary
 
-  Once signed in the user is introduced to the homepage where they are able to swipe through eligble bachelors and bachelorettes.
-  The user can either click on 'Bark' which means the user is not interested or 'Bone' which means the user is interested.
+![CreateADog](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/createdog.jpeg?token=GHSAT0AAAAAAB7BNBVYVKX63Q2ULNOVRFOMZGNE7NA)
+
+Once signed in the user is introduced to the homepage where they are able to swipe through eligble bachelors and bachelorettes.
+The user can either click on 'Bark' which means the user is not interested or 'Bone' which means the user is interested.
