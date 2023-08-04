@@ -38,33 +38,75 @@ Link: https://pawmeets-api-production.up.railway.app/dogs/(objectID number)
 
 # Front End Functionality
 
-### Login:
+### Login
 
-![Login](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/login.jpeg?token=GHSAT0AAAAAAB7BNBVYQGRL4X3MMAAVVVJ4ZGNE5SQ)
+Login functionality:
 
-### Signup:
+- Authentication
+- Data Validation
+- Password Hashing
+- Stores user Data
+- Token-based Auth
+- User Login
 
-The user will be directed to sign up if they do not have an account.
+![Login](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/login.jpeg?token=GHSAT0AAAAAAB7BNBVYLXISOXXHAME66ETYZGNFENA)
+
+### Signup
+
+The user will be directed to sign up if they do not have an account:
+
+Signup Functionality:
+
+- Authentication
+- Data Validation
+- Password Hashing
+- Stores User Data
+- Handling Errors (duplication username/emails)
 
 ![Signup](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/signup.jpeg?token=GHSAT0AAAAAAB7BNBVZVBLK4ZDZDI3EY5HEZGNE6TQ)
 
-### Create:
+### Create
 
-After a user signs up, they will create their dogs profile.
+After a user signs up, they will create their dogs profile:
 
 - Dog Name
 - Dog Breed
 - Dog Age
 - Dog Personality Summary
-- Dog picture using Cloudinary
+- Dog picture using Cloudinary for uploading
 
 ![CreateADog](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/createdog.jpeg?token=GHSAT0AAAAAAB7BNBVYVKX63Q2ULNOVRFOMZGNE7NA)
 
-### Once signed in the user is introduced to the homepage:
+### Homepage
 
-Here, they are able to swipe through eligble bachelors and bachelorettes.
-The user can either click on 'Bark' which means the user is not interested or 'Bone' which means the user is interested.
+After a user creates a dog, they will be directed to the homepage. Here, they are able to swipe through eligble bachelors and bachelorettes. The user can either click on 'Bark' which means the user is not interested or 'Bone' which means the user is interested:
 
 ![Homepage](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/homepage.jpeg?token=GHSAT0AAAAAAB7BNBVYM3RIFOM2MCW5UTTAZGNFCGA)
 
-### The user has access to their profile
+### Profile
+
+A user can perform CRUD functionality here:
+
+- Edit Dog
+- Delete their Dog
+- Create a new Dog Profile
+
+They are also able to switch between dog profiles to swipe through the homepage using
+
+- Select Current Dog
+
+![Profile](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/userprofile.jpeg?token=GHSAT0AAAAAAB7BNBVYF62OIV7OPGOU7BIOZGNFLMQ)
+
+### Edit Dog
+
+A user can edit their dog profile here:
+
+- Autofilled inputs for ease
+
+![Edit](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/editdog.jpeg?token=GHSAT0AAAAAAB7BNBVZ2ZGORAFU2GAOQHZAZGNFL5A)
+
+### Matches
+
+A user can see their dog's matches here:
+
+![Matches](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/matches.jpeg?token=GHSAT0AAAAAAB7BNBVZIKMOLOWAC2ZZYX2CZGNFMXQ)
