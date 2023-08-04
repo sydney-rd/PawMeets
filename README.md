@@ -43,6 +43,7 @@ After a user signs up, they will create their dogs profile:
 - Dog Breed
 - Dog Age
 - Dog Personality Summary
+- Dog Gender
 - Dog picture using Cloudinary for uploading
 
 ![CreateADog](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/createdog.jpeg?token=GHSAT0AAAAAAB7BNBVZYX7TBM7I46E3WWW4ZGNGEGA)
