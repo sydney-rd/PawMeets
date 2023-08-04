@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { createDog } from "../../services/dogs.js";
+import { createDog, getDogBreeds } from "../../services/dogs.js";
 import "./CreateADog.css";
 
 const CreateADog = ({ setCurrentDog }) => {
@@ -10,12 +10,23 @@ const CreateADog = ({ setCurrentDog }) => {
     handleSubmit,
     formState: { errors },
     setValue,
-    getValues,
   } = useForm();
   const navigate = useNavigate();
   const [imageUrl, setImage] = useState("");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [aboutText, setAboutText] = useState("");
+  const [dogBreeds, setDogBreeds] = useState([]);
+
+  useEffect(() => {
+    // Fetch the list of dog breeds from the backend using the service function
+    getDogBreeds()
+      .then((breeds) => {
+        setDogBreeds(breeds);
+      })
+      .catch((error) => {
+        console.error("Error fetching dog breeds:", error);
+      });
+  }, []);
 
   const onSubmit = async (data) => {
     const dog = await createDog(data);
@@ -67,7 +78,11 @@ const CreateADog = ({ setCurrentDog }) => {
             {...register("breed", { required: true, minLength: 3 })}
             list="dog-breeds-list"
           />
-          <datalist id="dog-breeds-list"></datalist>
+          <datalist id="dog-breeds-list">
+            {dogBreeds.map((breed) => (
+              <option key={breed} value={breed} />
+            ))}
+          </datalist>
           {errors.breed && errors.breed.type === "minLength" && (
             <span>Breed should be at least 2 characters long.</span>
           )}

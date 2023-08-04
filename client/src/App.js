@@ -1,5 +1,4 @@
 import HomePage from "./screens/HomePage/HomePage.jsx";
-import Messages from "./screens/Messages/Messages.jsx";
 import Login from "./screens/Login/Login.jsx";
 import SignUp from "./screens/SignUp/SignUp.jsx";
 import SignOut from "./screens/SignOut.jsx";
@@ -80,17 +79,6 @@ function App() {
           path="/homepage"
           element={
             <HomePage currentDog={currentDog} setCurrentDog={setCurrentDog} />
-          }
-        />
-        <Route
-          path="/messages"
-          element={
-            <Messages
-              user={user}
-              userDogs={userDogs}
-              currentDog={currentDog}
-              setCurrentDog={handleSetCurrentDog}
-            />
           }
         />
         <Route

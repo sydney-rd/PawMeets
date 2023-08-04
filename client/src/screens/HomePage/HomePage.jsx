@@ -51,18 +51,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
 
   if (filteredDogs.length === 0) return <h1>No dogs found in your area...</h1>;
 
-  // console.log(
-  //   "------------------------------------------------------------------------------------"
-  // );
-  // console.log(
-  //   "------------------------------------------------------------------------------------"
-  // );
-  // console.log("dogs: ", dogs);
-  // console.log("currentDog?.likes: ", currentDog?.likes);
-  // console.log("filteredDogs: ", filteredDogs);
-  // console.log("currentDogIndex: ", currentDogIndex);
   const dog = filteredDogs[currentDogIndex];
-  // console.log("dog: ", dog);
 
   return (
     <div>

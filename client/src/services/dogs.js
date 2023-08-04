@@ -20,6 +20,16 @@ export const getDog = async (id) => {
   }
 };
 
+export const getDogBreeds = async () => {
+  try {
+    const response = await api.get("/dogs/breeds");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching dog breeds:", error);
+    throw error;
+  }
+};
+
 export const getUserDogs = async () => {
   try {
     const response = await api.get(`/dogs/user/dogs`);
@@ -74,12 +84,3 @@ export const likeDog = async (dogId, likedDog) => {
     throw error;
   }
 };
-
-// export const messageDog = async (dogId, message, likedDog) => {
-//   try {
-//     const response = await api.post(`/dog/message/${dogId}`, { likedDog, message });
-//     return response.data;
-//   } catch (error) {
-//     throw error;
-//   }
-// };

@@ -18,7 +18,6 @@ export default function EditDog() {
   useEffect(() => {
     const fetchDog = async () => {
       const dog = await getDog(id);
-
       dogNameRef.current.defaultValue = dog.name;
       dogBreedRef.current.defaultValue = dog.breed;
       dogAgeRef.current.defaultValue = dog.age;
