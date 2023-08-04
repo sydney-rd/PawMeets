@@ -1,6 +1,6 @@
 # PawMeets™
 
-## Description
+## About
 
 Pawmeets™ is a dog dating app that helps dogs find compatible partners in New York City. The app showcases dog profiles with their picture and an about me section that allows them to share their personalities. They can swipe through profiles of NYC's finest dogs and match with those they think would be a good fit. Pawmeets™ allows pet owners to create a new profile for a pet, edit, or delete their profiles. Pawmeets™ promises to provide a user-friendly experience with seamless UI/UX that will enable pet owners to discover ideal matches for their dogs.
 
@@ -43,7 +43,7 @@ const UserSchema = new Schema({
 
 ### Get Requests
 
-- (Returns all dogs in application minus current user's dogs)[localhost:3000/]
+- [Returns all dogs in application minus current user's dogs](localhost:3000/)
 
 ### Post Requests
 
