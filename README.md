@@ -2,54 +2,11 @@
 
 ## About
 
-Pawmeets™ is a dog dating app that helps dogs find compatible partners in New York City. The app showcases dog profiles with their picture and an about me section that allows them to share their personalities. They can swipe through profiles of NYC's finest dogs and match with those they think would be a good fit. Pawmeets™ allows pet owners to create a new profile for a pet, edit, or delete their profiles. Pawmeets™ promises to provide a user-friendly experience with seamless UI/UX that will enable pet owners to discover ideal matches for their dogs.
+PawMeets™ is a dog dating app that helps dogs find compatible partners in New York City. The app showcases dog profiles with their picture and an about me section that allows them to share their personalities. They can swipe through profiles of NYC's finest dogs and match with those they think would be a good fit. PawMeets™ allows pet owners to create a new profile for a pet, edit, or delete their profiles. PawMeets™ promises to provide a user-friendly experience with seamless UI/UX that will enable pet owners to discover ideal matches for their dogs.
 
-## Object Content
+PawMeets uses React on the frontend.
 
-```
-const DogSchema = new Schema({
-  breed: [
-    {
-      type: String,
-      enum: [
-         breed list
-      ],
-    },
-  ],
-  name: { type: String },
-  age: { type: String },
-  about: { type: String },
-  gender: { type: String },
-  image: { type: String },
-  likes: [{ type: Schema.Types.ObjectId, ref: "dogs" }],
-  user: { type: Schema.Types.ObjectId, ref: "users" },
-});
-```
-
-```
-const UserSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  email: {type: String},
-  password_digest: { type: String, required: true, select: false },
-});
-
-```
-
-## API Endpoints Examples
-
-### Get Requests
-
-- [Returns all dogs in application minus current user's dogs](localhost:3000/)
-
-### Post Requests
-
-### Put Requests
-
-# Front End Functionality
+# Frontend Functionality
 
 ### Login
 
@@ -123,3 +80,74 @@ A user can edit their dog profile here:
 A user can see their dog's matches here:
 
 ![Matches](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/matches.jpeg?token=GHSAT0AAAAAAB7BNBVZIKMOLOWAC2ZZYX2CZGNFMXQ)
+
+## API Endpoints Examples
+
+### Get Requests
+
+- Returns all dogs in application minus current user's dogs: localhost:3000/
+
+- Returns all current users dogs: localhost:3000/user/dogs
+
+- Returns user dogs matches: localhost:3000/user/dogs/matches
+
+- Returns specific dog by ID: localhost:3000/:id
+
+### Post Requests
+
+- Returns create dog: localhost:3000/
+
+- Returns deletion of dog profile: localhost:3000/delete/:dogId
+
+### Put Requests
+
+- Returns update dog: localhost:3000/:id/update
+
+- Return like dog: localhost:3000/:id/like
+
+# Backend Functionality
+
+## About
+
+The backend of PawMeets uses the following:
+
+- MongoDB: A NoSQL database used to store and manage data.
+- Express.js: A backend web application framework for Node.js, used to build the server and handle routing.
+- Node.js: A JavaScript runtime used to execute server-side code.
+
+The GitHub backend link is found [HERE](https://github.com/sydney-rd/paw-meets-api)
+
+## Object Content
+
+```
+const DogSchema = new Schema({
+  breed: [
+    {
+      type: String,
+      enum: [
+         breed list
+      ],
+    },
+  ],
+  name: { type: String },
+  age: { type: String },
+  about: { type: String },
+  gender: { type: String },
+  image: { type: String },
+  likes: [{ type: Schema.Types.ObjectId, ref: "dogs" }],
+  user: { type: Schema.Types.ObjectId, ref: "users" },
+});
+```
+
+```
+const UserSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  email: {type: String},
+  password_digest: { type: String, required: true, select: false },
+});
+
+```
