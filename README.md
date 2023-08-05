@@ -19,7 +19,7 @@ Login functionality:
 - Token-based Authentication
 - User Login
 
-![Login](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/login.jpeg?token=GHSAT0AAAAAAB7BNBVZFPTQQU3QCBJ7MZMKZGNGDYA)
+![Login](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/login.jpeg)
 
 ### Signup
 
@@ -33,7 +33,7 @@ Signup Functionality:
 - Stores User Data
 - Handling Errors (duplication username/emails)
 
-![Signup](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/signup.jpeg?token=GHSAT0AAAAAAB7BNBVYB6HJXX66RACS6AX4ZGNGD7A)
+![Signup](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/signup.jpeg)
 
 ### Create
 
@@ -46,13 +46,13 @@ After a user signs up, they will create their dogs profile:
 - Dog Gender
 - Dog picture using Cloudinary for uploading
 
-![CreateADog](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/createdog.jpeg?token=GHSAT0AAAAAAB7BNBVZYX7TBM7I46E3WWW4ZGNGEGA)
+![CreateADog](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/createdog.jpeg)
 
 ### Homepage
 
 After a user creates a dog, they will be directed to the homepage. Here, they are able to swipe through eligble bachelors and bachelorettes. The user can either click on 'Bark' which means the user is not interested or 'Bone' which means the user is interested:
 
-![Homepage](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/homepage.jpeg?token=GHSAT0AAAAAAB7BNBVYCA3B24CVYHXJVRJCZGNGENQ)
+![Homepage](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/homepage.jpeg)
 
 ### Profile
 
@@ -66,7 +66,7 @@ They are also able to switch between dog profiles to swipe through the homepage 
 
 - Select Current Dog
 
-![Profile](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/userprofile.jpeg?token=GHSAT0AAAAAAB7BNBVYNGAO76V4LERL3Y2IZGNGEXA)
+![Profile](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/userprofile.jpeg)
 
 ### Edit Dog
 
@@ -74,13 +74,13 @@ A user can edit their dog profile here:
 
 - Autofilled inputs for ease
 
-![Edit](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/editdog.jpeg?token=GHSAT0AAAAAAB7BNBVYBULRCRSOKUGJHNMKZGNGE6Q)
+![Edit](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/editdog.jpeg)
 
 ### Matches
 
 A user can see their dog's matches here:
 
-![Matches](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/client/src/assets/README/matches.jpeg?token=GHSAT0AAAAAAB7BNBVYQKGNE4HXFDM5G4QOZGNGFFA)
+![Matches](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/matches.jpeg)
 
 ## API Endpoints Examples
 
