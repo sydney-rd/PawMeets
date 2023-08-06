@@ -64,7 +64,7 @@ function Login(props) {
           {errors.username && (
             <p className="login-error-message">{errors.username.message}</p>
           )}
-          <div>
+          <div className="password-input-container">
             <input
               required
               type={showPassword ? "text" : "password"}

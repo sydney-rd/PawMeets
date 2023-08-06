@@ -123,6 +123,10 @@
     margin-top: 2rem;
   }
 
+  .password-input-container {
+    position: relative;
+  }
+
   .form-signup form .password-toggle-btn {
     position: absolute;
     display: inline-flex;

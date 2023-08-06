@@ -7,6 +7,10 @@
   padding-top: 6rem;
 }
 
+.password-input-container {
+  position: relative;
+}
+
 .form-login {
   background-color: rgba(236, 235, 233, 255);
   padding: 2rem;
