@@ -71,7 +71,7 @@ const CreateADog = ({ setCurrentDog }) => {
             placeholder="Dog's Name"
             {...register("name", { required: true })}
           />
-          {errors.name && <span>Name is required.</span>}
+          {errors.name && <span className="error-msg">Name is required.</span>}
           <input
             type="text"
             placeholder="Dog's Breed"
@@ -84,10 +84,12 @@ const CreateADog = ({ setCurrentDog }) => {
             ))}
           </datalist>
           {errors.breed && errors.breed.type === "minLength" && (
-            <span>Breed should be at least 2 characters long.</span>
+            <span className="error-msg">
+              Breed should be at least 2 characters long.
+            </span>
           )}
           {errors.breed && errors.breed.type === "required" && (
-            <span>Breed is required.</span>
+            <span className="error-msg">Breed is required.</span>
           )}
           <input
             type="number"
@@ -97,10 +99,24 @@ const CreateADog = ({ setCurrentDog }) => {
             max="20"
           />
           {errors.age && errors.age.type === "required" && (
-            <span>Age is required.</span>
+            <span className="error-msg">Age is required.</span>
           )}
           {errors.age && errors.age.type === "pattern" && (
-            <span>Age must be a number.</span>
+            <span className="error-msg">Age must be a number.</span>
+          )}
+          <input
+            type="text"
+            placeholder="Dog's Gender"
+            {...register("gender", {
+              required: true,
+              pattern: /^(Male|Female)$/i,
+            })}
+          />
+          {errors.gender && errors.gender.type === "required" && (
+            <span className="error-msg">Gender is required.</span>
+          )}
+          {errors.gender && errors.gender.type === "pattern" && (
+            <span className="error-msg">Gender must be Male or Female.</span>
           )}
           <label className="text-area-label">
             <textarea
@@ -118,27 +134,17 @@ const CreateADog = ({ setCurrentDog }) => {
           </label>
 
           {errors.about && errors.about.type === "minLength" && (
-            <span>Description should be at least 100 characters long.</span>
+            <span className="error-msg">
+              Description should be at least 100 characters long.
+            </span>
           )}
           {errors.about && errors.about.type === "maxLength" && (
-            <span>Description should be no longer than 250 characters</span>
+            <span className="error-msg">
+              Description should be no longer than 250 characters
+            </span>
           )}
           {errors.about && errors.about.type === "required" && (
-            <span>Description is required.</span>
-          )}
-          <input
-            type="text"
-            placeholder="Dog's Gender"
-            {...register("gender", {
-              required: true,
-              pattern: /^(Male|Female)$/i,
-            })}
-          />
-          {errors.gender && errors.gender.type === "required" && (
-            <span>Gender is required.</span>
-          )}
-          {errors.gender && errors.gender.type === "pattern" && (
-            <span>Gender must be Male or Female.</span>
+            <span className="error-msg">Description is required.</span>
           )}
           <div className="btn-container">
             <button
@@ -149,7 +155,9 @@ const CreateADog = ({ setCurrentDog }) => {
               {isImageUploaded ? "Change Image" : "Upload Image"}
             </button>
             <input type="hidden" {...register("image", { required: true })} />
-            {errors.image && <span>Image is required.</span>}
+            {errors.image && (
+              <span className="error-msg">Image is required.</span>
+            )}
             <button type="submit" className="create-submit-btn">
               Submit
             </button>
