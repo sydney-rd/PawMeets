@@ -4,6 +4,7 @@ import { getDogs, likeDog } from "../../services/dogs.js";
 import Nav from "../../components/Nav/Nav.jsx";
 import Modal from "../../components/Modal/Modal.jsx";
 import "./HomePage.css";
+import { faTruckLoading } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomePage({ currentDog, setCurrentDog }) {
   const [dogs, setDogs] = useState([]);
@@ -49,48 +50,51 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     }
   }, [filteredDogs, currentDogIndex]);
 
-  if (filteredDogs.length === 0) return <h1>No dogs found in your area...</h1>;
-
   const dog = filteredDogs[currentDogIndex];
 
   return (
     <div>
       <Nav />
-      {filteredDogs.length > 0 && (
-        <div className="homepage-container">
-          <div className="overlay"> </div>
-          <div className="dog-container">
-            <h1 className="home-page-dog-name">{dog.name}</h1>
-            <div className="dog-image-container">
-              <Link to={`/dogs/${dog._id}`}>
-                <img
-                  className="homepage-dog-image"
-                  src={dog.image}
-                  alt={dog.name}
-                />
-              </Link>
-              <div>
-                <button
-                  className="dislike-button"
-                  onClick={handleDislikeBtnClick}
-                >
-                  BARK
-                </button>
-                <button className="like-button" onClick={handleLikeClick}>
-                  BONE
-                </button>
+      <div className="homepage-container">
+        <div className="overlay"> </div>
+        <div className="dog-container">
+          {filteredDogs.length > 0 ? (
+            <>
+              <h1 className="home-page-dog-name">{dog.name}</h1>
+              <div className="dog-image-container">
+                <Link to={`/dogs/${dog._id}`}>
+                  <img
+                    className="homepage-dog-image"
+                    src={dog.image}
+                    alt={dog.name}
+                  />
+                </Link>
+                <div>
+                  <button
+                    className="dislike-button"
+                    onClick={handleDislikeBtnClick}
+                  >
+                    BARK
+                  </button>
+                  <button className="like-button" onClick={handleLikeClick}>
+                    BONE
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className="homepage-description">
-              <p>
-                {dog.name} the {dog.breed}. {dog.gender}, {dog.age} years young.
-              </p>
-              <br />
-              <p>{dog.about}</p>
-            </div>
-          </div>
+              <div className="homepage-description">
+                <p>
+                  {dog.name} the {dog.breed}. {dog.gender}, {dog.age} years
+                  young.
+                </p>
+                <br />
+                <p>{dog.about}</p>
+              </div>
+            </>
+          ) : (
+            <h1>Loading...</h1>
+          )}
         </div>
-      )}
+      </div>
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}

@@ -121,6 +121,7 @@
     background: #cbc9c0cd;
     border-radius: 0.7rem;
     margin-top: 2rem;
+    width: 100%;
   }
 
   .password-input-container {
