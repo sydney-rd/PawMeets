@@ -12,7 +12,6 @@ const CreateADog = ({ setCurrentDog }) => {
     setValue,
   } = useForm();
   const navigate = useNavigate();
-  const [imageUrl, setImage] = useState("");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [aboutText, setAboutText] = useState("");
   const [dogBreeds, setDogBreeds] = useState([]);
@@ -43,7 +42,6 @@ const CreateADog = ({ setCurrentDog }) => {
     (error, res) => {
       if (!error && res && res.event === "success") {
         setValue("image", res.info.url);
-        setImage(res.info.url);
         setIsImageUploaded(true);
       }
     }

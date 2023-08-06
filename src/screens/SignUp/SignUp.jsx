@@ -168,7 +168,7 @@ function SignUp(props) {
         </form>
         <p className="login-nav-link">
           Have an account?{" "}
-          <a className="login-a-tag" href="/login">
+          <a className="login-a-tag" href="/">
             Login
           </a>
         </p>
