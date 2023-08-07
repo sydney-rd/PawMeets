@@ -6,6 +6,8 @@ PawMeets™ is a dog dating app that helps dogs find compatible partners in New 
 
 PawMeets uses React on the frontend.
 
+PawMeets is deployed on[Netlify](https://main--pawmeets.netlify.app/)
+
 ## Frontend Functionality
 
 ### Login
