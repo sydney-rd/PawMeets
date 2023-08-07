@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { createDog, getDogBreeds } from "../../services/dogs.js";
+import { debounce } from "lodash";
 import "./CreateADog.css";
 
 const CreateADog = ({ setCurrentDog }) => {
@@ -51,11 +52,15 @@ const CreateADog = ({ setCurrentDog }) => {
     widget.open();
   };
 
-  const handleAboutChange = (event) => {
-    const inputText = event.target.value;
-    if (inputText.length <= 300) {
+  const debouncedHandleAboutChange = debounce((inputText) => {
+    if (inputText.length <= 250) {
       setAboutText(inputText);
     }
+  }, 250);
+
+  const handleAboutChange = (event) => {
+    const inputText = event.target.value;
+    debouncedHandleAboutChange(inputText);
   };
 
   return (
