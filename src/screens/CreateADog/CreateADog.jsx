@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { createDog, getDogBreeds } from "../../services/dogs.js";
-import { debounce } from "lodash";
 import "./CreateADog.css";
 
 const CreateADog = ({ setCurrentDog }) => {
@@ -52,15 +51,11 @@ const CreateADog = ({ setCurrentDog }) => {
     widget.open();
   };
 
-  const debouncedHandleAboutChange = debounce((inputText) => {
-    if (inputText.length <= 250) {
-      setAboutText(inputText);
-    }
-  }, 250);
-
   const handleAboutChange = (event) => {
     const inputText = event.target.value;
-    debouncedHandleAboutChange(inputText);
+    if (inputText.length <= 200) {
+      setAboutText(inputText);
+    }
   };
 
   return (
@@ -125,24 +120,24 @@ const CreateADog = ({ setCurrentDog }) => {
               placeholder="Tell us about your dog"
               {...register("about", {
                 required: true,
-                minLength: 50,
-                maxLength: 250,
+                minLength: 20,
+                maxLength: 200,
               })}
               onChange={handleAboutChange}
               value={aboutText}
               style={{ resize: "none", minHeight: "100px" }}
             />
-            <span className="character-count">{aboutText.length || 0}/250</span>
+            <span className="character-count">{aboutText.length || 0}/200</span>
           </label>
 
           {errors.about && errors.about.type === "minLength" && (
             <span className="error-msg">
-              Description should be at least 50 characters long.
+              Description should be at least 20 characters long.
             </span>
           )}
           {errors.about && errors.about.type === "maxLength" && (
             <span className="error-msg">
-              Description should be no longer than 250 characters
+              Description should be no longer than 200 characters
             </span>
           )}
           {errors.about && errors.about.type === "required" && (
