@@ -15,9 +15,9 @@ const CreateADog = ({ setCurrentDog }) => {
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [aboutText, setAboutText] = useState("");
   const [dogBreeds, setDogBreeds] = useState([]);
+  const [selectedBreed, setSelectedBreed] = useState("");
 
   useEffect(() => {
-    // Fetch the list of dog breeds from the backend using the service function
     getDogBreeds()
       .then((breeds) => {
         setDogBreeds(breeds);
@@ -59,6 +59,10 @@ const CreateADog = ({ setCurrentDog }) => {
     }
   };
 
+  const handleBreedSelect = (event) => {
+    setSelectedBreed(event.target.value);
+  };
+
   return (
     <div className="create-container">
       <div className="form-create">
@@ -70,17 +74,18 @@ const CreateADog = ({ setCurrentDog }) => {
             {...register("name", { required: true })}
           />
           {errors.name && <span className="error-msg">Name is required.</span>}
-          <input
-            type="text"
-            placeholder="Dog's Breed"
-            {...register("breed", { required: true, minLength: 3 })}
-            list="dog-breeds-list"
-          />
-          <datalist id="dog-breeds-list">
-            {dogBreeds.map((breed) => (
-              <option key={breed} value={breed} />
-            ))}
-          </datalist>
+          <div className="custom-dropdown">
+            <select value={selectedBreed} onChange={handleBreedSelect} required>
+              <option value="" disabled hidden>
+                Select Breed
+              </option>
+              {dogBreeds.map((breed) => (
+                <option key={breed} value={breed}>
+                  {breed}
+                </option>
+              ))}
+            </select>
+          </div>{" "}
           {errors.breed && errors.breed.type === "minLength" && (
             <span className="error-msg">
               Breed should be at least 2 characters long.
@@ -130,7 +135,6 @@ const CreateADog = ({ setCurrentDog }) => {
             />
             <span className="character-count">{aboutText.length || 0}/250</span>
           </label>
-
           {errors.about && errors.about.type === "minLength" && (
             <span className="error-msg">
               Description should be at least 100 characters long.
