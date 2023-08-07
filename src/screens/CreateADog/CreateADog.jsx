@@ -120,7 +120,7 @@ const CreateADog = ({ setCurrentDog }) => {
               placeholder="Tell us about your dog"
               {...register("about", {
                 required: true,
-                minLength: 100,
+                minLength: 50,
                 maxLength: 250,
               })}
               onChange={handleAboutChange}
@@ -132,7 +132,7 @@ const CreateADog = ({ setCurrentDog }) => {
 
           {errors.about && errors.about.type === "minLength" && (
             <span className="error-msg">
-              Description should be at least 100 characters long.
+              Description should be at least 50 characters long.
             </span>
           )}
           {errors.about && errors.about.type === "maxLength" && (
