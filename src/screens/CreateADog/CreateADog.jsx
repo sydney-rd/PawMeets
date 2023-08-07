@@ -65,12 +65,6 @@ const CreateADog = ({ setCurrentDog }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
-            placeholder="Dog's Name"
-            {...register("name", { required: true })}
-          />
-          {errors.name && <span className="error-msg">Name is required.</span>}
-          <input
-            type="text"
             placeholder="Dog's Breed"
             {...register("breed", { required: true, minLength: 3 })}
             list="dog-breeds-list"
@@ -88,6 +82,13 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.breed && errors.breed.type === "required" && (
             <span className="error-msg">Breed is required.</span>
           )}
+
+          <input
+            type="text"
+            placeholder="Dog's Name"
+            {...register("name", { required: true })}
+          />
+          {errors.name && <span className="error-msg">Name is required.</span>}
           <input
             type="number"
             placeholder="Dog's Age"
