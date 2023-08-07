@@ -144,4 +144,10 @@
     width: 7rem;
     height: 2rem;
   }
+
+  .custom-dropdown {
+    position: relative;
+    width: 16rem;
+  }
+
 }
