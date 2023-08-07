@@ -144,7 +144,7 @@ const CreateADog = ({ setCurrentDog }) => {
               value={aboutText}
               style={{ resize: "none", minHeight: "100px" }}
             />
-            <span className="character-count">{aboutText.length || 0}/250</span>
+            {/* <span className="character-count">{aboutText.length || 0}/250</span> */}
           </label>
 
           {errors.about && errors.about.type === "minLength" && (
