@@ -39,6 +39,8 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Rest of the styles unchanged */
+
 .custom-dropdown {
   position: relative;
   width: 20rem;
@@ -52,7 +54,22 @@
   outline: none;
   font-size: 0.9rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  appearance: none;
+  background-size: 1.5rem;
 }
+
+.custom-dropdown select option {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.custom-dropdown select option:disabled {
+  color: #999;
+}
+
+/* Rest of the styles unchanged */
+
 
 .text-area-label {
   position: relative;
