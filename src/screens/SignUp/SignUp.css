@@ -100,7 +100,7 @@
   .form-signup {
     padding: 2rem;
     max-width: 20rem;
-    width: 75%;
+    width: 72%;
     height: auto;
     margin: 2.5rem auto;
   }
@@ -108,15 +108,15 @@
   .form-signup form input {
     padding: 0.6rem 1rem;
     margin: 0.5rem auto;
-    font-size: .8rem;
+    font-size: .7rem;
     border-radius: 0.3rem;
     border: 0.1rem solid black;
     outline: none;
   }
 
   .form-signup form button {
-    width: 5rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2.5rem;
     margin: auto;
     background: #cbc9c0cd;
     border-radius: 0.7rem;
