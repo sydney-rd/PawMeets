@@ -15,7 +15,6 @@ const CreateADog = ({ setCurrentDog }) => {
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [aboutText, setAboutText] = useState("");
   const [dogBreeds, setDogBreeds] = useState([]);
-  const [selectedBreed, setSelectedBreed] = useState("");
 
   useEffect(() => {
     getDogBreeds()
@@ -59,28 +58,28 @@ const CreateADog = ({ setCurrentDog }) => {
     }
   };
 
-  const handleBreedSelect = (event) => {
-    setSelectedBreed(event.target.value);
-  };
-
   return (
     <div className="create-container">
       <div className="form-create">
         <h3>Create Your Dog Profile</h3>
-
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="custom-dropdown">
-            <select value={selectedBreed} onChange={handleBreedSelect} required>
-              <option value="" disabled hidden>
-                Select Breed
-              </option>
-              {dogBreeds.map((breed) => (
-                <option key={breed} value={breed}>
-                  {breed}
-                </option>
-              ))}
-            </select>
-          </div>
+          <input
+            type="text"
+            placeholder="Dog's Name"
+            {...register("name", { required: true })}
+          />
+          {errors.name && <span className="error-msg">Name is required.</span>}
+          <input
+            type="text"
+            placeholder="Dog's Breed"
+            {...register("breed", { required: true, minLength: 3 })}
+            list="dog-breeds-list"
+          />
+          <datalist id="dog-breeds-list">
+            {dogBreeds.map((breed) => (
+              <option key={breed} value={breed} />
+            ))}
+          </datalist>
           {errors.breed && errors.breed.type === "minLength" && (
             <span className="error-msg">
               Breed should be at least 2 characters long.
@@ -89,13 +88,6 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.breed && errors.breed.type === "required" && (
             <span className="error-msg">Breed is required.</span>
           )}
-
-          <input
-            type="text"
-            placeholder="Dog's Name"
-            {...register("name", { required: true })}
-          />
-          {errors.name && <span className="error-msg">Name is required.</span>}
           <input
             type="number"
             placeholder="Dog's Age"
@@ -137,6 +129,7 @@ const CreateADog = ({ setCurrentDog }) => {
             />
             <span className="character-count">{aboutText.length || 0}/250</span>
           </label>
+
           {errors.about && errors.about.type === "minLength" && (
             <span className="error-msg">
               Description should be at least 100 characters long.
