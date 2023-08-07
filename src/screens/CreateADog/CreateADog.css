@@ -40,7 +40,7 @@
 }
 
 /* Rest of the styles unchanged */
-
+/* 
 .custom-dropdown {
   position: relative;
   width: 20rem;
@@ -60,7 +60,40 @@
   padding: 0.6rem 1rem;
   font-size: 0.9rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+
+.custom-dropdown {
+  position: relative;
+  width: 20rem;
+  margin: 0.5rem;
 }
+
+.custom-dropdown select {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  appearance: none;
+  color: #000;
+  background-color: rgba(236, 235, 233, 255);
+}
+
+.custom-dropdown select option {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+  background-color: rgba(236, 235, 233, 255);
+}
+
+.custom-dropdown select option:disabled {
+  color: #999;
+}
+
 
 .text-area-label {
   position: relative;
