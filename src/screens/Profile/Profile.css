@@ -57,6 +57,7 @@
     border-radius: 0.7rem;
     margin-top: 1rem;
     font-size: .9rem;
+    align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -100,8 +101,6 @@
         cursor: pointer;
         width: 12rem;
         height: 2.5rem;
-        display: flex;
-        flex-direction: column;
         background: #cbc9c0cd;
         margin-top: rem;
         font-size: .9rem;
