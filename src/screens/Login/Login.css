@@ -122,6 +122,10 @@
 
   .form-login form .password-toggle-btn {
     padding: .9em;
+    font-size: .8rem;
+    padding: 1em;
+    margin: 0.8em .1rem;
+
   }
 
 
