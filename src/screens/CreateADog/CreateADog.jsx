@@ -15,6 +15,7 @@ const CreateADog = ({ setCurrentDog }) => {
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [aboutText, setAboutText] = useState("");
   const [dogBreeds, setDogBreeds] = useState([]);
+  const [selectedBreed, setSelectedBreed] = useState("");
 
   useEffect(() => {
     getDogBreeds()
@@ -58,6 +59,10 @@ const CreateADog = ({ setCurrentDog }) => {
     }
   };
 
+  const handleBreedSelect = (event) => {
+    setSelectedBreed(event.target.value);
+  };
+
   return (
     <div className="create-container">
       <div className="form-create">
@@ -69,7 +74,7 @@ const CreateADog = ({ setCurrentDog }) => {
             {...register("name", { required: true })}
           />
           {errors.name && <span className="error-msg">Name is required.</span>}
-          <input
+          {/* <input
             type="text"
             placeholder="Dog's Breed"
             {...register("breed", { required: true, minLength: 3 })}
@@ -79,7 +84,19 @@ const CreateADog = ({ setCurrentDog }) => {
             {dogBreeds.map((breed) => (
               <option key={breed} value={breed} />
             ))}
-          </datalist>
+          </datalist> */}
+          <div className="custom-dropdown">
+            <select value={selectedBreed} onChange={handleBreedSelect} required>
+              <option value="" disabled hidden>
+                Select Breed
+              </option>
+              {dogBreeds.map((breed) => (
+                <option key={breed} value={breed}>
+                  {breed}
+                </option>
+              ))}
+            </select>
+          </div>
           {errors.breed && errors.breed.type === "minLength" && (
             <span className="error-msg">
               Breed should be at least 2 characters long.
