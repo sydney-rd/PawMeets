@@ -90,6 +90,21 @@
   background-color: rgba(236, 235, 233, 255);
 }
 
+
+.custom-dropdown::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+.custom-dropdown select::-ms-expand {
+  display: none;
+}
+
 .text-area-label {
   position: relative;
 }
