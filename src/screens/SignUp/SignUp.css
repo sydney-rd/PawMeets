@@ -100,18 +100,16 @@
   .form-signup {
     padding: 2rem;
     max-width: 20rem;
-    width: 72%;
-    height: auto;
+    width: 70%;
+    height: 90%;
     margin: 2.5rem auto;
   }
 
   .form-signup form input {
     padding: 0.6rem 1rem;
-    margin: 0.5rem auto;
-    font-size: .7rem;
-    border-radius: 0.3rem;
-    border: 0.1rem solid black;
-    outline: none;
+    margin: 0.4rem auto;
+    font-size: .8rem;
+    width: 100%;
   }
 
   .form-signup form button {
@@ -124,22 +122,9 @@
     width: 100%;
   }
 
-  .password-input-container {
-    position: relative;
-  }
-
   .form-signup form .password-toggle-btn {
-    position: absolute;
-    display: inline-flex;
-    transform: translateX(-100%);
-    background-color: transparent;
-    width: auto;
     padding: .5em;
     margin: 0.9em 0;
-  }
-
-  .form-signup form .password-toggle-btn:hover {
-    box-shadow: initial;
   }
 
   .signup-error-message {
@@ -155,6 +140,6 @@
 
   .login-nav-link {
     font-size: .9rem;
-    padding-top: 1.2rem;
+    padding-top: 2rem;
   }
 }
