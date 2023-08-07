@@ -67,13 +67,8 @@ const CreateADog = ({ setCurrentDog }) => {
     <div className="create-container">
       <div className="form-create">
         <h3>Create Your Dog Profile</h3>
+
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="text"
-            placeholder="Dog's Name"
-            {...register("name", { required: true })}
-          />
-          {errors.name && <span className="error-msg">Name is required.</span>}
           <div className="custom-dropdown">
             <select value={selectedBreed} onChange={handleBreedSelect} required>
               <option value="" disabled hidden>
@@ -85,7 +80,7 @@ const CreateADog = ({ setCurrentDog }) => {
                 </option>
               ))}
             </select>
-          </div>{" "}
+          </div>
           {errors.breed && errors.breed.type === "minLength" && (
             <span className="error-msg">
               Breed should be at least 2 characters long.
@@ -94,6 +89,13 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.breed && errors.breed.type === "required" && (
             <span className="error-msg">Breed is required.</span>
           )}
+
+          <input
+            type="text"
+            placeholder="Dog's Name"
+            {...register("name", { required: true })}
+          />
+          {errors.name && <span className="error-msg">Name is required.</span>}
           <input
             type="number"
             placeholder="Dog's Age"

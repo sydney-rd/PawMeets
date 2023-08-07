@@ -90,7 +90,6 @@
   background-color: rgba(236, 235, 233, 255);
 }
 
-
 .custom-dropdown::after {
   content: "▼";
   position: absolute;
