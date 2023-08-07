@@ -98,18 +98,31 @@
 /* The media queries for responsiveness */
 @media only screen and (max-width: 768px) {
   .form-login {
-    width: 80%;
+    width: 68%;
+    height: 75%;
   }
 
   .login-container {
     padding-top: 3rem;
   }
 
-  .password-toggle-btn-container {
-    bottom: 3%;
+  .signup-nav-link {
+    padding-top: 1rem;
+    font-size: .8rem;
   }
 
-  .signup-nav-link {
-    padding-top: 2rem;
+  .form-login form button {
+    width: 5rem;
+    height: 2.5rem;
   }
+
+  .form-login form input {
+    font-size: .8rem;
+  }
+
+  .form-login form .password-toggle-btn {
+    padding: .9em;
+  }
+
+
 }
