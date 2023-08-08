@@ -88,9 +88,9 @@
 @media only screen and (max-width: 768px) {
   .form-edit {
     align-self: center;
-    padding: 2rem;
-    width: 20rem;
-    margin: 4rem auto;
+    padding: 1.5rem;
+    width: 18rem;
+    margin: 3rem auto;
   }
 
   .form-edit h3 {
@@ -99,7 +99,7 @@
 
   .form-edit form input[type="text"],
   .form-edit form textarea {
-    font-size: .8rem;
+    font-size: .7rem;
   }
 
   .form-edit .btn {
@@ -110,5 +110,17 @@
     border-radius: 0.7rem;
     cursor: pointer;
     font-size: 1rem;
+  }
+
+  .image-label {
+    padding: 0.6rem 1rem;
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f0f0f0;
   }
 }
