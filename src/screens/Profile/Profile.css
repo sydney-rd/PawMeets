@@ -71,12 +71,12 @@
 @media only screen and (max-width: 768px) {
     .profile-container {
         background-color: lightgrey;
-        height: 80vh;
+        height: auto;
         overflow: auto;
         display: flex;
         flex-direction: column;
         text-align: center;
-        padding-top: 9rem;
+        padding-top: 1.5rem;
     }
 
     .dog-profile-container {
