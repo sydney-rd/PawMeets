@@ -130,12 +130,12 @@ export default function EditDog() {
             max="20"
           />
           {errors.age && (
+            <span className="edit-error-msg">Age is required.</span>
+          )}
+          {errors.age && errors.age.type === "pattern" && (
             <span className="edit-error-msg">
               Age must be a number between 1 and 20.
             </span>
-          )}
-          {errors.age && errors.age.type === "pattern" && (
-            <span className="edit-error-msg">Age must be a number.</span>
           )}
 
           {/* Dog's Gender */}

@@ -114,6 +114,11 @@
     padding-bottom: 1rem;
   }
 
+  .age-container {
+    font-size: 0.7rem;
+    width: 14rem;
+  }
+
   .form-edit form input[type="text"],
   .form-edit form textarea {
     font-size: 0.7rem;
