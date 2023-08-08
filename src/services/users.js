@@ -1,11 +1,30 @@
 import api from "./apiConfig";
 import jwtDecode from "jwt-decode";
 
-const handleApiCall = async (apiEndpoint, credentials) => {
+export const signUp = async (credentials) => {
   try {
-    const resp = await api.post(apiEndpoint, credentials);
+    const resp = await api.post("/auth/signup", credentials);
+
     localStorage.setItem("token", resp.data.token);
-    return jwtDecode(resp.data.token);
+    const user = jwtDecode(resp.data.token);
+    return user;
+  } catch (error) {
+    if (error.response) {
+      const customError = new Error(error.response.data.message);
+      customError.field = error.response.data.field;
+      throw customError;
+    }
+
+    throw error;
+  }
+};
+
+export const login = async (credentials) => {
+  try {
+    const resp = await api.post("/auth/", credentials);
+    localStorage.setItem("token", resp.data.token);
+    const user = jwtDecode(resp.data.token);
+    return user;
   } catch (error) {
     if (error.response) {
       const customError = new Error(error.response.data.message);
@@ -15,15 +34,6 @@ const handleApiCall = async (apiEndpoint, credentials) => {
     throw error;
   }
 };
-
-export const signUp = async (credentials) => {
-  return handleApiCall("/auth/signup", credentials);
-};
-
-export const login = async (credentials) => {
-  return handleApiCall("/auth/", credentials);
-};
-
 export const verifyUser = async () => {
   const token = localStorage.getItem("token");
   if (token) {
