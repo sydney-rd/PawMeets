@@ -66,6 +66,7 @@ function SignUp(props) {
           <img src={logo} alt="Logo" />
         </div>
         <form onSubmit={handleSubmit(onSignUp)}>
+          {/* Email Input and Validation */}
           <div className="form-group">
             <input
               required
@@ -77,6 +78,8 @@ function SignUp(props) {
             />
             {renderError("email")}
           </div>
+
+          {/* Username Input and Validation */}
           <div className="form-group">
             <input
               required
@@ -101,6 +104,8 @@ function SignUp(props) {
             />
             {renderError("username")}
           </div>
+
+          {/* Password Input, Validation, Eye Icon */}
           <div className="form-group password-input-container">
             <input
               required
@@ -134,6 +139,7 @@ function SignUp(props) {
           </div>
           {renderError("password")}
 
+          {/* Confirm Password Input, Validation, Eye Icon */}
           <div className="form-group password-input-container">
             <input
               required
@@ -161,6 +167,8 @@ function SignUp(props) {
             Sign Up
           </button>
         </form>
+
+        {/* Login Nav Link */}
         <p className="login-nav-link">
           Have an account?
           <a className="login-a-tag" href="/">
