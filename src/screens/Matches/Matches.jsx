@@ -24,18 +24,24 @@ export default function Matches() {
           <div className="dog-matches" key={obj.dog.id}>
             <div className="dog-name">{obj.dog.name}'s matches</div>
             <div className="matches-list">
-              {obj.matches.map((match) => (
-                <div className="match-dog-name" key={match.id}>
-                  <div>
-                    <img
-                      className="match-image"
-                      src={match.image}
-                      alt={match.name}
-                    />
-                    <div>{match.name}</div>
+              {obj.matches.length > 0 ? (
+                obj.matches.map((match) => (
+                  <div className="match-dog-name" key={match.id}>
+                    <div>
+                      <img
+                        className="match-image"
+                        src={match.image}
+                        alt={match.name}
+                      />
+                      <div>{match.name}</div>
+                    </div>
                   </div>
+                ))
+              ) : (
+                <div className="no-matches-message">
+                  {obj.dog.name} has no matches yet!
                 </div>
-              ))}
+              )}
             </div>
           </div>
         ))}

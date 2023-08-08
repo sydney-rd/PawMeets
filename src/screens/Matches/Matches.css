@@ -31,6 +31,10 @@
     margin: 1rem;
 }
 
+.no-matches-message {
+    margin: 1rem;
+}
+
 .match-image {
     width: 10rem;
     height: 10rem;
