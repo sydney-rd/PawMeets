@@ -58,18 +58,18 @@ export const createDog = async (dogData) => {
   }
 };
 
-export const updateDog = async (id, dogData) => {
+export const deleteDog = async (dogId) => {
   try {
-    const response = await api.put(`/dogs/${id}/update`, dogData);
+    const response = await api.post(`/dogs/delete/${dogId}`);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const deleteDog = async (dogId) => {
+export const updateDog = async (id, dogData) => {
   try {
-    const response = await api.post(`/dogs/delete/${dogId}`);
+    const response = await api.put(`/dogs/${id}/update`, dogData);
     return response.data;
   } catch (error) {
     throw error;
