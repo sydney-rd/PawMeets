@@ -183,7 +183,7 @@ const CreateADog = ({ setCurrentDog }) => {
             </button>
             <input type="hidden" {...register("image", { required: true })} />
             {errors.image && (
-              <span className="create-error-msg">Image is required.</span>
+              <span className="create-img-error-msg">Image is required.</span>
             )}
             <button type="submit" className="create-submit-btn">
               Submit
