@@ -87,7 +87,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
               </div>
             </>
           ) : (
-            <h1>Loading...</h1>
+            <h1 className="loading-msg">Loading...🐾</h1>
           )}
         </div>
       </div>
