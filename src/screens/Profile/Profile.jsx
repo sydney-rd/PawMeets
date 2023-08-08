@@ -53,7 +53,7 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
                   {selectedDogId === dog?._id
                     ? "Dog Selected"
                     : "Select as Current Dog"}
-                </button>{" "}
+                </button>
               </div>
             </div>
           ))}

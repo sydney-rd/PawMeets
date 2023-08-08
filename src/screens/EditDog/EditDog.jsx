@@ -42,13 +42,15 @@ export default function EditDog() {
       });
   }, []);
 
-  const checkValidBreed = (value) => {
-    if (!dogBreeds.includes(value)) {
-      console.log("Invalid breed detected:", value);
-      return "invalidBreed";
-    }
-    return true;
-  };
+  // const checkValidBreed = (value) => {
+  //   if (!dogBreeds.includes(value)) {
+  //     return {
+  //       type: "invalidBreed",
+  //       message: "Invalid Breed",
+  //     };
+  //   }
+  //   return true;
+  // };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -97,9 +99,8 @@ export default function EditDog() {
             type="text"
             placeholder="Dog's Breed"
             {...register("breed", {
-              required: true,
               minLength: 3,
-              validate: checkValidBreed,
+              // validate: checkValidBreed,
             })}
             list="dog-breeds-list"
           />
