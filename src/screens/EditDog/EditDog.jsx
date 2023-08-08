@@ -125,7 +125,7 @@ export default function EditDog() {
             className="age-container"
             type="number"
             placeholder="Dog's Age"
-            {...register("age", { required: true, pattern: /^\d+$/ })}
+            {...register("age", { required: true, pattern: /^[1-9][0-9]?$/ })}
             min="1"
             max="20"
           />
