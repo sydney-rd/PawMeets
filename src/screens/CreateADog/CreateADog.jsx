@@ -169,7 +169,9 @@ const CreateADog = ({ setCurrentDog }) => {
             </span>
           )}
           {errors.about && errors.about.type === "required" && (
-            <span className="create-error-msg">Description is required.</span>
+            <span className="description--error-msg">
+              Description is required.
+            </span>
           )}
 
           {/* Image Input */}
