@@ -97,20 +97,20 @@ export default function EditDog() {
             type="text"
             placeholder="Dog's Breed"
             {...register("breed", {
-              // required: true,
+              required: true,
               minLength: 3,
-              // validate: checkValidBreed,
+              validate: checkValidBreed,
             })}
-            // list="dog-breeds-list"
+            list="dog-breeds-list"
           />
-          {/* <datalist id="dog-breeds-list">
+          <datalist id="dog-breeds-list">
             {dogBreeds.map((breed) => (
               <option key={breed} value={breed} />
             ))}
-          </datalist> */}
-          {/* {errors.breed && (
+          </datalist>
+          {errors.breed && (
             <span className="error-msg">Breed is required.</span>
-          )} */}
+          )}
           {errors.breed && errors.breed.type === "minLength" && (
             <span className="edit-error-msg">
               Breed should be at least 2 characters long.
