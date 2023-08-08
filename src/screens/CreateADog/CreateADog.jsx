@@ -120,14 +120,10 @@ const CreateADog = ({ setCurrentDog }) => {
             max="20"
           />
           {errors.age && errors.age.type === "required" && (
-            <span className="create-error-msg">Age is required.</span>
-          )}
-          {errors.age && errors.age.type === "pattern" && (
             <span className="create-error-msg">
-              Age must be a number between 1 and 20
+              Age is required and must be a number between 1 and 20
             </span>
           )}
-
           {/* Dog's Gender */}
           <input
             type="text"
