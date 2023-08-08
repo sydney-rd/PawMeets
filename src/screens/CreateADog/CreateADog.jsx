@@ -26,6 +26,14 @@ const CreateADog = ({ setCurrentDog }) => {
       });
   }, []);
 
+  const checkValidBreed = (value) => {
+    if (!dogBreeds.includes(value)) {
+      console.log("Invalid breed detected:", value);
+      return "invalidBreed";
+    }
+    return true;
+  };
+
   const onSubmit = async (data) => {
     const dog = await createDog(data);
     setCurrentDog(dog);
@@ -58,14 +66,6 @@ const CreateADog = ({ setCurrentDog }) => {
     }
   };
 
-  const checkValidBreed = (value) => {
-    if (!dogBreeds.includes(value)) {
-      console.log("Invalid breed detected:", value);
-      return "invalidBreed";
-    }
-    return true;
-  };
-
   return (
     <div className="create-container">
       <div className="form-create">
@@ -79,7 +79,7 @@ const CreateADog = ({ setCurrentDog }) => {
           />
           {errors.name && <span className="error-msg">Name is required.</span>}
 
-          {/* Dog's Breed WIP */}
+          {/* Dog's Breed WORK IN PROGRESS */}
           <input
             type="text"
             placeholder="Dog's Breed"
