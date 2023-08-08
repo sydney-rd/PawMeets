@@ -11,7 +11,7 @@
 }
 
 .dog-profile-container {
-    background-image: url("https://cdn1.vectorstock.com/i/1000x1000/91/00/background-with-dog-paw-print-and-bone-vector-2669100.jpg");
+    background-image: url("../../assets/pawprintBg.jpeg");
     border-radius: 10%;
     box-shadow: 0.2rem 0.4rem 2rem rgba(0, 0, 0, 0.3);
     max-width: 28rem;

@@ -105,7 +105,6 @@
   display: none;
 }
 
-/* Media Query for Smaller Screens */
 @media only screen and (max-width: 768px) {
   .form-edit {
     align-self: center;

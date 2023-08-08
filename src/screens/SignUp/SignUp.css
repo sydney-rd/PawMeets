@@ -91,11 +91,6 @@
   font-weight: bold;
 }
 
-.verdana-text {
-  font-family: "Verdana", sans-serif;
-}
-
-
 /* The media queries for responsiveness */
 @media only screen and (max-width: 768px) {
   .signup-container {
