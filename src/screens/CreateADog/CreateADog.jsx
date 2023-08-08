@@ -56,8 +56,8 @@ const CreateADog = ({ setCurrentDog }) => {
   );
 
   const showWidget = (widget) => {
-    // setIsImageUploaded(false);
     widget.open();
+    clearErrors("image");
   };
 
   const handleAboutChange = (event) => {
