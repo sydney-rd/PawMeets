@@ -4,9 +4,9 @@
 
 PawMeets™ is a dog dating app that helps dogs find compatible partners in New York City. The app showcases dog profiles with their picture and an about me section that allows them to share their personalities. They can swipe through profiles of NYC's finest dogs and match with those they think would be a good fit. PawMeets™ allows pet owners to create a new profile for a pet, edit, or delete their profiles. PawMeets™ promises to provide a user-friendly experience with seamless UI/UX that will enable pet owners to discover ideal matches for their dogs. 🐶 ♡
 
-PawMeets uses React on the frontend.
+PawMeets™ uses React on the frontend.
 
-PawMeets is deployed on [Netlify](https://main--pawmeets.netlify.app/)
+PawMeets™ is deployed on [Netlify](https://main--pawmeets.netlify.app/)
 
 ## Frontend Functionality
 
@@ -112,7 +112,7 @@ A user can see their dog's matches here:
 
 ## About
 
-The backend of PawMeets uses the following:
+The backend of PawMeets™ uses the following:
 
 - MongoDB: A NoSQL database used to store and manage data.
 - Express.js: A backend web application framework for Node.js, used to build the server and handle routing.
