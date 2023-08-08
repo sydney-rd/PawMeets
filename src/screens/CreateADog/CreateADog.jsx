@@ -30,7 +30,10 @@ const CreateADog = ({ setCurrentDog }) => {
   const checkValidBreed = (value) => {
     if (!dogBreeds.includes(value)) {
       console.log("Invalid breed detected:", value);
-      return "invalidBreed";
+      return {
+        type: "invalidBreed",
+        message: "Invalid Breed",
+      };
     }
     return true;
   };
@@ -83,7 +86,7 @@ const CreateADog = ({ setCurrentDog }) => {
             <span className="create-error-msg">Name is required.</span>
           )}
 
-          {/* Dog's Breed WORK IN PROGRESS */}
+          {/* Dog's Breed */}
           <input
             type="text"
             placeholder="Dog's Breed"
@@ -108,7 +111,7 @@ const CreateADog = ({ setCurrentDog }) => {
             </span>
           )}
           {errors.breed && errors.breed.type === "invalidBreed" && (
-            <span className="create-error-msg">Invalid breed.</span>
+            <span className="create-error-msg">{errors.breed}</span>
           )}
 
           {/* Dog's Age */}
