@@ -198,7 +198,7 @@ export default function EditDog() {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            style={{ display: "none" }}
+            maxSize={5 * 1024 * 1024}
           />
 
           {/* Submit Button */}

@@ -101,6 +101,10 @@
   border-radius: 0.3rem;
 }
 
+#file-input {
+  display: none;
+}
+
 /* Media Query for Smaller Screens */
 @media only screen and (max-width: 768px) {
   .form-edit {
