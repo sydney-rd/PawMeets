@@ -71,12 +71,15 @@ const CreateADog = ({ setCurrentDog }) => {
       <div className="form-create">
         <h3>Create Your Dog Profile</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
+          {/* Dog's Name */}
           <input
             type="text"
             placeholder="Dog's Name"
             {...register("name", { required: true })}
           />
           {errors.name && <span className="error-msg">Name is required.</span>}
+
+          {/* Dog's Breed WIP */}
           <input
             type="text"
             placeholder="Dog's Breed"
@@ -101,10 +104,10 @@ const CreateADog = ({ setCurrentDog }) => {
             </span>
           )}
           {errors.breed && errors.breed.type === "invalidBreed" && (
-            <span className="error-msg">
-              Invalid breed selefadsfadfadfacted.
-            </span>
+            <span className="error-msg">Invalid breed.</span>
           )}
+
+          {/* Dog's Age */}
           <input
             type="number"
             placeholder="Dog's Age"
@@ -118,6 +121,8 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.age && errors.age.type === "pattern" && (
             <span className="error-msg">Age must be a number.</span>
           )}
+
+          {/* Dog's Gender */}
           <input
             type="text"
             placeholder="Dog's Gender"
@@ -132,6 +137,8 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.gender && errors.gender.type === "pattern" && (
             <span className="error-msg">Gender must be Male or Female.</span>
           )}
+
+          {/* Dog's About */}
           <label className="text-area-label">
             <textarea
               placeholder="Tell us about your dog"
@@ -160,6 +167,8 @@ const CreateADog = ({ setCurrentDog }) => {
           {errors.about && errors.about.type === "required" && (
             <span className="error-msg">Description is required.</span>
           )}
+
+          {/* Image Input */}
           <div className="btn-container">
             <button
               type="button"
