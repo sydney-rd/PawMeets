@@ -122,9 +122,9 @@ function SignUp(props) {
                 },
                 pattern: {
                   value:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]+$/,
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&*()])[A-Za-z\d!@#$%^&*()]+$/,
                   message:
-                    "Password should contain at least one uppercase letter, number, and symbol",
+                    "Password should contain at least one uppercase letter, number, and special char: !@#$%&*()",
                 },
               })}
               placeholder="Password"
