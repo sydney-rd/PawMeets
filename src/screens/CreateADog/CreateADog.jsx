@@ -113,22 +113,12 @@ const CreateADog = ({ setCurrentDog }) => {
 
           {/* Dog's Age */}
           <input
-            type="text"
+            type="number"
             placeholder="Dog's Age"
-            {...register("age", {
-              required: true,
-              validate: (value) => {
-                if (/^[1-9][0-9]*$/.test(value)) {
-                  return true;
-                } else {
-                  return "Age must be a number between 1 and 20";
-                }
-              },
-            })}
+            {...register("age", { required: true, pattern: /^[1-9][0-9]?$/ })}
             min="1"
             max="20"
           />
-
           {errors.age && errors.age.type === "required" && (
             <span className="create-error-msg">Age is required.</span>
           )}
