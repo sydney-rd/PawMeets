@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/Logo/PawMeets-1.png";
-import "./Login.css";
 import { getUserDogs } from "../../services/dogs.js";
+import "./Login.css";
 
 function Login(props) {
   const { user: currentUser, setUser, setCurrentDog } = props;

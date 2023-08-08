@@ -9,6 +9,8 @@ import "./SignUp.css";
 
 function SignUp(props) {
   const { user: currentUser, setUser } = props;
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
   const {
     register,
@@ -17,11 +19,6 @@ function SignUp(props) {
     setError,
     getValues,
   } = useForm();
-
-  console.log("errors: ", errors);
-
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   useEffect(() => {
     if (currentUser) {
@@ -80,7 +77,6 @@ function SignUp(props) {
             />
             {renderError("email")}
           </div>
-
           <div className="form-group">
             <input
               required
@@ -105,7 +101,6 @@ function SignUp(props) {
             />
             {renderError("username")}
           </div>
-
           <div className="form-group password-input-container">
             <input
               required
@@ -167,7 +162,7 @@ function SignUp(props) {
           </button>
         </form>
         <p className="login-nav-link">
-          Have an account?{" "}
+          Have an account?
           <a className="login-a-tag" href="/">
             Login
           </a>
