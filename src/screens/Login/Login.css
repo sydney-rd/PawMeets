@@ -119,6 +119,7 @@
 
   .form-login form input {
     font-size: .8rem;
+    width: 100%;
   }
 
   .form-login form .password-toggle-btn {
