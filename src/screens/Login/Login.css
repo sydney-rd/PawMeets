@@ -99,7 +99,8 @@
 @media only screen and (max-width: 768px) {
   .form-login {
     width: 68%;
-    height: 68%;
+    height: auto;
+
   }
 
   .login-container {
