@@ -10,6 +10,7 @@ const CreateADog = ({ setCurrentDog }) => {
     handleSubmit,
     formState: { errors },
     setValue,
+    clearErrors,
   } = useForm();
   const navigate = useNavigate();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
@@ -55,7 +56,7 @@ const CreateADog = ({ setCurrentDog }) => {
   );
 
   const showWidget = (widget) => {
-    setIsImageUploaded(false);
+    // setIsImageUploaded(false);
     widget.open();
   };
 
@@ -63,6 +64,7 @@ const CreateADog = ({ setCurrentDog }) => {
     const inputText = event.target.value;
     if (inputText.length <= 200) {
       setAboutText(inputText);
+      clearErrors("about");
     }
   };
 
@@ -159,17 +161,17 @@ const CreateADog = ({ setCurrentDog }) => {
           </label>
 
           {errors.about && errors.about.type === "minLength" && (
-            <span className="create-error-msg">
+            <span className="description-error-msg">
               Description should be at least 2 * characters long.
             </span>
           )}
           {errors.about && errors.about.type === "maxLength" && (
-            <span className="create-error-msg">
+            <span className="description-error-msg">
               Description should be no longer than 200 characters
             </span>
           )}
           {errors.about && errors.about.type === "required" && (
-            <span className="description--error-msg">
+            <span className="description-error-msg">
               Description is required.
             </span>
           )}
@@ -187,6 +189,8 @@ const CreateADog = ({ setCurrentDog }) => {
             {errors.image && (
               <span className="create-img-error-msg">Image is required.</span>
             )}
+
+            {/* Submit Btn */}
             <button type="submit" className="create-submit-btn">
               Submit
             </button>
