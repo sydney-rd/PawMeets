@@ -4,8 +4,8 @@ import { login } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/Logo/PawMeets-1.png";
 import { getUserDogs } from "../../services/dogs.js";
+import logo from "../../assets/Logo/PawMeets-1.png";
 import "./Login.css";
 
 function Login(props) {
@@ -55,6 +55,7 @@ function Login(props) {
           <img src={logo} alt="Logo" />
         </div>
         <form onSubmit={handleSubmit(onLogin)}>
+          {/* Username Input */}
           <input
             required
             type="text"
@@ -64,6 +65,8 @@ function Login(props) {
           {errors.username && (
             <p className="login-error-message">{errors.username.message}</p>
           )}
+
+          {/* Password Input */}
           <div className="password-input-container">
             <input
               required
@@ -71,6 +74,8 @@ function Login(props) {
               {...register("password", { required: "Password is required" })}
               placeholder="Enter Password"
             />
+
+            {/* Password Visibility Logic */}
             <button
               type="button"
               className="password-toggle-btn"
@@ -84,6 +89,8 @@ function Login(props) {
           )}
           <button type="submit">Login</button>
         </form>
+
+        {/* Signup Nav Link */}
         <p className="signup-nav-link">
           Need an account?
           <a className="signup-a-tag" href="/signup">
