@@ -16,7 +16,7 @@
     box-shadow: 0.2rem 0.4rem 2rem rgba(0, 0, 0, 0.3);
     max-width: 28rem;
     margin-bottom: 7rem;
-    height: 60vh;
+    height: 65vh;
     width: 35vh;
     border: 2px solid gray;
 }
@@ -63,12 +63,12 @@
 @media only screen and (max-width: 768px) {
     .profile-container {
         background-color: lightgrey;
-        height: 10rem;
+        height: auto;
         overflow: auto;
         display: flex;
         flex-direction: column;
         text-align: center;
-        padding-top: 42rem;
+        padding-top: 3rem;
     }
 
     .dog-profile-container {
