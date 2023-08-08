@@ -39,7 +39,7 @@ const CreateADog = ({ setCurrentDog }) => {
     const dog = await createDog(data);
     setCurrentDog(dog);
     localStorage.setItem("currentProfile", JSON.stringify(dog));
-    navigate("/homepage");
+    navigate("/profile");
   };
 
   const widget = window.cloudinary.createUploadWidget(
