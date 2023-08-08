@@ -65,6 +65,12 @@
   box-shadow: 0.3rem 0.8rem 1.6rem rgba(0, 0, 0, 0.5);
 }
 
+.error-msg {
+  font-size: .7rem;
+  text-align: center;
+}
+
+
 .image-label {
   width: 39rem;
   padding: 0.6rem 1rem;

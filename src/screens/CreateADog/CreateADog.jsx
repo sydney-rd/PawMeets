@@ -58,6 +58,14 @@ const CreateADog = ({ setCurrentDog }) => {
     }
   };
 
+  const checkValidBreed = (value) => {
+    if (!dogBreeds.includes(value)) {
+      console.log("Invalid breed detected:", value);
+      return "invalidBreed";
+    }
+    return true;
+  };
+
   return (
     <div className="create-container">
       <div className="form-create">
@@ -72,7 +80,11 @@ const CreateADog = ({ setCurrentDog }) => {
           <input
             type="text"
             placeholder="Dog's Breed"
-            {...register("breed", { required: true, minLength: 3 })}
+            {...register("breed", {
+              required: true,
+              minLength: 3,
+              validate: checkValidBreed,
+            })}
             list="dog-breeds-list"
           />
           <datalist id="dog-breeds-list">
@@ -80,13 +92,18 @@ const CreateADog = ({ setCurrentDog }) => {
               <option key={breed} value={breed} />
             ))}
           </datalist>
+          {errors.breed && errors.breed.type === "" && (
+            <span className="error-msg">Breed is required.</span>
+          )}
           {errors.breed && errors.breed.type === "minLength" && (
             <span className="error-msg">
               Breed should be at least 2 characters long.
             </span>
           )}
-          {errors.breed && errors.breed.type === "required" && (
-            <span className="error-msg">Breed is required.</span>
+          {errors.breed && errors.breed.type === "invalidBreed" && (
+            <span className="error-msg">
+              Invalid breed selefadsfadfadfacted.
+            </span>
           )}
           <input
             type="number"
