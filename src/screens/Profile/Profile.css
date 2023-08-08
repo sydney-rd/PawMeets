@@ -63,7 +63,7 @@
 @media only screen and (max-width: 768px) {
     .profile-container {
         background-color: lightgrey;
-        height: 40rem;
+        height: 20rem;
         overflow: auto;
         display: flex;
         flex-direction: column;
