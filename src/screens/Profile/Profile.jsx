@@ -22,8 +22,12 @@ function Profile({ user, userDogs, setToggle, setCurrentDog }) {
     <div>
       <Nav />
       <div className="header">
-        <h1>Welcome, {user?.username}! Please see your dogs below</h1>
-        <Link to="/create">Add a new dog profile here</Link>
+        <h1>
+          Welcome, {user?.username}! <br /> Please see your dogs below
+        </h1>
+        <Link className="create-dog-profile-link" to="/create">
+          Add a new dog profile here
+        </Link>
       </div>
       <div className="profile-container">
         {userDogs.length > 0 &&

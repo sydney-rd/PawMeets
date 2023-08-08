@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
 import React, { useState, useEffect, useMemo } from "react";
 import { getDogs, likeDog } from "../../services/dogs.js";
 import Nav from "../../components/Nav/Nav.jsx";
 import Modal from "../../components/Modal/Modal.jsx";
 import "./HomePage.css";
-import { faTruckLoading } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomePage({ currentDog, setCurrentDog }) {
   const [dogs, setDogs] = useState([]);
@@ -62,13 +60,11 @@ export default function HomePage({ currentDog, setCurrentDog }) {
             <>
               <h1 className="home-page-dog-name">{dog.name}</h1>
               <div className="dog-image-container">
-                <Link to={`/dogs/${dog._id}`}>
-                  <img
-                    className="homepage-dog-image"
-                    src={dog.image}
-                    alt={dog.name}
-                  />
-                </Link>
+                <img
+                  className="homepage-dog-image"
+                  src={dog.image}
+                  alt={dog.name}
+                />
                 <div>
                   <button
                     className="dislike-button"
