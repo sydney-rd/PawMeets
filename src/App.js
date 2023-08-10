@@ -96,7 +96,15 @@ function App() {
           path="/create"
           element={<CreateADog setCurrentDog={setCurrentDog} user={user} />}
         />
-        <Route path="/edit/:id" element={<EditDog />} />
+        <Route
+          path="/edit/:id"
+          element={
+            <EditDog
+              currentDog={currentDog}
+              setCurrentDog={handleSetCurrentDog}
+            />
+          }
+        />
         <Route
           path="/Matches"
           element={

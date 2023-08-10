@@ -5,7 +5,7 @@ import { updateDog, getDog, getDogBreeds } from "../../services/dogs.js";
 import DogFormFields from "../../components/DogFormFields/DogFormFields";
 import "./EditDog.css";
 
-export default function EditDog() {
+export default function EditDog({ currentDog, setCurrentDog }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(null);
@@ -57,6 +57,12 @@ export default function EditDog() {
       image: currentImage,
     };
     await updateDog(id, updatedData);
+
+    if (currentDog && currentDog._id === id) {
+      const updatedDog = { ...currentDog, ...data, image: currentImage };
+      setCurrentDog(updatedDog);
+      localStorage.setItem("currentProfile", JSON.stringify(updatedDog));
+    }
     navigate("/profile");
   };
 
