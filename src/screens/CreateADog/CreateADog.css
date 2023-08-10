@@ -42,6 +42,8 @@
 
 .text-area-label {
   position: relative;
+  resize: "none";
+  min-height: "100px";
 }
 
 .image-btn {

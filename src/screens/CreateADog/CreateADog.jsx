@@ -11,8 +11,8 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
     formState: { errors },
     setValue,
     clearErrors,
-    getValues,
-    watch,
+    // getValues,
+    // watch,
   } = useForm();
   const navigate = useNavigate();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
@@ -151,16 +151,14 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
                 minLength: 2,
                 maxLength: 200,
               })}
-              style={{ resize: "none", minHeight: "100px" }}
             ></textarea>
             {/* <span className="character-count">
               {watch("about")?.length || 0}/200
             </span> */}
           </label>
-
           {errors.about && errors.about.type === "minLength" && (
             <span className="description-error-msg">
-              Description should be at least 2 * characters long.
+              Description should be at least 2 characters long.
             </span>
           )}
           {errors.about && errors.about.type === "maxLength" && (

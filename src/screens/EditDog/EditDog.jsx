@@ -7,7 +7,6 @@ import "./EditDog.css";
 export default function EditDog() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [aboutText, setAboutText] = useState("");
   const [currentImage, setCurrentImage] = useState(null);
   const [dogBreeds, setDogBreeds] = useState([]);
 
@@ -27,7 +26,6 @@ export default function EditDog() {
       setValue("age", dog.age);
       setValue("about", dog.about);
       setValue("gender", dog.gender);
-      setAboutText(dog.about);
     };
     fetchDog();
   }, [id]);
@@ -60,13 +58,6 @@ export default function EditDog() {
         setCurrentImage(reader.result);
       };
       reader.readAsDataURL(file);
-    }
-  };
-
-  const handleAboutChange = (event) => {
-    const inputText = event.target.value;
-    if (inputText.length <= 200) {
-      setAboutText(inputText);
     }
   };
 
@@ -160,20 +151,18 @@ export default function EditDog() {
           {/* Dog's About */}
           <label className="text-area-label">
             <textarea
-              placeholder="Tell us about yourself"
+              placeholder="Tell us about your dog"
               {...register("about", {
                 required: true,
                 minLength: 2,
                 maxLength: 200,
               })}
-              onChange={handleAboutChange}
-              value={aboutText}
-            />
-            <span className="character-count">{aboutText.length || 0}/200</span>
+            ></textarea>
+            {/* <span className="character-count">{aboutText.length || 0}/200</span> */}
           </label>
           {errors.about && errors.about.type === "minLength" && (
             <span className="edit-error-msg">
-              Description should be at least 2 * characters long.
+              Description should be at least 2 characters long.
             </span>
           )}
           {errors.about && errors.about.type === "maxLength" && (
