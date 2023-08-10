@@ -11,8 +11,6 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
     formState: { errors },
     setValue,
     clearErrors,
-    // getValues,
-    // watch,
   } = useForm();
   const navigate = useNavigate();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
@@ -83,7 +81,7 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
             <span className="create-error-msg">Name is required.</span>
           )}
 
-          {/* Dog's Breed */}
+          {/* Dog's Breed WORK IN PROGRESS */}
           <input
             type="text"
             placeholder="Dog's Breed"
@@ -100,7 +98,9 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
             ))}
           </datalist>
           {errors.breed && errors.breed.type === "required" && (
-            <span className="create-error-msg">Breed is required.</span>
+            <span className="create-error-msg">
+              Choose a breed from the required list.
+            </span>
           )}
           {errors.breed && errors.breed.type === "minLength" && (
             <span className="create-error-msg">
