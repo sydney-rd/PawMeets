@@ -4,18 +4,26 @@ import { useNavigate } from "react-router-dom";
 import { createDog, getDogBreeds } from "../../services/dogs.js";
 import "./CreateADog.css";
 
-const CreateADog = ({ setCurrentDog }) => {
+const CreateADog = ({ setCurrentDog, user: currentUser }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
     clearErrors,
+    getValues,
+    watch,
   } = useForm();
   const navigate = useNavigate();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
-  const [aboutText, setAboutText] = useState("");
   const [dogBreeds, setDogBreeds] = useState([]);
+
+  useEffect(() => {
+    console.log("CreateADog currentUser: ", currentUser);
+    if (!currentUser) {
+      navigate("/");
+    }
+  }, [currentUser]);
 
   useEffect(() => {
     getDogBreeds()
@@ -58,14 +66,6 @@ const CreateADog = ({ setCurrentDog }) => {
   const showWidget = (widget) => {
     widget.open();
     clearErrors("image");
-  };
-
-  const handleAboutChange = (event) => {
-    const inputText = event.target.value;
-    if (inputText.length <= 200) {
-      setAboutText(inputText);
-      clearErrors("about");
-    }
   };
 
   return (
@@ -151,11 +151,11 @@ const CreateADog = ({ setCurrentDog }) => {
                 minLength: 2,
                 maxLength: 200,
               })}
-              onChange={handleAboutChange}
-              value={aboutText}
               style={{ resize: "none", minHeight: "100px" }}
-            />
-            <span className="character-count">{aboutText.length || 0}/200</span>
+            ></textarea>
+            {/* <span className="character-count">
+              {watch("about")?.length || 0}/200
+            </span> */}
           </label>
 
           {errors.about && errors.about.type === "minLength" && (

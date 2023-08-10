@@ -94,7 +94,7 @@ function App() {
         />
         <Route
           path="/create"
-          element={<CreateADog setCurrentDog={setCurrentDog} />}
+          element={<CreateADog setCurrentDog={setCurrentDog} user={user} />}
         />
         <Route path="/edit/:id" element={<EditDog />} />
         <Route

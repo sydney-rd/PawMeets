@@ -120,7 +120,7 @@ function SignUp(props) {
                   value:
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[a-zA-Z\d\W_]+$/,
                   message:
-                    "Password should contain at least one uppercase letter, number, and special char.",
+                    "Password should contain at least one uppercase letter, number, and a special char.",
                 },
               })}
               placeholder="Password"
