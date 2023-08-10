@@ -113,18 +113,14 @@ function SignUp(props) {
               {...register("password", {
                 required: "Password is required",
                 minLength: {
-                  value: 5,
-                  message: "Password should have a minimum length of 5",
-                },
-                maxLength: {
-                  value: 24,
-                  message: "Password should have a maximum length of 24",
+                  value: 8,
+                  message: "Password should have a minimum length of 8",
                 },
                 pattern: {
                   value:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&*()])[A-Za-z\d!@#$%^&*()]+$/,
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[a-zA-Z\d\W_]+$/,
                   message:
-                    "Password should contain at least one uppercase letter, number, and special char: !@#$%&*()",
+                    "Password should contain at least one uppercase letter, number, and special char.",
                 },
               })}
               placeholder="Password"
