@@ -1,14 +1,12 @@
 import React from "react";
 
 const DogFormFields = ({ register, errors, dogBreeds, isEdit }) => {
-  // TBD
-  // const checkValidBreed = (value) => {
-  //   if (!dogBreeds.includes(value)) {
-  //     console.log("Invalid breed detected:", value);
-  //     return "invalidBreed";
-  //   }
-  //   return true;
-  // };
+  const checkValidBreed = (value) => {
+    if (!dogBreeds.includes(value)) {
+      return "invalidBreed";
+    }
+    return undefined;
+  };
 
   return (
     <>
@@ -30,7 +28,7 @@ const DogFormFields = ({ register, errors, dogBreeds, isEdit }) => {
         {...register("breed", {
           required: true,
           minLength: 3,
-          // validate: checkValidBreed,
+          validate: checkValidBreed,
         })}
         list="dog-breeds-list"
       />
@@ -41,7 +39,7 @@ const DogFormFields = ({ register, errors, dogBreeds, isEdit }) => {
       </datalist>
       {errors.breed && (
         <span className={`${isEdit ? "edit" : "create"}-error-msg`}>
-          {isEdit ? "Breed is" : "Breed is"} required.
+          Please select a breed from the list.
         </span>
       )}
       {errors.breed && errors.breed.type === "minLength" && (

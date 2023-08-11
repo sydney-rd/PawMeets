@@ -18,7 +18,6 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
   const [dogBreeds, setDogBreeds] = useState([]);
 
   useEffect(() => {
-    console.log("CreateADog currentUser: ", currentUser);
     if (!currentUser) {
       navigate("/");
     }

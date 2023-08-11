@@ -51,9 +51,6 @@ function App() {
     localStorage.setItem("currentProfile", JSON.stringify(dog));
   };
 
-  console.log(userDogs);
-  console.log("current dog", currentDog);
-
   return (
     <div className="App">
       <Routes>
