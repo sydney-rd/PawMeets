@@ -30,7 +30,6 @@ function SignUp(props) {
     try {
       const user = await signUp(data);
       setUser(user);
-      console.log(user);
       navigate("/create");
     } catch (error) {
       setError(error.field, { type: "custom", message: error.message });
@@ -92,12 +91,12 @@ function SignUp(props) {
                     "Username should only contain alphanumeric characters",
                 },
                 minLength: {
-                  value: 5,
-                  message: "Username should have a minimum length of 5",
+                  value: 6,
+                  message: "Username should have a minimum length of 6",
                 },
                 maxLength: {
-                  value: 24,
-                  message: "Username should have a maximum length of 24",
+                  value: 30,
+                  message: "Username should have a maximum length of 30",
                 },
               })}
               placeholder="Enter username"
@@ -120,7 +119,7 @@ function SignUp(props) {
                   value:
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[a-zA-Z\d\W_]+$/,
                   message:
-                    "Password should contain at least one uppercase letter, number, and a special char.",
+                    "Password should contain at least one uppercase letter, number, and a special char",
                 },
               })}
               placeholder="Password"

@@ -98,15 +98,10 @@
   }
 
   .form-signup {
-    padding: 2rem;
-    max-width: 20rem;
     width: 65%;
-    height: auto;
-    margin: 2.5rem auto;
   }
 
   .form-signup form input {
-    padding: 0.6rem 1rem;
     margin: 0.4rem auto;
     font-size: .8rem;
     width: 100%;
@@ -115,10 +110,6 @@
   .form-signup form button {
     width: 2rem;
     height: 2.5rem;
-    margin: auto;
-    background: #cbc9c0cd;
-    border-radius: 0.7rem;
-    margin-top: 2rem;
     width: 100%;
   }
 
@@ -126,13 +117,6 @@
     padding: .5em;
     margin: 1.2em 0;
     font-size: .8rem;
-  }
-
-  .signup-error-message {
-    font-size: 0.7rem;
-    display: flex;
-    color: black;
-    justify-content: center;
   }
 
   .signupPmLogo {

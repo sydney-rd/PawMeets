@@ -14,6 +14,7 @@ import { getUserDogs } from "./services/dogs.js";
 function App() {
   const [user, setUser] = useState(null);
   const [userDogs, setUserDogs] = useState([]);
+  const [toggle, setToggle] = useState(false);
   const [currentDog, setCurrentDog] = useState(() => {
     const profile = localStorage.getItem("currentProfile");
     if (profile) {
@@ -22,7 +23,6 @@ function App() {
       return null;
     }
   });
-  const [toggle, setToggle] = useState(false);
 
   const fetchUser = async () => {
     const user = await verifyUser();

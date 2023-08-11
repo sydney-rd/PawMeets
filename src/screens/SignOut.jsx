@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { signOut } from "../services/users.js";
 import { useNavigate } from "react-router-dom";
+import { signOut } from "../services/users.js";
 
 export default function SignOut({ setUser, setCurrentDog }) {
   const navigate = useNavigate();

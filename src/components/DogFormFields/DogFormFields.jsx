@@ -102,12 +102,12 @@ const DogFormFields = ({ register, errors, dogBreeds, isEdit, watch }) => {
       </label>
       {errors.about && errors.about.type === "minLength" && (
         <span className={`${isEdit ? "edit" : "create"}-error-msg`}>
-          Description should be at least 25 characters long.
+          About should be at least 25 characters long.
         </span>
       )}
       {errors.about && errors.about.type === "maxLength" && (
         <span className={`${isEdit ? "edit" : "create"}-error-msg`}>
-          Description should be no longer than 200 characters.
+          About should be no longer than 200 characters.
         </span>
       )}
       {errors.about && (
