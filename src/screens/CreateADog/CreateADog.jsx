@@ -12,6 +12,7 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
     formState: { errors },
     setValue,
     clearErrors,
+    watch,
   } = useForm();
   const navigate = useNavigate();
   const [isImageUploaded, setIsImageUploaded] = useState(false);
@@ -69,6 +70,7 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
             errors={errors}
             dogBreeds={dogBreeds}
             isEdit={false}
+            watch={watch}
           />
 
           {/* Image Input */}

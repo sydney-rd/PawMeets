@@ -1,6 +1,6 @@
 import React from "react";
 
-const DogFormFields = ({ register, errors, dogBreeds, isEdit }) => {
+const DogFormFields = ({ register, errors, dogBreeds, isEdit, watch }) => {
   const checkValidBreed = (value) => {
     if (!dogBreeds.includes(value)) {
       return "invalidBreed";
@@ -99,6 +99,7 @@ const DogFormFields = ({ register, errors, dogBreeds, isEdit }) => {
           })}
         ></textarea>
       </label>
+      {watch("about")?.length}
       {errors.about && errors.about.type === "minLength" && (
         <span className={`${isEdit ? "edit" : "create"}-error-msg`}>
           Description should be at least 2 characters long.
