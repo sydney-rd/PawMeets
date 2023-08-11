@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
-import { updateDog, getDog, getDogBreeds } from "../../services/dogs.js";
+import {
+  updateDog,
+  getDog,
+  getDogBreeds,
+  getUserDogs,
+} from "../../services/dogs.js";
 import DogFormFields from "../../components/DogFormFields/DogFormFields";
 import "./EditDog.css";
 
-export default function EditDog({ currentDog, setCurrentDog }) {
+export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(null);
@@ -58,11 +63,14 @@ export default function EditDog({ currentDog, setCurrentDog }) {
     };
     await updateDog(id, updatedData);
 
+    setUserDogs(await getUserDogs());
+
     if (currentDog && currentDog._id === id) {
       const updatedDog = { ...currentDog, ...data, image: currentImage };
       setCurrentDog(updatedDog);
       localStorage.setItem("currentProfile", JSON.stringify(updatedDog));
     }
+
     navigate("/profile");
   };
 

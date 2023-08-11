@@ -98,6 +98,7 @@ function App() {
           element={
             <EditDog
               currentDog={currentDog}
+              setUserDogs={setUserDogs}
               setCurrentDog={handleSetCurrentDog}
             />
           }
