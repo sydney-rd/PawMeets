@@ -94,7 +94,7 @@ const DogFormFields = ({ register, errors, dogBreeds, isEdit, watch }) => {
           placeholder="Tell us about your dog"
           {...register("about", {
             required: true,
-            minLength: 25,
+            minLength: 2,
             maxLength: 200,
           })}
         ></textarea>
@@ -102,7 +102,7 @@ const DogFormFields = ({ register, errors, dogBreeds, isEdit, watch }) => {
       </label>
       {errors.about && errors.about.type === "minLength" && (
         <span className={`${isEdit ? "edit" : "create"}-error-msg`}>
-          About should be at least 25 characters long.
+          About should be at least 2* characters long.
         </span>
       )}
       {errors.about && errors.about.type === "maxLength" && (
