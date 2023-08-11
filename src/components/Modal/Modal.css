@@ -63,7 +63,7 @@
 @media only screen and (max-width: 767px) {
     .modal-content {
         width: 20rem;
-        height: 25rem;
+        height: 26rem;
         font-size: 1.1rem;
     }
 
@@ -78,5 +78,6 @@
 
     .modal-dog-img {
         width: 9rem;
+        height: 8.5rem;
     }
 }
