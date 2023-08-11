@@ -19,6 +19,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -85,6 +86,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
             errors={errors}
             dogBreeds={dogBreeds}
             isEdit={true}
+            watch={watch}
           />
 
           {/* Image Input */}

@@ -47,6 +47,15 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.about-length {
+  font-size: .6rem;
+  position: absolute;
+  display: block;
+  bottom: 1.5em;
+  right: 1.3em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .age-container {
   width: 25rem;
   padding: 0.5rem 1rem;

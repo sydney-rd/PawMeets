@@ -1,7 +1,7 @@
 import api from "./apiConfig";
 import jwtDecode from "jwt-decode";
 
-const handleApiCall = async (apiEndpoint, credentials) => {
+const handleAuthCalls = async (apiEndpoint, credentials) => {
   try {
     const resp = await api.post(apiEndpoint, credentials);
     localStorage.setItem("token", resp.data.token);
@@ -12,16 +12,15 @@ const handleApiCall = async (apiEndpoint, credentials) => {
       customError.field = error.response.data.field;
       throw customError;
     }
-    throw error;
   }
 };
 
 export const signUp = async (credentials) => {
-  return handleApiCall("/auth/signup", credentials);
+  return handleAuthCalls("/auth/signup", credentials);
 };
 
 export const login = async (credentials) => {
-  return handleApiCall("/auth/", credentials);
+  return handleAuthCalls("/auth/", credentials);
 };
 
 export const verifyUser = async () => {

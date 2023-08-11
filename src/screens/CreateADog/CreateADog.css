@@ -30,12 +30,11 @@
   box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
 }
 
-.character-count {
-  font-size: .5rem;
-  font-weight: bold;
+.about-length {
+  font-size: .6rem;
   position: absolute;
   display: block;
-  bottom: 2em;
+  bottom: 1.8em;
   right: 1.7em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
