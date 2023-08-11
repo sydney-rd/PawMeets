@@ -114,6 +114,12 @@
   display: none;
 }
 
+.uploading-container {
+  position: absolute;
+  display: block;
+  margin-top: 15rem;
+}
+
 @media only screen and (max-width: 768px) {
   .form-edit {
     padding: 1.5rem;

@@ -75,7 +75,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
       localStorage.setItem("currentProfile", JSON.stringify(updatedDog));
     }
 
-    setIsSubmitting(false); // Set loading state back to false
+    setIsSubmitting(false);
     navigate("/profile");
   };
 
@@ -112,7 +112,9 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
             value="Submit"
             disabled={isSubmitting}
           />
-          {isSubmitting && <h1>Loading...</h1>}
+          <div className="uploading-container">
+            {isSubmitting && <h1 id="edit-uploading">Uploading...</h1>}
+          </div>
         </form>
       </div>
     </div>
