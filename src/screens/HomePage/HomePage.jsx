@@ -14,6 +14,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     setCurrentDogIndex((prev) => (prev + 1) % filteredDogs.length);
   };
 
+  // Like and Match Logic
   const handleLikeClick = async () => {
     const likedDogId = filteredDogs[currentDogIndex]._id;
     const dog = await likeDog(currentDog._id, likedDogId);
@@ -42,6 +43,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     fetchDogs();
   }, []);
 
+  // filter dogs based on likes
   const filteredDogs = useMemo(
     () => dogs.filter((dog) => !currentDog?.likes.includes(dog._id)),
     [dogs, currentDog?.likes]

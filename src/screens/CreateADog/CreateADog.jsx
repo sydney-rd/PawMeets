@@ -24,6 +24,7 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
     }
   }, [currentUser]);
 
+  // fetch dog breeds
   useEffect(() => {
     getDogBreeds()
       .then((breeds) => {
@@ -41,6 +42,7 @@ const CreateADog = ({ setCurrentDog, user: currentUser }) => {
     navigate("/profile");
   };
 
+  // cloudinary image upload logic
   const widget = window.cloudinary.createUploadWidget(
     {
       cloudName: "dhhjypuye",

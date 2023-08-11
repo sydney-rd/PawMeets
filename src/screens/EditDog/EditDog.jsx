@@ -36,6 +36,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
     fetchDog();
   }, [id]);
 
+  // fetch dog breeds
   useEffect(() => {
     getDogBreeds()
       .then((breeds) => {
@@ -46,6 +47,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
       });
   }, []);
 
+  // image change
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
