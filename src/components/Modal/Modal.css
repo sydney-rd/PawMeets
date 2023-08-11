@@ -61,11 +61,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .close-btn {
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
     .modal-content {
         width: 20rem;
         height: 25rem;
@@ -78,7 +73,6 @@
     }
 
     .images-container {
-        padding-bottom: 4rem;
         gap: .7rem;
     }
 
