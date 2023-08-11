@@ -9,8 +9,9 @@ export default function HomePage({ currentDog, setCurrentDog }) {
   const [currentDogIndex, setCurrentDogIndex] = useState(0);
   const [likedByLikedDog, setLikedByLikedDog] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
   const handleDislikeBtnClick = () => {
-    setCurrentDogIndex((currentDogIndex + 1) % filteredDogs.length);
+    setCurrentDogIndex((prev) => (prev + 1) % filteredDogs.length);
   };
 
   const handleLikeClick = async () => {
@@ -20,12 +21,16 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     setCurrentDog((prev) => {
       return { ...prev, likes: [...prev.likes, likedDogId] };
     });
+
     const matchedDog = dogs.find(
       (dog) => dog.likes.includes(currentDog._id) && dog._id === likedDogId
     );
     if (matchedDog) {
       setLikedByLikedDog(matchedDog);
       setShowModal(true);
+    }
+    if (filteredDogs.length - 1 <= currentDogIndex) {
+      setCurrentDogIndex(0);
     }
   };
 
@@ -48,7 +53,7 @@ export default function HomePage({ currentDog, setCurrentDog }) {
     }
   }, [filteredDogs, currentDogIndex]);
 
-  const dog = filteredDogs[currentDogIndex];
+  const currentlyViewedDog = filteredDogs[currentDogIndex];
 
   return (
     <div>
@@ -58,12 +63,12 @@ export default function HomePage({ currentDog, setCurrentDog }) {
         <div className="dog-container">
           {filteredDogs.length > 0 ? (
             <>
-              <h1 className="home-page-dog-name">{dog.name}</h1>
+              <h1 className="home-page-dog-name">{currentlyViewedDog.name}</h1>
               <div className="dog-image-container">
                 <img
                   className="homepage-dog-image"
-                  src={dog.image}
-                  alt={dog.name}
+                  src={currentlyViewedDog.image}
+                  alt={currentlyViewedDog.name}
                 />
                 <div>
                   <button
@@ -79,11 +84,12 @@ export default function HomePage({ currentDog, setCurrentDog }) {
               </div>
               <div className="homepage-description">
                 <p>
-                  {dog.name} the {dog.breed}. {dog.gender}, {dog.age} years
+                  {currentlyViewedDog.name} the {currentlyViewedDog.breed}.{" "}
+                  {currentlyViewedDog.gender}, {currentlyViewedDog.age} years
                   young.
                 </p>
                 <br />
-                <p>{dog.about}</p>
+                <p>{currentlyViewedDog.about}</p>
               </div>
             </>
           ) : (
