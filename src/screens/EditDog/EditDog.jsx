@@ -15,7 +15,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
   const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(null);
   const [dogBreeds, setDogBreeds] = useState([]);
-  const [isSubmitting, setIsSubmitting] = useState(false); // New state for loading indicator
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -59,7 +59,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
   };
 
   const onSubmit = async (data) => {
-    setIsSubmitting(true); // Set loading state to true
+    setIsSubmitting(true); // loading state
 
     const updatedData = {
       ...data,
@@ -109,7 +109,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
           <input
             className="btn"
             type="submit"
-            value={isSubmitting ? "Submitting..." : "Submit"}
+            value="Submit"
             disabled={isSubmitting}
           />
           {isSubmitting && <h1>Loading...</h1>}
