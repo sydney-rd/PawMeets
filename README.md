@@ -80,6 +80,12 @@ A user can edit their dog profile here:
 
 ![Edit](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/editdog.jpeg)
 
+### Modal Match
+
+When two dog's like eachother - they match:
+
+![Modal](https://raw.githubusercontent.com/sydney-rd/paw-meets/main/src/assets/README/modal.jpeg)
+
 ### Matches
 
 A user can see their dog's matches here:
