@@ -15,6 +15,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
   const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(null);
   const [dogBreeds, setDogBreeds] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false); // New state for loading indicator
   const {
     register,
     handleSubmit,
@@ -36,7 +37,6 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
     fetchDog();
   }, [id]);
 
-  // fetch dog breeds
   useEffect(() => {
     getDogBreeds()
       .then((breeds) => {
@@ -47,7 +47,6 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
       });
   }, []);
 
-  // image change
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -60,6 +59,8 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
   };
 
   const onSubmit = async (data) => {
+    setIsSubmitting(true); // Set loading state to true
+
     const updatedData = {
       ...data,
       image: currentImage,
@@ -74,6 +75,7 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
       localStorage.setItem("currentProfile", JSON.stringify(updatedDog));
     }
 
+    setIsSubmitting(false); // Set loading state back to false
     navigate("/profile");
   };
 
@@ -82,7 +84,6 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
       <div className="form-edit">
         <h3>Edit Dog's Profile</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Dog Form Input */}
           <DogFormFields
             register={register}
             errors={errors}
@@ -91,7 +92,6 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
             watch={watch}
           />
 
-          {/* Image Input */}
           <label className="image-label" htmlFor="file-input">
             {currentImage ? (
               <img className="current-image" src={currentImage} alt="Dog" />
@@ -106,8 +106,13 @@ export default function EditDog({ currentDog, setCurrentDog, setUserDogs }) {
             onChange={handleImageChange}
           />
 
-          {/* Submit Button */}
-          <input className="btn" type="submit" value="Submit" />
+          <input
+            className="btn"
+            type="submit"
+            value={isSubmitting ? "Submitting..." : "Submit"}
+            disabled={isSubmitting}
+          />
+          {isSubmitting && <h1>Loading...</h1>}
         </form>
       </div>
     </div>
