@@ -117,7 +117,11 @@
 .uploading-container {
   position: absolute;
   display: block;
-  margin-top: 15rem;
+  margin-top: 8rem;
+}
+
+#edit-uploading {
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 768px) {
