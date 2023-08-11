@@ -114,14 +114,14 @@
   display: none;
 }
 
+/* WIP */
 .uploading-container {
-  position: absolute;
-  display: block;
-  margin-top: 8rem;
+  margin-top: 0rem;
 }
 
 #edit-uploading {
-  font-size: 2rem;
+  font-size: 1rem;
+  color: black;
 }
 
 @media only screen and (max-width: 768px) {
