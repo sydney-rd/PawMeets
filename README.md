@@ -8,6 +8,8 @@ PawMeets™ uses React on the frontend.
 
 PawMeets™ is deployed on [Netlify](https://main--pawmeets.netlify.app/)
 
+<strong>Please note - this projects functionality, design, and code is still being improved and perfected!</strong>
+
 ## Frontend Functionality
 
 ### Login
